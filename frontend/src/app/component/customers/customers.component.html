@@ -1,0 +1,136 @@
+<!-- SANITY CHECK BANNER
+    This is just for checking, that your setup works.
+    You can – and should – remove this later
+    -->
+@if (bannerError) {
+  <div class="container mt-3 mb-3">
+    <div class="alert alert-danger" role="alert">
+      <h4>Error!</h4> {{ bannerError }}
+      <p>Could not load customers.</p>
+      <p>Something is not quite right. Did you start the backend?</p>
+    </div>
+  </div>
+} @else {
+  <div class="container mt-3">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>Your application is up and running.</p>
+      <p>You should see the current list of customers below.</p>
+      <p>Please remove this banner when you start working.</p>
+    </div>
+  </div>
+}
+<!-- END SANITY CHECK BANNER -->
+
+<div class="row">
+  <div class="col">
+    <h1>Search customers</h1>
+  </div>
+
+  <div class="col-auto d-flex align-items-center">
+    <!-- Submit Button (Search) -->
+    <button (click)="getCustomers()" class="btn btn-primary me-2">
+      <i class="bi bi-search"></i>
+      Search
+    </button>
+
+    <!-- New Customer Button -->
+    <a class="btn btn-success" routerLink="create" aria-label="New customer">
+      <i class="bi bi-plus-lg"></i>
+      New customer
+    </a>
+  </div>
+</div>
+
+
+<form (ngSubmit)="getCustomers()">
+  <!-- hidden submit button -->
+  <input hidden="hidden" type="submit"/>
+
+  <div class="row">
+    <!-- First Name -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="firstName">First Name</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.firstName" class="form-control" id="firstName"
+             name="firstName" placeholder="Enter first name" type="text"/>
+    </div>
+
+    <!-- Last Name -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="lastName">Last Name</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.lastName" class="form-control" id="lastName"
+             name="lastName" placeholder="Enter last name" type="text"/>
+    </div>
+
+    <!-- Email -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="email">Email</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.email" class="form-control" id="email"
+             name="email" placeholder="Enter email" type="email"/>
+    </div>
+
+    <!-- Date of Birth (Earliest) -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="dateOfBirthEarliest">Born after</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.dateOfBirthEarliest" class="form-control"
+             id="dateOfBirthEarliest" name="dateOfBirthEarliest" type="date"/>
+    </div>
+
+    <!-- Date of Birth (Latest) -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="dateOfBirthLatest">Born before</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.dateOfBirthLatest" class="form-control"
+             id="dateOfBirthLatest" name="dateOfBirthLatest" type="date"/>
+    </div>
+
+    <!-- Min Age -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="minAge">Minimum Age</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.minAge" class="form-control" id="minAge"
+             name="minAge" placeholder="Min age" type="number"/>
+    </div>
+
+    <!-- Max Age -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="maxAge">Maximum Age</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.maxAge" class="form-control" id="maxAge"
+             name="maxAge" placeholder="Max age" type="number"/>
+    </div>
+  </div>
+</form>
+
+<div class="mt-3">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+        <th>Age</th>
+        <th class="min-width">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (customer of customers; track customer) {
+        <tr class="align-middle">
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.dateOfBirth | date: 'dd.MM.yyyy' }}</td>
+          <td>{{ customer.age }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/customers/edit', customer.id]" class="btn btn-sm responsive-warning-button">
+                <i class="bi bi-pencil"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</div>
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.18.2">
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\config\LogConfiguration.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\config\LogFilter.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\config\WebConfig.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\dto\CustomerCreateDto.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\dto\CustomerDetailDto.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\dto\CustomerSearchDto.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\dto\CustomerUpdateDto.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\entity\Article.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\entity\Customer.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\exception\ConflictException.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\exception\ErrorListException.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\exception\FatalException.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\exception\NotFoundException.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\exception\ValidationException.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\mapper\CustomerMapper.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\persistence\ArticleDao.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\persistence\CustomerDao.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\persistence\DataGeneratorBean.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\persistence\impl\ArticleJdbcDao.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\persistence\impl\CustomerJdbcDao.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\rest\ApplicationExceptionHandler.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\rest\ArticleEndpoint.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\rest\CustomerEndpoint.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\rest\ValidationErrorRestDto.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\SeprIndividualAssignmentApplication.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\service\ArticleService.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\service\ArticleServiceImpl.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\service\CustomerService.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\service\CustomerServiceImpl.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java\at\ac\tuwien\sepr\assignment\individual\service\CustomerValidator.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\test\java\at\ac\tuwien\sepr\assignment\individual\rest\CustomerEndpointTest.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\test\java\at\ac\tuwien\sepr\assignment\individual\SeprIndividualAssignmentApplicationTests.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\test\java\at\ac\tuwien\sepr\assignment\individual\service\CustomerServiceTest.java">
+</file>
+<file name="C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\test\java\at\ac\tuwien\sepr\assignment\individual\TestBase.java">
+</file>
+</checkstyle>

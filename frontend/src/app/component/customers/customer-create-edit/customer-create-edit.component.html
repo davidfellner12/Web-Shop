@@ -1,0 +1,68 @@
+<!-- Header Section -->
+<div class="row">
+  <div class="col">
+    <h1>{{ header }}</h1>
+  </div>
+  <div class="col-auto">
+  </div>
+</div>
+
+<!-- Customer Form -->
+<form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+  <!-- Hidden submit element, to keep presses of enter key to trigger the cancel button -->
+  <input type="submit" hidden="hidden"/>
+
+  <div class="row">
+    <!-- First Name -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="firstName">First Name</label>
+      <input [(ngModel)]="customer.firstName" class="form-control" id="firstName" name="firstName"
+             placeholder="Enter first name" required type="text"/>
+    </div>
+
+    <!-- Last Name -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="lastName">Last Name</label>
+      <input [(ngModel)]="customer.lastName" class="form-control" id="lastName" name="lastName"
+             placeholder="Enter last name" required type="text"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Email -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="email">Email Address</label>
+      <input [(ngModel)]="customer.email" class="form-control" id="email" name="email" placeholder="Enter email"
+             required type="email"/>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="dateOfBirth">Date of Birth</label>
+      <input [(ngModel)]="dateOfBirth" class="form-control" id="dateOfBirth" name="dateOfBirth" required
+             type="date"/>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="d-flex flex-row justify-content-end">
+    <a class="btn btn-secondary me-1" routerLink="/customers">
+      <i class="bi bi-x-lg"></i>
+      Cancel
+    </a>
+    <button [disabled]="!customerForm.valid" class="btn btn-primary" type="submit">
+      <i class="bi bi-check-lg"></i>
+      {{ submitButtonText }}
+    </button>
+  </div>
+
+</form>
+
+@if (showConfirmDeletionDialog) {
+  <app-confirm-dialog
+    [mode]="ConfirmationDialogMode.delete"
+    [message]="deleteMessage"
+    (confirm)="delete()"
+    (cancel)="showConfirmDeletionDialog = false">
+  </app-confirm-dialog>
+}

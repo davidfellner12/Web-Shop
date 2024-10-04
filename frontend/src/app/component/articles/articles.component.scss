@@ -1,0 +1,15 @@
+@use "sass:map";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.responsive-primary-button, .responsive-info-button, .responsive-warning-button, .responsive-danger-button, .responsive-dark-button, .responsive-tree-button {
+  @include button-variant($light, $light);
+}
+
+@each $color in (primary, info, warning, danger) {
+  $value: map.get($theme-colors, $color);
+  tr:hover .responsive-#{$color}-button {
+    @include button-variant($value, $value);
+  }
+}

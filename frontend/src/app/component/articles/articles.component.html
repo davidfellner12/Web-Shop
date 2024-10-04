@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col">
+    <h1>Search articles</h1>
+  </div>
+
+  <div class="col-auto d-flex align-items-center">
+    <!-- Submit Button (Search) -->
+    <button (click)="getArticles()" class="btn btn-primary me-2">
+      <i class="bi bi-search"></i>
+      Search
+    </button>
+
+    <!-- New Article Button -->
+    <a aria-label="New article" class="btn btn-success" routerLink="create">
+      <i class="bi bi-plus-lg"></i>
+      New article
+    </a>
+  </div>
+</div>
+
+<form (ngSubmit)="getArticles()">
+  <!-- Hidden Submit Button -->
+  <input hidden="hidden" type="submit"/>
+
+  <div class="row">
+    <!-- Article Name -->
+    <div class="col-md-3">
+      <label class="form-label" for="name">Article Name</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.name" class="form-control" id="name"
+             name="name" placeholder="Enter article name"
+             type="text"/>
+    </div>
+
+    <!-- Description -->
+    <div class="col-md-3">
+      <label class="form-label" for="description">Description</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.description" class="form-control"
+             id="description" name="description"
+             placeholder="Enter description" type="text"/>
+    </div>
+
+    <!-- Min Price -->
+    <div class="col-md-3">
+      <label class="form-label" for="minPrice">Minimum Price</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.minPrice" class="form-control" id="minPrice"
+             name="minPrice"
+             placeholder="Min price" type="number"/>
+    </div>
+
+    <!-- Max Price -->
+    <div class="col-md-3">
+      <label class="form-label" for="maxPrice">Maximum Price</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.maxPrice" class="form-control" id="maxPrice"
+             name="maxPrice"
+             placeholder="Max price" type="number"/>
+    </div>
+  </div>
+</form>
+
+<div class="mt-3">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th class="col-md-6">Description</th>
+      <th>Price</th>
+      <th class="min-width">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (article of articles; track article) {
+        <tr class="align-middle">
+          <td>
+          </td>
+          <td>{{ article.name }}</td>
+          <td>{{ article.description }}</td>
+          <td>{{ article.price | currency}}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/articles/details', article.id]" class="btn btn-sm responsive-info-button">
+                <i class="bi bi-info"></i>
+              </a>
+              <a [routerLink]="['/articles/edit', article.id]" class="btn btn-sm responsive-warning-button">
+                <i class="bi bi-pencil"></i>
+              </a>
+              <button (click)="addToCart(article)" class="btn btn-sm responsive-primary-button">
+                <i class="bi bi-cart-plus"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

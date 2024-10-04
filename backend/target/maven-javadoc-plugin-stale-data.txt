@@ -1,0 +1,100 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.4/spring-boot-starter-web-3.3.4.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.4/spring-boot-starter-3.3.4.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot/3.3.4/spring-boot-3.3.4.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.4/spring-boot-autoconfigure-3.3.4.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.4/spring-boot-starter-logging-3.3.4.jar;C:/Users/david/.m2/repository/ch/qos/logback/logback-classic/1.5.8/logback-classic-1.5.8.jar;C:/Users/david/.m2/repository/ch/qos/logback/logback-core/1.5.8/logback-core-1.5.8.jar;C:/Users/david/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar;C:/Users/david/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar;C:/Users/david/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar;C:/Users/david/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/david/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.4/spring-boot-starter-json-3.3.4.jar;C:/Users/david/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar;C:/Users/david/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar;C:/Users/david/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar;C:/Users/david/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.2/jackson-datatype-jdk8-2.17.2.jar;C:/Users/david/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar;C:/Users/david/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.2/jackson-module-parameter-names-2.17.2.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.4/spring-boot-starter-tomcat-3.3.4.jar;C:/Users/david/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.30/tomcat-embed-core-10.1.30.jar;C:/Users/david/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.30/tomcat-embed-el-10.1.30.jar;C:/Users/david/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.30/tomcat-embed-websocket-10.1.30.jar;C:/Users/david/.m2/repository/org/springframework/spring-web/6.1.13/spring-web-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-beans/6.1.13/spring-beans-6.1.13.jar;C:/Users/david/.m2/repository/io/micrometer/micrometer-observation/1.13.4/micrometer-observation-1.13.4.jar;C:/Users/david/.m2/repository/io/micrometer/micrometer-commons/1.13.4/micrometer-commons-1.13.4.jar;C:/Users/david/.m2/repository/org/springframework/spring-webmvc/6.1.13/spring-webmvc-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-aop/6.1.13/spring-aop-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-context/6.1.13/spring-context-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-expression/6.1.13/spring-expression-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.4/spring-boot-starter-jdbc-3.3.4.jar;C:/Users/david/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar;C:/Users/david/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar;C:/Users/david/.m2/repository/org/springframework/spring-jdbc/6.1.13/spring-jdbc-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-tx/6.1.13/spring-tx-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-core/6.1.13/spring-core-6.1.13.jar;C:/Users/david/.m2/repository/org/springframework/spring-jcl/6.1.13/spring-jcl-6.1.13.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/david/Desktop/SEPM/Wendys-Christmas-Shop/backend/src/main/java;C:/Users/david/Desktop/SEPM/Wendys-Christmas-Shop/backend/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/david/Desktop/SEPM/Wendys-Christmas-Shop/backend/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'sepr-individual-assignment-java-template 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'sepr-individual-assignment-java-template 0.0.1-SNAPSHOT API'
+at.ac.tuwien.sepr.assignment.individual.config
+at.ac.tuwien.sepr.assignment.individual.dto
+at.ac.tuwien.sepr.assignment.individual.entity
+at.ac.tuwien.sepr.assignment.individual.exception
+at.ac.tuwien.sepr.assignment.individual.mapper
+at.ac.tuwien.sepr.assignment.individual.persistence
+at.ac.tuwien.sepr.assignment.individual.persistence.impl
+at.ac.tuwien.sepr.assignment.individual.rest
+at.ac.tuwien.sepr.assignment.individual
+at.ac.tuwien.sepr.assignment.individual.service
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.3.4\spring-boot-starter-web-3.3.4.jar = 1728027864486
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-starter\3.3.4\spring-boot-starter-3.3.4.jar = 1728027863957
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot\3.3.4\spring-boot-3.3.4.jar = 1728027864332
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.3.4\spring-boot-autoconfigure-3.3.4.jar = 1728027864116
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.3.4\spring-boot-starter-logging-3.3.4.jar = 1728027864042
+C:\Users\david\.m2\repository\ch\qos\logback\logback-classic\1.5.8\logback-classic-1.5.8.jar = 1728027864144
+C:\Users\david\.m2\repository\ch\qos\logback\logback-core\1.5.8\logback-core-1.5.8.jar = 1728027863989
+C:\Users\david\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.23.1\log4j-to-slf4j-2.23.1.jar = 1727093814332
+C:\Users\david\.m2\repository\org\apache\logging\log4j\log4j-api\2.23.1\log4j-api-2.23.1.jar = 1727093813703
+C:\Users\david\.m2\repository\org\slf4j\jul-to-slf4j\2.0.16\jul-to-slf4j-2.0.16.jar = 1728027863951
+C:\Users\david\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1716136872597
+C:\Users\david\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar = 1716136877900
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.3.4\spring-boot-starter-json-3.3.4.jar = 1728027863883
+C:\Users\david\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar = 1728027864144
+C:\Users\david\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar = 1728027864291
+C:\Users\david\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar = 1728027864458
+C:\Users\david\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.17.2\jackson-datatype-jdk8-2.17.2.jar = 1728027864821
+C:\Users\david\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.17.2\jackson-datatype-jsr310-2.17.2.jar = 1728027864203
+C:\Users\david\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.17.2\jackson-module-parameter-names-2.17.2.jar = 1728027864819
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.3.4\spring-boot-starter-tomcat-3.3.4.jar = 1728027864279
+C:\Users\david\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.30\tomcat-embed-core-10.1.30.jar = 1728027864694
+C:\Users\david\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.30\tomcat-embed-el-10.1.30.jar = 1728027864750
+C:\Users\david\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.30\tomcat-embed-websocket-10.1.30.jar = 1728027864353
+C:\Users\david\.m2\repository\org\springframework\spring-web\6.1.13\spring-web-6.1.13.jar = 1728027864165
+C:\Users\david\.m2\repository\org\springframework\spring-beans\6.1.13\spring-beans-6.1.13.jar = 1728027864021
+C:\Users\david\.m2\repository\io\micrometer\micrometer-observation\1.13.4\micrometer-observation-1.13.4.jar = 1728027863898
+C:\Users\david\.m2\repository\io\micrometer\micrometer-commons\1.13.4\micrometer-commons-1.13.4.jar = 1728027865288
+C:\Users\david\.m2\repository\org\springframework\spring-webmvc\6.1.13\spring-webmvc-6.1.13.jar = 1728027864701
+C:\Users\david\.m2\repository\org\springframework\spring-aop\6.1.13\spring-aop-6.1.13.jar = 1728027864556
+C:\Users\david\.m2\repository\org\springframework\spring-context\6.1.13\spring-context-6.1.13.jar = 1728027864379
+C:\Users\david\.m2\repository\org\springframework\spring-expression\6.1.13\spring-expression-6.1.13.jar = 1728027864321
+C:\Users\david\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.3.4\spring-boot-starter-jdbc-3.3.4.jar = 1728027864399
+C:\Users\david\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar = 1728027864557
+C:\Users\david\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar = 1728027863857
+C:\Users\david\.m2\repository\org\springframework\spring-jdbc\6.1.13\spring-jdbc-6.1.13.jar = 1728027864443
+C:\Users\david\.m2\repository\org\springframework\spring-tx\6.1.13\spring-tx-6.1.13.jar = 1728027864329
+C:\Users\david\.m2\repository\org\springframework\spring-core\6.1.13\spring-core-6.1.13.jar = 1728027864161
+C:\Users\david\.m2\repository\org\springframework\spring-jcl\6.1.13\spring-jcl-6.1.13.jar = 1728027864523
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\src\main\java = 1728023158595
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\generated-sources\annotations = 1728030587875
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\allclasses-index.html = 1728030596745
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\allpackages-index.html = 1728030596749
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\constant-values.html = 1728030596205
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\copy.svg = 1728030596866
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\element-list = 1728030595987
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\help-doc.html = 1728030596838
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\index-all.html = 1728030596815
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\index.html = 1728030596699
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\link.svg = 1728030596879
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\member-search-index.js = 1728030596757
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\module-search-index.js = 1728030596751
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\overview-summary.html = 1728030596822
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\overview-tree.html = 1728030596686
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\package-search-index.js = 1728030596752
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\script.js = 1728030596860
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\search-page.js = 1728030596892
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\search.html = 1728030596819
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\search.js = 1728030596890
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\serialized-form.html = 1728030596242
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\stylesheet.css = 1728030596851
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\tag-search-index.js = 1728030596759
+C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\reports\apidocs\type-search-index.js = 1728030596754
