@@ -1,19 +1,26 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence.impl;
 
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
+import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.persistence.CustomerDao;
 import java.lang.invoke.MethodHandles;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+
 
 /**
  * Implementation of the CustomerDao interface using JDBC.
@@ -27,8 +34,11 @@ public class CustomerJdbcDao implements CustomerDao {
   private static final String SQL_SELECT_SEARCH = "SELECT  *"
       + " FROM " + TABLE_NAME
       ;
-
-
+  private static final String SQL_REGISTER_CUSTOMER = "INSERT INTO " + TABLE_NAME
+          + " SET first_name = ?"
+          + "  , last_name = ?"
+          + "  , date_of_birth = ?"
+          + "  , email = ?";
 
   private static final String SQL_UPDATE = "UPDATE " + TABLE_NAME
       + " SET first_name = ?"
@@ -55,6 +65,32 @@ public class CustomerJdbcDao implements CustomerDao {
     return jdbcTemplate.query(SQL_SELECT_SEARCH, this::mapRow);
   }
 
+  @Override
+  public Customer create(CustomerCreateDto customerCreateDto) throws ConflictException {
+    LOG.trace("create({})", customerCreateDto);
+    KeyHolder keyHolder = new GeneratedKeyHolder();
+
+
+    int created = jdbcTemplate.update(connection -> {
+      PreparedStatement ps = connection.prepareStatement(SQL_REGISTER_CUSTOMER, Statement.RETURN_GENERATED_KEYS);
+      ps.setString(1, customerCreateDto.firstName());
+      ps.setString(2, customerCreateDto.lastName());
+      ps.setDate(3, java.sql.Date.valueOf(customerCreateDto.dateOfBirth())); // Assuming dateOfBirth is LocalDate
+      ps.setString(4, customerCreateDto.email());
+      return ps;
+    }, keyHolder);
+
+    if (created == 0) {
+     //TODO:throwing exception
+    }
+
+    // Get the generated ID
+    Long id = keyHolder.getKey().longValue(); // This retrieves the generated key directly
+
+    return new Customer(id, customerCreateDto.firstName(), customerCreateDto.lastName(), customerCreateDto.dateOfBirth(), customerCreateDto.email());
+  }
+
+
 
   @Override
   public Customer update(CustomerUpdateDto dto) throws NotFoundException {
@@ -69,7 +105,6 @@ public class CustomerJdbcDao implements CustomerDao {
       throw new NotFoundException(("Could not update customer with ID %d,"
           + "because it does not exist").formatted(dto.id()));
     }
-
     return new Customer(
         dto.id(),
         dto.lastName(),

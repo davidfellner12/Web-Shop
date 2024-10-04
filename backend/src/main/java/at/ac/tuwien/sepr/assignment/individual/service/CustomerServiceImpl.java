@@ -1,5 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.service;
 
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
@@ -48,6 +49,13 @@ public class CustomerServiceImpl implements CustomerService {
     LOG.trace("update({})", dto);
     customerValidator.validateForUpdate(dto);
     return customerMapper.entityToDetailDto(customerDao.update(dto));
+  }
+
+  @Override
+  public CustomerDetailDto create(CustomerCreateDto dto) throws NotFoundException, ValidationException, ConflictException {
+    LOG.trace("create({})", dto);
+    customerValidator.validateForCreate(dto);
+    return customerMapper.entityToDetailDto(customerDao.create(dto));
   }
 
 }

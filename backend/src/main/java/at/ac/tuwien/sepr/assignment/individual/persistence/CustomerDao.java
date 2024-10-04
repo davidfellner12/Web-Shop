@@ -1,8 +1,10 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence;
 
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
+import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import java.util.Collection;
 
@@ -32,4 +34,15 @@ public interface CustomerDao {
    * @throws NotFoundException thrown if the customer with the given ID does not exist in the persistent data store
    */
   Customer update(CustomerUpdateDto dto) throws NotFoundException;
+
+  /**
+   * Register and creates with
+   * the data given in {@code dto}
+   * in the persistent data store.
+   *
+   * @param dto dto containing data to create the new user
+   * @return the created customer
+   * @throws ConflictException thrown if the input data types do not math the expected input
+   */
+  Customer create(CustomerCreateDto dto) throws ConflictException;
 }

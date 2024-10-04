@@ -173,3 +173,282 @@
 2024-10-04T11:35:38.367+02:00 r=047e9f95238f ip=0:0:0:0:0:0:0:1  INFO 27900 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
 2024-10-04T11:36:58.420+02:00 r= ip=  INFO 27900 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-10-04T11:36:58.425+02:00 r= ip=  INFO 27900 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-04T11:55:56.169+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 28164 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
+2024-10-04T11:55:56.171+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
+2024-10-04T11:55:56.951+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-04T11:55:56.973+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-04T11:55:56.973+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-04T11:55:57.006+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-04T11:55:57.007+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 788 ms
+2024-10-04T11:55:57.026+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-04T11:55:57.250+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:./wendydb user=SA
+2024-10-04T11:55:57.251+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-04T11:55:57.258+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./wendydb'
+2024-10-04T11:55:57.570+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-04T11:55:57.575+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 1.79 seconds (process running for 2.217)
+2024-10-04T11:56:14.670+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-04T11:56:14.671+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-04T11:56:14.673+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-04T11:56:14.678+02:00 r=62a8810dc56f ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T11:56:14.748+02:00 r=62a8810dc56f ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T11:56:14.800+02:00 r=62a8810dc56f ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=121ms
+2024-10-04T11:58:54.041+02:00 r=2ef469d7db95 ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T11:58:54.042+02:00 r=2ef469d7db95 ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T11:58:54.045+02:00 r=2ef469d7db95 ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-04T11:59:06.356+02:00 r=c2d8f143e83b ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T11:59:06.368+02:00 r=c2d8f143e83b ip=0:0:0:0:0:0:0:1  WARN 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=404 time=11ms
+2024-10-04T11:59:08.162+02:00 r=6e293fe77075 ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T11:59:08.164+02:00 r=6e293fe77075 ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T11:59:08.166+02:00 r=6e293fe77075 ip=0:0:0:0:0:0:0:1  INFO 28164 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-04T12:05:56.904+02:00 r= ip=  WARN 28164 --- [wendys-christmas-shop] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m59s536ms874µs100ns).
+2024-10-04T12:08:06.453+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-04T12:08:06.457+02:00 r= ip=  INFO 28164 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-04T13:25:57.590+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 38356 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
+2024-10-04T13:25:57.592+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
+2024-10-04T13:25:58.597+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-04T13:25:58.610+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-04T13:25:58.610+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-04T13:25:58.655+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-04T13:25:58.656+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 989 ms
+2024-10-04T13:25:58.677+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-04T13:25:58.926+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:./wendydb user=SA
+2024-10-04T13:25:58.928+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-04T13:25:58.935+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./wendydb'
+2024-10-04T13:25:59.270+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-04T13:25:59.275+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 2.126 seconds (process running for 2.738)
+2024-10-04T13:28:07.717+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-04T13:28:07.718+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-04T13:28:07.719+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-04T13:28:07.726+02:00 r=92d308f31d9c ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:07.780+02:00 r=92d308f31d9c ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T13:28:07.814+02:00 r=92d308f31d9c ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=87ms
+2024-10-04T13:28:19.311+02:00 r=91843b79ecd1 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:19.322+02:00 r=91843b79ecd1 ip=0:0:0:0:0:0:0:1  WARN 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=404 time=10ms
+2024-10-04T13:28:20.922+02:00 r=6c90aa2cd7c9 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:20.923+02:00 r=6c90aa2cd7c9 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T13:28:20.925+02:00 r=6c90aa2cd7c9 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-04T13:28:28.645+02:00 r=480d3dfe81a7 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:28.653+02:00 r=480d3dfe81a7 ip=0:0:0:0:0:0:0:1  WARN 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=404 time=7ms
+2024-10-04T13:28:29.501+02:00 r=8ac2d92abc2b ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:29.503+02:00 r=8ac2d92abc2b ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T13:28:29.505+02:00 r=8ac2d92abc2b ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-04T13:28:37.071+02:00 r=1aa95efce4c2 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> OPTIONS /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:37.078+02:00 r=1aa95efce4c2 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< OPTIONS /customers status=200 time=6ms
+2024-10-04T13:28:37.083+02:00 r=199043283c73 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> POST /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:28:37.157+02:00 r=199043283c73 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : POST /customers
+2024-10-04T13:28:37.179+02:00 r=199043283c73 ip=0:0:0:0:0:0:0:1  INFO 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< POST /customers status=200 time=91ms
+2024-10-04T13:28:37.180+02:00 r= ip= ERROR 38356 --- [wendys-christmas-shop] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+at.ac.tuwien.sepr.assignment.individual.exception.FatalException: jakarta.servlet.ServletException: Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "org.springframework.jdbc.support.KeyHolder.getKeys()" is null
+	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:49) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: jakarta.servlet.ServletException: Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "org.springframework.jdbc.support.KeyHolder.getKeys()" is null
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:47) ~[classes/:na]
+	... 31 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because the return value of "org.springframework.jdbc.support.KeyHolder.getKeys()" is null
+	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.CustomerJdbcDao.create(CustomerJdbcDao.java:81) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
+	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.CustomerJdbcDao$$SpringCGLIB$$0.create(<generated>) ~[classes/:na]
+	at at.ac.tuwien.sepr.assignment.individual.service.CustomerServiceImpl.create(CustomerServiceImpl.java:58) ~[classes/:na]
+	at at.ac.tuwien.sepr.assignment.individual.rest.CustomerEndpoint.create(CustomerEndpoint.java:51) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	... 41 common frames omitted
+
+2024-10-04T13:28:51.713+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-04T13:28:51.715+02:00 r= ip=  INFO 38356 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-04T13:31:55.589+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 23296 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
+2024-10-04T13:31:55.592+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
+2024-10-04T13:31:56.281+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-04T13:31:56.290+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-04T13:31:56.290+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-04T13:31:56.321+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-04T13:31:56.321+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 687 ms
+2024-10-04T13:31:56.342+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-04T13:31:56.553+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:./wendydb user=SA
+2024-10-04T13:31:56.555+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-04T13:31:56.561+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:./wendydb'
+2024-10-04T13:31:56.866+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-04T13:31:56.871+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 1.594 seconds (process running for 2.022)
+2024-10-04T13:32:12.310+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-04T13:32:12.310+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-04T13:32:12.312+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-04T13:32:12.324+02:00 r=97180cd8d48c ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:32:12.371+02:00 r=97180cd8d48c ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-04T13:32:12.426+02:00 r=97180cd8d48c ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=101ms
+2024-10-04T13:32:22.251+02:00 r=dfce37d9ddca ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> OPTIONS /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:32:22.259+02:00 r=dfce37d9ddca ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< OPTIONS /customers status=200 time=5ms
+2024-10-04T13:32:22.262+02:00 r=226439167226 ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> POST /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-04T13:32:22.321+02:00 r=226439167226 ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.CustomerEndpoint        : POST /customers
+2024-10-04T13:32:22.350+02:00 r=226439167226 ip=0:0:0:0:0:0:0:1  INFO 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< POST /customers status=200 time=86ms
+2024-10-04T13:32:22.350+02:00 r= ip= ERROR 23296 --- [wendys-christmas-shop] [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+at.ac.tuwien.sepr.assignment.individual.exception.FatalException: jakarta.servlet.ServletException: Request processing failed: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; Eindeutiger Index oder Primärschlüssel verletzt: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"; SQL statement:
+INSERT INTO customers SET first_name = ?  , last_name = ?  , date_of_birth = ?  , email = ? [23505-232]
+	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:49) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: jakarta.servlet.ServletException: Request processing failed: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; Eindeutiger Index oder Primärschlüssel verletzt: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"; SQL statement:
+INSERT INTO customers SET first_name = ?  , last_name = ?  , date_of_birth = ?  , email = ? [23505-232]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:47) ~[classes/:na]
+	... 31 common frames omitted
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; Eindeutiger Index oder Primärschlüssel verletzt: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"; SQL statement:
+INSERT INTO customers SET first_name = ?  , last_name = ?  , date_of_birth = ?  , email = ? [23505-232]
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:95) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1548) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1001) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.CustomerJdbcDao.create(CustomerJdbcDao.java:74) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
+	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.CustomerJdbcDao$$SpringCGLIB$$0.create(<generated>) ~[classes/:na]
+	at at.ac.tuwien.sepr.assignment.individual.service.CustomerServiceImpl.create(CustomerServiceImpl.java:58) ~[classes/:na]
+	at at.ac.tuwien.sepr.assignment.individual.rest.CustomerEndpoint.create(CustomerEndpoint.java:51) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	... 41 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Eindeutiger Index oder Primärschlüssel verletzt: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"
+Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.CUSTOMERS(EMAIL NULLS FIRST) VALUES ( /* 1 */ 'david.fellner2003@gmail.com' )"; SQL statement:
+INSERT INTO customers SET first_name = ?  , last_name = ?  , date_of_birth = ?  , email = ? [23505-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.index.Index.getDuplicateKeyException(Index.java:523) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.db.MVSecondaryIndex.checkUnique(MVSecondaryIndex.java:223) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:184) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:517) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:174) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.dml.Insert.update(Insert.java:135) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.CommandContainer.executeUpdateWithGeneratedKeys(CommandContainer.java:212) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Command.executeUpdate(Command.java:304) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Command.executeUpdate(Command.java:248) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:213) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:172) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$3(JdbcTemplate.java:1002) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658) ~[spring-jdbc-6.1.13.jar:6.1.13]
+	... 67 common frames omitted
+
+2024-10-04T13:32:43.848+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-04T13:32:43.852+02:00 r= ip=  INFO 23296 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

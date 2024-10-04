@@ -1,5 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.service;
 
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
@@ -54,4 +55,13 @@ public class CustomerValidator {
     }
   }
 
+
+
+
+  //TODO: Maby there is also some validator for the new creation needed
+  public void validateForCreate(CustomerCreateDto customer) throws ValidationException, ConflictException {
+    LOG.trace("validateForCreate({})", customer);
+    List<String> validationErrors = new ArrayList<>();
+
+  }
 }

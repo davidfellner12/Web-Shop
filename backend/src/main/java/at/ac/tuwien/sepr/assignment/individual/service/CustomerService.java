@@ -1,5 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.service;
 
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
@@ -34,5 +35,7 @@ public interface CustomerService {
    * @throws ConflictException   if the update data given for the customer is in conflict the data currently in the system (email already exists, …)
    */
   CustomerDetailDto update(CustomerUpdateDto customer) throws NotFoundException, ValidationException, ConflictException;
+
+  CustomerDetailDto create(CustomerCreateDto customer) throws NotFoundException, ValidationException, ConflictException;
 
 }
