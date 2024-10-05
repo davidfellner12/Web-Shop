@@ -36,6 +36,17 @@ public interface CustomerService {
    */
   CustomerDetailDto update(CustomerUpdateDto customer) throws NotFoundException, ValidationException, ConflictException;
 
-  CustomerDetailDto create(CustomerCreateDto customer) throws NotFoundException, ValidationException, ConflictException;
+  /**
+   * Creates a new customer in the database
+   * with the data given in {@code customer}
+   * in the persistent data store
+   *
+   * @param customer
+   * @return
+   * @throws ValidationException if the data given for the customer is in itself incorrect(no name, name too long)
+   * @throws ConflictException if the data given for the customer is in conflict with the data currently in the system (email already exists, …)
+   * @throws NotFoundException if the customer parameter is null
+   */
+  CustomerDetailDto create(CustomerCreateDto customer) throws ValidationException, ConflictException, NotFoundException;
 
 }

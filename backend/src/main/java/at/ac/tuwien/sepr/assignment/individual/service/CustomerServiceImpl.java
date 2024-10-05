@@ -52,7 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
   }
 
   @Override
-  public CustomerDetailDto create(CustomerCreateDto dto) throws NotFoundException, ValidationException, ConflictException {
+  public CustomerDetailDto create(CustomerCreateDto dto) throws  ValidationException, ConflictException, NotFoundException {
     LOG.trace("create({})", dto);
     customerValidator.validateForCreate(dto);
     return customerMapper.entityToDetailDto(customerDao.create(dto));

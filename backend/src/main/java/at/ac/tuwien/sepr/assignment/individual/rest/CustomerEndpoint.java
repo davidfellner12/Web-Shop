@@ -48,11 +48,9 @@ public class CustomerEndpoint {
   @PostMapping()
   public CustomerDetailDto create(@RequestBody CustomerCreateDto dto) throws ValidationException, ConflictException, NotFoundException {
     LOG.info("POST " + BASE_PATH);
-   return customerService.create(dto);
+    LOG.debug("request parameters: {}", dto);
+    return customerService.create(dto);
   }
-
-
-
 
   private void logClientError(HttpStatus status, String message, Exception e) {
     LOG.warn("{} {}: {}: {}", status.value(), message, e.getClass().getSimpleName(), e.getMessage());

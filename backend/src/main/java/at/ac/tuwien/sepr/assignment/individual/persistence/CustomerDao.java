@@ -45,4 +45,14 @@ public interface CustomerDao {
    * @throws ConflictException thrown if the input data types do not math the expected input
    */
   Customer create(CustomerCreateDto dto) throws ConflictException;
+
+
+  /**
+   * Checks if a customer with the
+   * data given in {@code email}
+   * exists in the data store
+   * @param email email for searching in the database
+   * @return boolean if is so
+   */
+  boolean emailExists(String email);
 }
