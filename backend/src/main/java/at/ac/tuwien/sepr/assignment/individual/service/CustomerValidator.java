@@ -46,38 +46,30 @@ public class CustomerValidator {
   public void validateForUpdate(CustomerUpdateDto customer) throws ValidationException, ConflictException, NotFoundException {
     LOG.trace("validateForUpdate({})", customer);
 
-    if (customer == null) {
-      throw new NotFoundException("Customer not found");
-    }
-
     List<String> validationErrors = new ArrayList<>();
+    CustomerCreateDto toCheck = new CustomerCreateDto(
+            customer.firstName(),
+            customer.lastName(),
+            customer.dateOfBirth(),
+            customer.email());
+    validateCustomer(toCheck);
+    validationErrors.add(toCheck.firstName());
+    validationErrors.add(toCheck.lastName());
+    validationErrors.add(toCheck.email());
+    validationErrors.add(toCheck.dateOfBirth().toString());
 
     if (customer.id() == null) {
-      validationErrors.add("No ID given");
-    }
-    if (customer.firstName() == null) {
-      validationErrors.add("No first name given");
-    }
-    if (customer.lastName() == null) {
-      validationErrors.add("No last name given");
-    }
-    if (customer.dateOfBirth() == null) {
-      validationErrors.add("No dateOfBirth given");
-    }
-    if (customer.email() == null) {
-      validationErrors.add("No email given");
+      validationErrors.add("No ID for updating given");
     }
 
-
-    // TODO Validation is not complete…
+    List<String> conflictErrors = new ArrayList<>();
+    if (!(customerDao.emailExists(customer.email()))){
+      conflictErrors.add("Email address does not exist for update");
+    }
 
     if (!validationErrors.isEmpty()) {
       throw new ValidationException("Validation of customer for update failed", validationErrors);
     }
-
-    List<String> conflictErrors = new ArrayList<>();
-    // TODO got to check for conflicts with related data too.
-
     if (!conflictErrors.isEmpty()) {
       throw new ConflictException("Update for customer contains conflicts", conflictErrors);
     }
@@ -85,9 +77,7 @@ public class CustomerValidator {
 
   public void validateForCreate(CustomerCreateDto customer) throws ValidationException, ConflictException, NotFoundException {
     LOG.trace("validateForCreate({})", customer);
-    if (customer == null) {
-      throw new NotFoundException("Customer not found");
-    }
+
     List<String> validationErrors = validateCustomer(customer);
     if (!validationErrors.isEmpty()) {
       throw new ValidationException("Validation of customer for update failed", validationErrors);
@@ -112,12 +102,10 @@ public class CustomerValidator {
     if (customer == null) {
       throw new NotFoundException("Customer not found");
     }
-    if (customer.firstName() == null || customer.firstName().isEmpty()) {
-      errorList.add("No first name given");
-    }
-    if (customer.lastName() == null || customer.lastName().isEmpty()) {
-      errorList.add("No last name given");
-    }
+
+    validateNotEmpty(customer.firstName(), "first name", errorList);
+    validateNotEmpty(customer.lastName(), "last name", errorList);
+
     if (customer.dateOfBirth() == null ) {
       errorList.add("No dateOfBirth given");
     }
@@ -183,6 +171,12 @@ public class CustomerValidator {
     String regex = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$";
 
     return Pattern.matches(regex, dateToCheck);
+  }
+
+  private void validateNotEmpty(String value, String fieldName, List<String> errors){
+    if (value == null || value.isEmpty()) {
+      errors.add("No " + fieldName + " given");
+    }
   }
 
 }

@@ -72,7 +72,7 @@ public class CustomerJdbcDao implements CustomerDao {
   }
 
   @Override
-  public Customer   create(CustomerCreateDto customerCreateDto) throws ConflictException {
+  public Customer create(CustomerCreateDto customerCreateDto) throws ConflictException {
     LOG.trace("create({})", customerCreateDto);
     KeyHolder keyHolder = new GeneratedKeyHolder();
 
