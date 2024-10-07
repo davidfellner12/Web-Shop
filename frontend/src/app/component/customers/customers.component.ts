@@ -55,10 +55,7 @@ export class CustomersComponent implements OnInit {
         }
       });
   }
-
-
   searchChanged(): void {
     this.searchChangedObservable.next();
   }
-
 }

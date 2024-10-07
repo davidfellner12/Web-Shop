@@ -83,4 +83,15 @@ export class CustomerService {
     return this.http.post<Customer>(baseUri, customer);
   }
 
+  /**
+   * Updates a specific customer in the system
+   *
+   * @param customer the data for the customer that should be updated
+   * @return an Observable for the updating of a customer
+   */
+
+  update(customer: Customer): Observable<Customer> {
+    return this.http.put<Customer>(baseUri, customer);
+  }
+
 }

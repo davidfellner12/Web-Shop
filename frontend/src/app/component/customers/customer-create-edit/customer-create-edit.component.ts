@@ -15,6 +15,7 @@ import { formatIsoDate } from 'src/app/util/date-helper';
 
 export enum CustomerCreateEditMode {
   create,
+  edit
 }
 
 @Component({
@@ -32,6 +33,7 @@ export enum CustomerCreateEditMode {
 export class CustomerCreateEditComponent implements OnInit {
   ConfirmationDialogMode = ConfirmationDialogMode;
 
+
   mode: CustomerCreateEditMode = CustomerCreateEditMode.create;
   customer: Customer = {
     firstName: '',
@@ -39,6 +41,8 @@ export class CustomerCreateEditComponent implements OnInit {
     email: '',
     dateOfBirth: new Date()
   };
+
+
 
   showConfirmDeletionDialog = false;
   deleteMessage = '?';
@@ -89,11 +93,16 @@ export class CustomerCreateEditComponent implements OnInit {
     return this.mode === CustomerCreateEditMode.create;
   }
 
-
+//TODO: has to be changed, ngOnInit lifecycle hook is only called once
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.mode = data['mode'];
+
     });
+  }
+
+  private loadCustomer(customerId: number){
+    return this.service.getById(customerId);
   }
 
   public onSubmit(form: NgForm): void {
@@ -102,6 +111,10 @@ export class CustomerCreateEditComponent implements OnInit {
       switch (this.mode) {
         case CustomerCreateEditMode.create:
           observable = this.service.create(this.customer);
+          break;
+        case CustomerCreateEditMode.edit:
+         //TODO: check for mode and then update it properly, id subscribtion via ngOnInit()
+          observable = this.service.update(this.customer);
           break;
         default:
           console.error('Unknown CustomerCreateEditMode', this.mode);
