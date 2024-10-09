@@ -1,6 +1,7 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence;
 
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
@@ -55,4 +56,14 @@ public interface CustomerDao {
    * @return boolean if is so
    */
   boolean emailExists(String email);
+
+  /**
+   * Gets a customer with the id
+   * given in {@code id}
+   * when it exists in the data store
+   * @param id id for searching the customer
+   * @return this specific customer if is so
+   * @throws NotFoundException thrown if there exists no customer with the specified id
+   */
+  Customer getOneById(Long id) throws NotFoundException;
 }

@@ -1,10 +1,12 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence.impl;
 
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
+import at.ac.tuwien.sepr.assignment.individual.exception.FatalException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.persistence.CustomerDao;
 import java.lang.invoke.MethodHandles;
@@ -96,6 +98,20 @@ public class CustomerJdbcDao implements CustomerDao {
   public boolean emailExists(String email) {
     List<Customer> customers = jdbcTemplate.query(SQL_SELECT_BY_EMAIL, this::mapRow, email);
     return !customers.isEmpty();
+  }
+
+  @Override
+  public Customer getOneById(Long id) throws NotFoundException{
+    LOG.trace("getOneById({})", id);
+
+    List<Customer> result = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+    if (result == null || result.isEmpty()) {
+      throw new NotFoundException(("Could not found customer with ID %d," + "because it does not exist").formatted(id));
+    }
+    if (result.size() > 1) {
+      throw new FatalException("To many customers with ID %d found".formatted(id));
+    }
+    return result.getFirst();
   }
 
 

@@ -1,1 +1,1 @@
-DELETE FROM customers;
+    DELETE FROM customers;

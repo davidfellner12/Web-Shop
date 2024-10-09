@@ -33,7 +33,6 @@ export enum CustomerCreateEditMode {
 export class CustomerCreateEditComponent implements OnInit {
   ConfirmationDialogMode = ConfirmationDialogMode;
 
-
   mode: CustomerCreateEditMode = CustomerCreateEditMode.create;
   customer: Customer = {
     firstName: '',
@@ -42,11 +41,10 @@ export class CustomerCreateEditComponent implements OnInit {
     dateOfBirth: new Date()
   };
 
-
-
   showConfirmDeletionDialog = false;
   deleteMessage = '?';
   dateOfBirthSet = false;
+
 
   constructor(private service: CustomerService,
               private errorFormatter: ErrorFormatterService,
@@ -75,6 +73,8 @@ export class CustomerCreateEditComponent implements OnInit {
     switch (this.mode) {
       case CustomerCreateEditMode.create:
         return 'Create New Customer';
+      case CustomerCreateEditMode.edit:
+        return "Edit The Customer"
       default:
         return '?';
     }
@@ -84,6 +84,8 @@ export class CustomerCreateEditComponent implements OnInit {
     switch (this.mode) {
       case CustomerCreateEditMode.create:
         return 'Create';
+      case CustomerCreateEditMode.edit:
+        return 'Edit';
       default:
         return '?';
     }
@@ -97,12 +99,30 @@ export class CustomerCreateEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.mode = data['mode'];
-
+       const id = this.route.snapshot.paramMap.get('id');
+       console.log('Customer ID:', id);
+      if (id && id != null){
+        this.mode = CustomerCreateEditMode.edit;
+        console.log(+id);
+        this.loadCustomer(+id);
+      } else {
+        this.mode = CustomerCreateEditMode.create;
+      }
     });
   }
 
-  private loadCustomer(customerId: number){
-    return this.service.getById(customerId);
+  private loadCustomer(customerId: number): void{
+    console.log("The id should be right")
+    console.log("Here is the number" + customerId)
+     this.service.getById(customerId).subscribe({
+       next: (customer) => {
+         this.customer = customer;
+       },
+       error: (err) => {
+         console.error("Error loading customer", err);
+         this.notification.error("Failed to load customer details");
+       }
+     });
   }
 
   public onSubmit(form: NgForm): void {
@@ -113,7 +133,6 @@ export class CustomerCreateEditComponent implements OnInit {
           observable = this.service.create(this.customer);
           break;
         case CustomerCreateEditMode.edit:
-         //TODO: check for mode and then update it properly, id subscribtion via ngOnInit()
           observable = this.service.update(this.customer);
           break;
         default:

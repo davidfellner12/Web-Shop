@@ -58,4 +58,11 @@ public class CustomerServiceImpl implements CustomerService {
     return customerMapper.entityToDetailDto(customerDao.create(dto));
   }
 
+  @Override
+  public CustomerDetailDto get(Long id) throws NotFoundException{
+    LOG.trace("get({})", id);
+    //TODO Mayber there is some validation needed, but when the customer is created everything should be fine
+    return customerMapper.entityToDetailDto(customerDao.getOneById(id));
+  }
+
 }

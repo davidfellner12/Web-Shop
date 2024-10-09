@@ -37,9 +37,15 @@ export class CustomerService {
    *
    * @param id
    */
-  getById(id: number): Observable<Customer> {
+    getById(id: number): Observable<Customer> {
+    console.log("Here is some information to observables")
+    console.log(`${baseUri}/${id}`);
     return this.http.get<Customer>(`${baseUri}/${id}`);
   }
+
+
+
+
 
   /**
    * Find all customers by the given filter criteria
@@ -91,7 +97,6 @@ export class CustomerService {
    */
 
   update(customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>(baseUri, customer);
+    return this.http.patch<Customer>(baseUri, customer);
   }
-
 }

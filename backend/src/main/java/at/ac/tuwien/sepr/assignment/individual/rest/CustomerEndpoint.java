@@ -31,8 +31,6 @@ public class CustomerEndpoint {
   public CustomerEndpoint(CustomerService customerService) {
     this.customerService = customerService;
   }
-
-
   /**
    * Interface to search for customers by search parameters.
    *
@@ -63,11 +61,19 @@ public class CustomerEndpoint {
     return customerService.create(dto);
   }
 
-  @PutMapping()
-  public CustomerDetailDto update(@RequestBody CustomerUpdateDto dto) throws ValidationException, ConflictException, NotFoundException {
-    LOG.info("PUT " + BASE_PATH);
+  @PatchMapping()
+  public CustomerDetailDto patch(@RequestBody CustomerUpdateDto dto) throws ValidationException, ConflictException, NotFoundException {
+    LOG.info("PATCH " + BASE_PATH + "/{}", dto);
     LOG.debug("request parameters: {}", dto);
     return customerService.update(dto);
+  }
+
+  @GetMapping("/{id}")
+  public CustomerDetailDto get(@PathVariable("id") Long id) throws NotFoundException {
+    LOG.info("GET " + BASE_PATH + "/{}", id);
+    LOG.debug("request parameters: {}", id);
+    System.out.println("here is the" + id);
+    return customerService.get(id);
   }
 
   private void logClientError(HttpStatus status, String message, Exception e) {

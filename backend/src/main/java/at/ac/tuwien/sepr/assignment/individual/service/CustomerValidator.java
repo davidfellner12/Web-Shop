@@ -53,10 +53,6 @@ public class CustomerValidator {
             customer.dateOfBirth(),
             customer.email());
     validateCustomer(toCheck);
-    validationErrors.add(toCheck.firstName());
-    validationErrors.add(toCheck.lastName());
-    validationErrors.add(toCheck.email());
-    validationErrors.add(toCheck.dateOfBirth().toString());
 
     if (customer.id() == null) {
       validationErrors.add("No ID for updating given");
