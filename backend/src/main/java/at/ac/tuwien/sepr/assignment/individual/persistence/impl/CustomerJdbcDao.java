@@ -14,8 +14,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -38,7 +41,7 @@ public class CustomerJdbcDao implements CustomerDao {
   public static final String TABLE_NAME = "customers";
   private static final String SQL_SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
   private static final String SQL_SELECT_SEARCH = "SELECT  *"
-      + " FROM " + TABLE_NAME
+      + " FROM " + TABLE_NAME + " WHERE 1=1"
       ;
   private static final String SQL_REGISTER_CUSTOMER = "INSERT INTO " + TABLE_NAME
           + " SET first_name = ?"
@@ -67,10 +70,44 @@ public class CustomerJdbcDao implements CustomerDao {
   }
 
 
+  //TODO  give it a try with positional arguments
   @Override
   public Collection<Customer> search(CustomerSearchDto searchParameters) {
     LOG.trace("search({})", searchParameters);
-    return jdbcTemplate.query(SQL_SELECT_SEARCH, this::mapRow);
+    StringBuilder sqlQuery = new StringBuilder(SQL_SELECT_SEARCH);
+
+    if (searchParameters.firstName() != null) {
+      sqlQuery.append(" AND LOWER(first_name) = LOWER('" + searchParameters.firstName() + "')");
+    }
+    if (searchParameters.lastName() != null) {
+      sqlQuery.append(" AND LOWER(last_name) =  LOWER('" + searchParameters.lastName() + "')");
+    }
+    if (searchParameters.email() != null) {
+      sqlQuery.append(" AND LOWER(email) = LOWER('" + searchParameters.email() + "')");
+    }
+    if (searchParameters.dateOfBirthEarliest() != null && searchParameters.dateOfBirthLatest() != null) {
+      sqlQuery.append(" AND date_of_birth  > '" + searchParameters.dateOfBirthEarliest() + "'" + " AND date_of_birth < '" + searchParameters.dateOfBirthLatest() + "'");
+    } else if (searchParameters.dateOfBirthEarliest() != null && searchParameters.dateOfBirthLatest() == null) {
+      sqlQuery.append(" AND date_of_birth > '" + searchParameters.dateOfBirthEarliest() + "'");
+    } else if (searchParameters.dateOfBirthLatest() == null && searchParameters.dateOfBirthLatest() != null) {
+      sqlQuery.append(" AND date_of_birth  < '" + searchParameters.dateOfBirthLatest() + "'");
+    }
+
+    LocalDate currentDate = LocalDate.now();
+    if (searchParameters.minAge() != null && searchParameters.maxAge() != null) {
+      LocalDate newMinDate = currentDate.minusYears(searchParameters.maxAge());
+      LocalDate newMaxDate = currentDate.minusYears(searchParameters.minAge());
+      sqlQuery.append(" AND date_of_birth > '" + newMinDate + "'" + " AND date_of_birth < '" + newMaxDate + "'");
+    } else if (searchParameters.minAge() != null && searchParameters.maxAge() == null) {
+      LocalDate newMaxDate = currentDate.minusYears(searchParameters.minAge());
+      sqlQuery.append(" AND date_of_birth < '" + newMaxDate + "'");
+    } else if (searchParameters.minAge() == null && searchParameters.maxAge() != null) {
+      LocalDate newMaxDate = currentDate.minusYears(searchParameters.maxAge());
+      sqlQuery.append(" AND date_of_birth > '" + newMaxDate + "'");
+    }
+
+    String sql = sqlQuery.toString();
+    return jdbcTemplate.query(sql, this::mapRow);
   }
 
   @Override

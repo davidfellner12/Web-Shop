@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import { Customer, CustomerListDto, CustomerSearch } from 'src/app/dto/customer';
 import { environment } from 'src/app/environments/environment';
 
@@ -75,7 +75,10 @@ export class CustomerService {
     if (filter.maxAge != null) {
       params = params.append('maxAge', filter.maxAge as number);
     }
-    return this.http.get<CustomerListDto[]>(baseUri, { params });
+    console.log("Here are the params" + params);
+
+      return this.http.get<CustomerListDto[]>(baseUri, { params });
+
   }
 
 

@@ -10,9 +10,11 @@ import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import at.ac.tuwien.sepr.assignment.individual.service.CustomerService;
 import java.lang.invoke.MethodHandles;
+import java.time.LocalDate;
 import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,10 +36,10 @@ public class CustomerEndpoint {
   /**
    * Interface to search for customers by search parameters.
    *
-   * @param dto Dto containing search parameters
+   *
    * @return Stream of customers matching search parameters
    */
-  @GetMapping()
+  @GetMapping(value = "")
   public Stream<CustomerDetailDto> search(CustomerSearchDto dto) {
     LOG.info("GET " + BASE_PATH);
     LOG.debug("request parameters: {}", dto);
