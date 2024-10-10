@@ -1,4 +1,4 @@
-import { DatePipe } from '@angular/common';
+import {DatePipe, NgClass} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
@@ -14,7 +14,8 @@ import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
   imports: [
     RouterModule,
     DatePipe,
-    FormsModule
+    FormsModule,
+    NgClass
   ],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.scss'
@@ -24,6 +25,8 @@ export class CustomersComponent implements OnInit {
   searchParams: CustomerSearch = {};
   searchChangedObservable = new Subject<void>();
   bannerError = false; /* For the setup sanity check banner. Should be removed with banner. */
+  toggle = true;
+  status = 'Enable';
 
   selectedCustomer: CustomerListDto | undefined;
 
@@ -55,6 +58,29 @@ export class CustomersComponent implements OnInit {
         }
       });
   }
+
+  markUnmarkAsRegistered(dto: CustomerListDto): void {
+    if (!dto.isRegistered) {
+      this.toggle = !this.toggle;
+      this.registerCustomer(dto);
+    } else {
+      this.toggle = !this.toggle;
+      this.unregisterCustomer(dto);
+    }
+    this.status = this.toggle ? 'Enable' : 'Disable';
+  }
+
+  private registerCustomer(dto: CustomerListDto): void {
+    dto.isRegistered = true;
+    console.log(`Registered customer: ${dto.firstName} ${dto.lastName}`);
+  }
+
+
+  private unregisterCustomer(dto: CustomerListDto): void {
+    dto.isRegistered = false;
+    console.log(`Unregistered customer: ${dto.firstName} ${dto.lastName}`);
+  }
+
   searchChanged(): void {
     this.searchChangedObservable.next();
   }

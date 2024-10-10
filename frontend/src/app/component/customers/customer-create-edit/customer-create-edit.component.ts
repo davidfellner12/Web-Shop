@@ -91,6 +91,7 @@ export class CustomerCreateEditComponent implements OnInit {
     }
   }
 
+
   get modeIsCreate(): boolean {
     return this.mode === CustomerCreateEditMode.create;
   }
@@ -101,7 +102,7 @@ export class CustomerCreateEditComponent implements OnInit {
       this.mode = data['mode'];
        const id = this.route.snapshot.paramMap.get('id');
        console.log('Customer ID:', id);
-      if (id && id != null){
+      if (id){
         this.mode = CustomerCreateEditMode.edit;
         console.log(+id);
         this.loadCustomer(+id);

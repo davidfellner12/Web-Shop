@@ -13,3 +13,7 @@
     @include button-variant($value, $value);
   }
 }
+
+.bg-registered {
+  background-color: #fff3cd !important;
+}

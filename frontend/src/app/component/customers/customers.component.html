@@ -16,6 +16,8 @@
       New customer
     </a>
   </div>
+
+
 </div>
 
 
@@ -85,11 +87,12 @@
         <th>Date of Birth</th>
         <th>Age</th>
         <th class="min-width">Actions</th>
+        <th>Register</th>
       </tr>
     </thead>
     <tbody>
       @for (customer of customers; track customer) {
-        <tr class="align-middle">
+        <tr class="align-middle" [ngClass] = "{'bg-registered':customer.isRegistered}" >
           <td>{{ customer.firstName }}</td>
           <td>{{ customer.lastName }}</td>
           <td>{{ customer.email }}</td>
@@ -100,6 +103,15 @@
               <a  [routerLink]="['/customers/edit', customer.id]" class="btn btn-sm responsive-warning-button">
                 <i class="bi bi-pencil"></i>
               </a>
+            </div>
+          </td>
+          <td>
+            <div class="btn-group">
+              <button
+                (click)="markUnmarkAsRegistered(customer)"
+                class="btn btn-sm btn-success">
+                <i class="bi bi-person-plus"></i> Register
+              </button>
             </div>
           </td>
         </tr>
