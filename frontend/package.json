@@ -1,6 +1,7 @@
 {
   "name": "wendys-christmas-shop",
   "version": "0.0.0",
+  "matricule": "12217038",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

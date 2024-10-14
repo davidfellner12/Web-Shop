@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.View;
 
+//TODO: it has to be differentiated between optional and fixed parameters
 /**
  * Validator used to validate customer related objects.
  */

@@ -7,6 +7,7 @@ import { debounceTime, Subject } from 'rxjs';
 import { CustomerListDto, CustomerSearch } from 'src/app/dto/customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-customers',
@@ -34,7 +35,8 @@ export class CustomersComponent implements OnInit {
   constructor(private service: CustomerService,
               private errorFormatter: ErrorFormatterService,
               private router: Router,
-              private notification: ToastrService) {
+              private notification: ToastrService,
+              private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -59,10 +61,14 @@ export class CustomersComponent implements OnInit {
       });
   }
 
+  //checks if a customer is registered
+
+
   markUnmarkAsRegistered(dto: CustomerListDto): void {
     if (!dto.isRegistered) {
       this.toggle = !this.toggle;
       this.registerCustomer(dto);
+
     } else {
       this.toggle = !this.toggle;
       this.unregisterCustomer(dto);
@@ -73,6 +79,7 @@ export class CustomersComponent implements OnInit {
   private registerCustomer(dto: CustomerListDto): void {
     dto.isRegistered = true;
     console.log(`Registered customer: ${dto.firstName} ${dto.lastName}`);
+    this.cdr.detectChanges();
   }
 
 
