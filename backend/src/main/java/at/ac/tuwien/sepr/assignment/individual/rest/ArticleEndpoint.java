@@ -1,21 +1,17 @@
 package at.ac.tuwien.sepr.assignment.individual.rest;
 
-import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.ArticleDetailDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.*;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import at.ac.tuwien.sepr.assignment.individual.service.ArticleService;
 import java.lang.invoke.MethodHandles;
+import java.util.stream.Stream;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Article Endpoint Implementation
@@ -38,6 +34,17 @@ public class ArticleEndpoint {
     LOG.info("POST " + BASE_PATH);
     LOG.debug("request parameters: {}", dto);
     return articleService.create(dto);
+  }
+
+  /**
+   * Interface to search for articles by search parameters.
+   * @return Stream of articles matching search parameters
+   */
+  @GetMapping(value = "")
+  public Stream<ArticleDetailDto> search(ArticleSearchDto dto) {
+    LOG.info("GET " + BASE_PATH);
+    LOG.debug("request parameters: {}", dto);
+    return articleService.search(dto);
   }
 
 

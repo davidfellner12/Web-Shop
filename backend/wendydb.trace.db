@@ -1523,3 +1523,83 @@ SELECT  * FROM customers WHERE 1=1 AND min_age = LOWER('23') AND max_age = LOWER
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-14 14:13:03.273920+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:13:07.691192+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:13:12.620263+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:13:16.104650+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:13:22.208236+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:15:13.190317+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:16:21.175953+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles WHERE 1 = 1 [42102-232]
+2024-10-14 14:27:20.552375+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:28:43.433760+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:30:36.126315+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:33:16.278703+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:34:46.746308+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:47:22.916539+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 14:47:32.355701+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 17:17:56.685391+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-14 17:18:07.440092+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles AND LOWER(designation) = LOWER('Irene Fellner') [42102-232]
+2024-10-16 13:42:25.821582+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
+Table "ARTICLES" not found; SQL statement:
+SELECT * FROM articles [42102-232]
+2024-10-16 13:47:52.273471+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLESWHERE" nicht gefunden
+Table "ARTICLESWHERE" not found; SQL statement:
+SELECT * FROM articlesWHERE 1=1 [42102-232]
+2024-10-16 13:47:57.589176+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLESWHERE" nicht gefunden
+Table "ARTICLESWHERE" not found; SQL statement:
+SELECT * FROM articlesWHERE 1=1 [42102-232]
+2024-10-16 13:49:04.777852+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLEWHERE" nicht gefunden
+Table "ARTICLEWHERE" not found; SQL statement:
+SELECT * FROM articleWHERE 1=1 [42102-232]

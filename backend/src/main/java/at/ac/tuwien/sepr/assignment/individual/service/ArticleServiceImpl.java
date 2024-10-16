@@ -2,12 +2,15 @@ package at.ac.tuwien.sepr.assignment.individual.service;
 
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleDetailDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.ArticleSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import at.ac.tuwien.sepr.assignment.individual.mapper.ArticleMapper;
 import at.ac.tuwien.sepr.assignment.individual.persistence.ArticleDao;
 import java.lang.invoke.MethodHandles;
+import java.util.stream.Stream;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -33,6 +36,14 @@ public class ArticleServiceImpl implements ArticleService {
     LOG.trace("create({})", dto);
     articleValidator.validateForCreate(dto);
     return articleMapper.entityToDetailDto(articleDao.create(dto));
+  }
+
+  @Override
+  public Stream<ArticleDetailDto> search(ArticleSearchDto dto) {
+    LOG.trace("search({})", dto);
+    return articleDao.search(dto)
+            .stream()
+            .map(articleMapper::entityToDetailDto);
   }
 
 

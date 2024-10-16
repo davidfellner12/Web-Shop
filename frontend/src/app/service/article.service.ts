@@ -14,7 +14,6 @@ export class ArticleService {
   constructor(private http: HttpClient) {
   }
 
-
   /**
    * Find all articles by the given filter criteria
    *

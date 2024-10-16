@@ -1,5 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence.impl;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.ArticleSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.entity.Article;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
@@ -9,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -27,7 +29,7 @@ import org.springframework.stereotype.Repository;
 public class ArticleJdbcDao implements ArticleDao {
   private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-  public static final String TABLE_NAME = "articles";
+  public static final String TABLE_NAME = "article";
   private final JdbcTemplate jdbcTemplate;
   private final NamedParameterJdbcTemplate jdbcNamed;
 
@@ -37,6 +39,7 @@ public class ArticleJdbcDao implements ArticleDao {
           + "  , price = ?"
           + "  , picture = ?";
   private static final String SQL_SELECT_BY_DESIGNATION = "SELECT * FROM " + TABLE_NAME + " WHERE designation = ?";
+  private static final String SQL_SELECT_ALL_ARTICLES = "SELECT * FROM " + TABLE_NAME + " WHERE 1=1";
 
 
   public ArticleJdbcDao(
@@ -45,7 +48,6 @@ public class ArticleJdbcDao implements ArticleDao {
     this.jdbcTemplate = jdbcTemplate;
     this.jdbcNamed = jdbcNamed;
   }
-
 
     @Override
     public Article create(ArticleCreateDto dto) throws ConflictException {
@@ -88,6 +90,26 @@ public class ArticleJdbcDao implements ArticleDao {
   public boolean designationExists(String designation){
     List<Article> articles = jdbcTemplate.query(SQL_SELECT_BY_DESIGNATION, this::mapRow, designation);
     return !articles.isEmpty();
+  }
+
+  @Override
+  public Collection<Article> search(ArticleSearchDto dto) {
+    StringBuilder sqlQuery = new StringBuilder(SQL_SELECT_ALL_ARTICLES);
+    if (dto.name() != null) {
+      sqlQuery.append(" AND LOWER(designation) = LOWER('" + dto.name() + "')");
+    }
+    if (dto.description() != null) {
+      sqlQuery.append(" AND LOWER(description) = LOWER('" + dto.description() + "')");
+    }
+    if (dto.minPrice() != null && dto.maxPrice() != null) {
+      sqlQuery.append(" AND LOWER(price) >= LOWER('" + dto.minPrice() + "') AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
+    } else if (dto.minPrice() != null && dto.maxPrice() == null) {
+      sqlQuery.append(" AND LOWER(price) >= LOWER('" + dto.minPrice() + "')");
+    } else if (dto.maxPrice() != null && dto.minPrice() == null) {
+      sqlQuery.append(" AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
+    }
+    String sql = sqlQuery.toString();
+    return jdbcTemplate.query(sql, this::mapRow);
   }
 
   private Article mapRow(ResultSet result, int rowNum) throws SQLException {

@@ -2,9 +2,12 @@ package at.ac.tuwien.sepr.assignment.individual.service;
 
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleDetailDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.ArticleSearchDto;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
+
+import java.util.stream.Stream;
 
 /**
  * Service for working with articles.
@@ -22,4 +25,13 @@ public interface ArticleService {
      * @throws ConflictException if the data given for the article is in conflict with the data currently in the system (id already exists, …)
      */
     ArticleDetailDto create(ArticleCreateDto dto) throws ConflictException, ValidationException, NotFoundException;
+
+    /**
+     * Searches for an article in the database
+     * with the data given in {@code dto}
+     *
+     * @param dto the article to search for
+     * @return a Stream of found ArticleDetailDtos
+     */
+    Stream<ArticleDetailDto> search(ArticleSearchDto dto);
 }
