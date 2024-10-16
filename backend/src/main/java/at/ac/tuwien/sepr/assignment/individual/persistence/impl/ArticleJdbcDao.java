@@ -1,9 +1,11 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence.impl;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleSearchDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.ArticleUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.entity.Article;
-import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
+import at.ac.tuwien.sepr.assignment.individual.exception.FatalException;
+import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.persistence.ArticleDao;
 import java.lang.invoke.MethodHandles;
 import java.sql.PreparedStatement;
@@ -27,6 +29,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class ArticleJdbcDao implements ArticleDao {
+  //TODO: Image handling
   private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   public static final String TABLE_NAME = "article";
@@ -40,6 +43,12 @@ public class ArticleJdbcDao implements ArticleDao {
           + "  , picture = ?";
   private static final String SQL_SELECT_BY_DESIGNATION = "SELECT * FROM " + TABLE_NAME + " WHERE designation = ?";
   private static final String SQL_SELECT_ALL_ARTICLES = "SELECT * FROM " + TABLE_NAME + " WHERE 1=1";
+  private static final String SQL_SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
+  private static final String SQL_UPDATE = "UPDATE " + TABLE_NAME
+          + " SET designation = ?"
+          + "  , description = ?"
+          + "  , price = ?"
+          + " WHERE id = ?";
 
 
   public ArticleJdbcDao(
@@ -111,6 +120,33 @@ public class ArticleJdbcDao implements ArticleDao {
     String sql = sqlQuery.toString();
     return jdbcTemplate.query(sql, this::mapRow);
   }
+
+  @Override
+  public Article get(Long id) throws NotFoundException {
+    LOG.trace("get({})", id);
+    List<Article> result = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+
+    if (result.size() > 1) {
+      throw new FatalException("To many articles with ID %d found".formatted(id));
+    }
+    if (result == null || result.isEmpty()) {
+      throw new NotFoundException(("Could not found article with ID %d," + "because it does not exist").formatted(id));
+    }
+    return result.getFirst();
+  }
+
+  @Override
+  public Article update(ArticleUpdateDto dto) throws NotFoundException {
+    LOG.trace("update({})", dto);
+    int updated = jdbcTemplate.update(SQL_UPDATE,
+            dto.designation(), dto.description(), dto.price()
+            );
+    if (updated == 0) {
+      throw new NotFoundException(("Could not update customer with ID %d,"
+              + "because it does not exist").formatted(dto.id()));
+    } return new Article(dto.id(), dto.designation(), dto.description(), dto.price());
+  }
+
 
   private Article mapRow(ResultSet result, int rowNum) throws SQLException {
     return new Article(

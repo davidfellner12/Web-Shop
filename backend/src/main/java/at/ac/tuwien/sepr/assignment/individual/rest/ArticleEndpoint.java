@@ -47,6 +47,22 @@ public class ArticleEndpoint {
     return articleService.search(dto);
   }
 
+  @GetMapping("/{id}")
+  public ArticleDetailDto get(@PathVariable("id") Long id) throws NotFoundException{
+    LOG.info("GET " + BASE_PATH);
+    LOG.info("GET /articles with id: {}", id);
+
+    LOG.debug("request parameters: {}", id);
+    return articleService.get(id);
+  }
+
+  @PatchMapping()
+  public ArticleDetailDto patch(@RequestBody ArticleUpdateDto dto) throws ValidationException, ConflictException, NotFoundException {
+    LOG.info("PATCH " + BASE_PATH + "/{}", dto);
+    LOG.debug("request parameters: {}", dto);
+    return articleService.update(dto);
+  }
+
 
   private void logClientError(HttpStatus status, String message, Exception e) {
     LOG.warn("{} {}: {}: {}", status.value(), message, e.getClass().getSimpleName(), e.getMessage());

@@ -70,6 +70,7 @@ public class CustomerEndpoint {
     return customerService.update(dto);
   }
 
+  //TODO: everything has to be encapsulated via a dto
   @GetMapping("/{id}")
   public CustomerDetailDto get(@PathVariable("id") Long id) throws NotFoundException {
     LOG.info("GET " + BASE_PATH + "/{}", id);

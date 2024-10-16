@@ -1,6 +1,7 @@
 package at.ac.tuwien.sepr.assignment.individual.service;
 
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.ArticleUpdateDto;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
@@ -19,8 +20,6 @@ import java.util.regex.Pattern;
 @Component
 public class ArticleValidator {
     private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
-
     private final ArticleDao articleDao;
     private final View error;
 
@@ -41,6 +40,27 @@ public class ArticleValidator {
         }
         if (!conflictErrors.isEmpty()) {
             throw new ConflictException("Creation of article contains conflicts", conflictErrors);
+        }
+    }
+
+    public void validateForUpdate (ArticleUpdateDto dto ) throws ValidationException, NotFoundException, ConflictException {
+        ArticleCreateDto toCheck = new ArticleCreateDto(
+                dto.designation(),
+                dto.description(),
+                dto.price());
+        List<String> validationErrors = validate(toCheck);
+        List<String> conflictErrors = new ArrayList<>();
+        if (dto.id() == null) {
+            validationErrors.add("No ID for updating given");
+        }
+        if (!(articleDao.designationExists(dto.designation()))){
+            conflictErrors.add("Designation for specific article does not exist");
+        }
+        if (!validationErrors.isEmpty()) {
+            throw new ValidationException("Validation of customer for update failed", validationErrors);
+        }
+        if (!conflictErrors.isEmpty()) {
+            throw new ConflictException("Update for customer contains conflicts", conflictErrors);
         }
     }
 

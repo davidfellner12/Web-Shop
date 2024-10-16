@@ -3,6 +3,8 @@ package at.ac.tuwien.sepr.assignment.individual.service;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleCreateDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleDetailDto;
 import at.ac.tuwien.sepr.assignment.individual.dto.ArticleSearchDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.ArticleUpdateDto;
+import at.ac.tuwien.sepr.assignment.individual.entity.Article;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
@@ -44,6 +46,20 @@ public class ArticleServiceImpl implements ArticleService {
     return articleDao.search(dto)
             .stream()
             .map(articleMapper::entityToDetailDto);
+  }
+
+  @Override
+  public ArticleDetailDto get(Long id) throws NotFoundException {
+    LOG.trace("get({})", id);
+    //TODO: validation
+    return  articleMapper.entityToDetailDto(articleDao.get(id));
+  }
+
+  @Override
+  public ArticleDetailDto update(ArticleUpdateDto dto) throws NotFoundException, ValidationException, ConflictException {
+    LOG.trace("update({})", dto);
+    articleValidator.validateForUpdate(dto);
+    return articleMapper.entityToDetailDto(articleDao.update(dto));
   }
 
 

@@ -40,7 +40,6 @@ export class CustomerCreateEditComponent implements OnInit {
     email: '',
     dateOfBirth: new Date()
   };
-
   showConfirmDeletionDialog = false;
   deleteMessage = '?';
   dateOfBirthSet = false;
@@ -90,7 +89,6 @@ export class CustomerCreateEditComponent implements OnInit {
         return '?';
     }
   }
-
 
   get modeIsCreate(): boolean {
     return this.mode === CustomerCreateEditMode.create;
