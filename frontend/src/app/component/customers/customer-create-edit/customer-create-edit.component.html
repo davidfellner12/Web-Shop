@@ -54,15 +54,13 @@
       <i class="bi bi-check-lg"></i>
       {{ submitButtonText }}
     </button>
+    <div class="btn-group">
+      <button
+        (click)="delete()"
+        class="btn btn-sm btn-danger">
+        <i class="bi bi-person-minus"></i> Delete
+      </button>
+    </div>
   </div>
 
 </form>
-
-@if (showConfirmDeletionDialog) {
-  <app-confirm-dialog
-    [mode]="ConfirmationDialogMode.delete"
-    [message]="deleteMessage"
-    (confirm)="delete()"
-    (cancel)="showConfirmDeletionDialog = false">
-  </app-confirm-dialog>
-}

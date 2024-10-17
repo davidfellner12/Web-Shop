@@ -15,7 +15,8 @@ import { formatIsoDate } from 'src/app/util/date-helper';
 
 export enum CustomerCreateEditMode {
   create,
-  edit
+  edit,
+  delete
 }
 
 @Component({
@@ -152,7 +153,19 @@ export class CustomerCreateEditComponent implements OnInit {
   }
 
   delete(): void {
-    // TODO this must be implemented
+    if (!this.customer.id){
+      console.error("No customer ID provided for deletion.");
+      return;
+    }
+    this.service.delete(this.customer.id).subscribe({
+      next: () => {
+        this.notification.success(`Customer ${this.customer.firstName} ${this.customer.lastName} successfully deleted!`);
+      },
+      error: (error) => {
+        console.error("Error deleting customer", error);
+        this.notification.error(this.errorFormatter.format(error), "Could not delete customer");
+      }
+    })
   }
 
 }
