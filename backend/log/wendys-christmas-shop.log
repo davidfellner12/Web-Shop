@@ -1,922 +1,141 @@
-2024-10-16T13:36:31.557+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 32192 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T13:36:31.576+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T13:36:33.499+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T13:36:33.525+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T13:36:33.526+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T13:36:33.608+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T13:36:33.608+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1957 ms
-2024-10-16T13:36:33.657+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T13:36:39.088+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T13:36:39.101+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T13:36:39.134+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T13:36:40.661+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T13:36:40.684+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 10.046 seconds (process running for 11.212)
-2024-10-16T13:42:19.910+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-16T13:42:19.914+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-16T13:42:19.923+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2024-10-16T13:42:19.956+02:00 r=fd1787ee3b48 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:42:20.251+02:00 r=fd1787ee3b48 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:42:20.531+02:00 r=fd1787ee3b48 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=573ms
-2024-10-16T13:42:22.164+02:00 r=e1d2fe199b81 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:42:22.166+02:00 r=e1d2fe199b81 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:42:22.172+02:00 r=e1d2fe199b81 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=6ms
-2024-10-16T13:42:23.323+02:00 r=1d2b82ca604e ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:42:23.325+02:00 r=1d2b82ca604e ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:42:23.328+02:00 r=1d2b82ca604e ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
-2024-10-16T13:42:25.813+02:00 r=2e47a95cb887 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:42:25.816+02:00 r=2e47a95cb887 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:42:25.836+02:00 r=2e47a95cb887 ip=0:0:0:0:0:0:0:1  INFO 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=22ms
-2024-10-16T13:42:25.837+02:00 r= ip= ERROR 32192 --- [wendys-christmas-shop] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-at.ac.tuwien.sepr.assignment.individual.exception.FatalException: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articles]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:49) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-Caused by: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articles]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:47) ~[classes/:na]
-	... 31 common frames omitted
-Caused by: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articles]
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1548) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:476) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:486) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao.search(ArticleJdbcDao.java:112) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao$$SpringCGLIB$$0.search(<generated>) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.service.ArticleServiceImpl.search(ArticleServiceImpl.java:44) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint.search(ArticleEndpoint.java:47) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	... 41 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLES" nicht gefunden
-Table "ARTICLES" not found; SQL statement:
-SELECT * FROM articles [42102-232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7945) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTablePrimary(Parser.java:1769) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableReference(Parser.java:2249) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2702) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelect(Parser.java:2810) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2692) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryTerm(Parser.java:2547) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2526) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2519) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpression(Parser.java:2512) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQuery(Parser.java:2479) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parsePrepared(Parser.java:610) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94) ~[h2-2.3.232.jar:2.3.232]
-	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
-	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:463) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	... 68 common frames omitted
-
-2024-10-16T13:46:17.764+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T13:46:17.769+02:00 r= ip=  INFO 32192 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T13:46:25.389+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 38032 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T13:46:25.392+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T13:46:27.071+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T13:46:27.099+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T13:46:27.099+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T13:46:27.170+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T13:46:27.170+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1693 ms
-2024-10-16T13:46:27.215+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T13:46:27.639+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T13:46:27.642+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T13:46:27.657+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T13:46:28.391+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T13:46:28.403+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 3.838 seconds (process running for 4.911)
-2024-10-16T13:47:03.289+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T13:47:03.291+02:00 r= ip=  INFO 38032 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T13:47:07.997+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 22612 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T13:47:08.001+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T13:47:09.286+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T13:47:09.303+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T13:47:09.303+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T13:47:09.359+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T13:47:09.359+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1284 ms
-2024-10-16T13:47:09.406+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T13:47:09.766+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T13:47:09.781+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T13:47:09.793+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T13:47:10.391+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T13:47:10.402+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 3.152 seconds (process running for 4.294)
-2024-10-16T13:47:49.590+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-16T13:47:49.590+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-16T13:47:49.592+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-10-16T13:47:49.609+02:00 r=07c7ddbdf47c ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:47:49.823+02:00 r=07c7ddbdf47c ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:47:49.984+02:00 r=07c7ddbdf47c ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=373ms
-2024-10-16T13:47:52.263+02:00 r=13f430631568 ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:47:52.272+02:00 r=13f430631568 ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:47:52.285+02:00 r=13f430631568 ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=17ms
-2024-10-16T13:47:52.286+02:00 r= ip= ERROR 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-at.ac.tuwien.sepr.assignment.individual.exception.FatalException: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articlesWHERE 1=1]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:49) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-Caused by: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articlesWHERE 1=1]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:47) ~[classes/:na]
-	... 31 common frames omitted
-Caused by: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articlesWHERE 1=1]
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1548) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:476) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:486) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao.search(ArticleJdbcDao.java:112) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao$$SpringCGLIB$$0.search(<generated>) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.service.ArticleServiceImpl.search(ArticleServiceImpl.java:44) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint.search(ArticleEndpoint.java:47) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	... 41 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLESWHERE" nicht gefunden
-Table "ARTICLESWHERE" not found; SQL statement:
-SELECT * FROM articlesWHERE 1=1 [42102-232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7945) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTablePrimary(Parser.java:1769) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableReference(Parser.java:2249) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2702) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelect(Parser.java:2810) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2692) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryTerm(Parser.java:2547) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2526) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2519) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpression(Parser.java:2512) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQuery(Parser.java:2479) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parsePrepared(Parser.java:610) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94) ~[h2-2.3.232.jar:2.3.232]
-	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
-	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:463) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	... 68 common frames omitted
-
-2024-10-16T13:47:57.586+02:00 r=92f59a20b4e1 ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:47:57.587+02:00 r=92f59a20b4e1 ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:47:57.589+02:00 r=92f59a20b4e1 ip=0:0:0:0:0:0:0:1  INFO 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=3ms
-2024-10-16T13:47:57.589+02:00 r= ip= ERROR 22612 --- [wendys-christmas-shop] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-at.ac.tuwien.sepr.assignment.individual.exception.FatalException: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articlesWHERE 1=1]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:49) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-Caused by: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articlesWHERE 1=1]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:47) ~[classes/:na]
-	... 31 common frames omitted
-Caused by: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articlesWHERE 1=1]
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1548) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:476) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:486) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao.search(ArticleJdbcDao.java:112) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao$$SpringCGLIB$$0.search(<generated>) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.service.ArticleServiceImpl.search(ArticleServiceImpl.java:44) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint.search(ArticleEndpoint.java:47) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	... 41 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLESWHERE" nicht gefunden
-Table "ARTICLESWHERE" not found; SQL statement:
-SELECT * FROM articlesWHERE 1=1 [42102-232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7945) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTablePrimary(Parser.java:1769) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableReference(Parser.java:2249) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2702) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelect(Parser.java:2810) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2692) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryTerm(Parser.java:2547) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2526) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2519) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpression(Parser.java:2512) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQuery(Parser.java:2479) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parsePrepared(Parser.java:610) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94) ~[h2-2.3.232.jar:2.3.232]
-	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
-	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:463) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	... 68 common frames omitted
-
-2024-10-16T13:48:39.159+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T13:48:39.168+02:00 r= ip=  INFO 22612 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T13:48:45.207+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 29988 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T13:48:45.218+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T13:48:46.517+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T13:48:46.534+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T13:48:46.534+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T13:48:46.585+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T13:48:46.585+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1310 ms
-2024-10-16T13:48:46.621+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T13:48:47.084+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T13:48:47.107+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T13:48:47.125+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T13:48:47.749+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T13:48:47.758+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 3.16 seconds (process running for 4.001)
-2024-10-16T13:49:02.320+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-16T13:49:02.323+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-16T13:49:02.332+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2024-10-16T13:49:02.348+02:00 r=e5ff4a02932c ip=0:0:0:0:0:0:0:1  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:49:02.463+02:00 r=e5ff4a02932c ip=0:0:0:0:0:0:0:1  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:49:02.551+02:00 r=e5ff4a02932c ip=0:0:0:0:0:0:0:1  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=200ms
-2024-10-16T13:49:04.770+02:00 r=259c0a723591 ip=0:0:0:0:0:0:0:1  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:49:04.774+02:00 r=259c0a723591 ip=0:0:0:0:0:0:0:1  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:49:04.791+02:00 r=259c0a723591 ip=0:0:0:0:0:0:0:1  INFO 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=20ms
-2024-10-16T13:49:04.792+02:00 r= ip= ERROR 29988 --- [wendys-christmas-shop] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-at.ac.tuwien.sepr.assignment.individual.exception.FatalException: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articleWHERE 1=1]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:49) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-Caused by: jakarta.servlet.ServletException: Request processing failed: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articleWHERE 1=1]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
-	at at.ac.tuwien.sepr.assignment.individual.config.LogFilter.doFilterInternal(LogFilter.java:47) ~[classes/:na]
-	... 31 common frames omitted
-Caused by: org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM articleWHERE 1=1]
-	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:103) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1548) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:476) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:486) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao.search(ArticleJdbcDao.java:112) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
-	at at.ac.tuwien.sepr.assignment.individual.persistence.impl.ArticleJdbcDao$$SpringCGLIB$$0.search(<generated>) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.service.ArticleServiceImpl.search(ArticleServiceImpl.java:44) ~[classes/:na]
-	at at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint.search(ArticleEndpoint.java:47) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	... 41 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "ARTICLEWHERE" nicht gefunden
-Table "ARTICLEWHERE" not found; SQL statement:
-SELECT * FROM articleWHERE 1=1 [42102-232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7945) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTablePrimary(Parser.java:1769) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.readTableReference(Parser.java:2249) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2702) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseSelect(Parser.java:2810) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2692) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryTerm(Parser.java:2547) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2526) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2519) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQueryExpression(Parser.java:2512) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parseQuery(Parser.java:2479) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parsePrepared(Parser.java:610) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
-	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94) ~[h2-2.3.232.jar:2.3.232]
-	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
-	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:463) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-6.1.13.jar:6.1.13]
-	... 68 common frames omitted
-
-2024-10-16T13:49:33.471+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T13:49:33.478+02:00 r= ip=  INFO 29988 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T13:49:40.450+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 15184 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T13:49:40.454+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T13:49:41.808+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T13:49:41.825+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T13:49:41.825+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T13:49:41.881+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T13:49:41.881+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1368 ms
-2024-10-16T13:49:41.919+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T13:49:42.299+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T13:49:42.301+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T13:49:42.313+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T13:49:42.988+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T13:49:42.999+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 3.241 seconds (process running for 4.171)
-2024-10-16T13:49:58.159+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-16T13:49:58.160+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-16T13:49:58.162+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-10-16T13:49:58.177+02:00 r=8aef4865aad0 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:49:58.266+02:00 r=8aef4865aad0 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:49:58.323+02:00 r=8aef4865aad0 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=145ms
-2024-10-16T13:50:00.831+02:00 r=d732e27e2d2f ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:50:00.836+02:00 r=d732e27e2d2f ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:50:00.838+02:00 r=d732e27e2d2f ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=6ms
-2024-10-16T13:50:02.667+02:00 r=737230783c77 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:50:02.668+02:00 r=737230783c77 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:50:02.675+02:00 r=737230783c77 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=7ms
-2024-10-16T13:50:05.362+02:00 r=66af53e073bd ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:50:05.368+02:00 r=66af53e073bd ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:50:05.376+02:00 r=66af53e073bd ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=12ms
-2024-10-16T13:52:16.977+02:00 r=43d09bf626ad ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:52:16.983+02:00 r=43d09bf626ad ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:52:16.987+02:00 r=43d09bf626ad ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=7ms
-2024-10-16T13:52:18.730+02:00 r=c0de6d955741 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:52:18.733+02:00 r=c0de6d955741 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:52:18.737+02:00 r=c0de6d955741 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
-2024-10-16T13:52:25.797+02:00 r=29b4899bc256 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:52:25.797+02:00 r=29b4899bc256 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:52:25.797+02:00 r=29b4899bc256 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=4ms
-2024-10-16T13:52:30.838+02:00 r=b4a36682ed0b ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:52:30.840+02:00 r=b4a36682ed0b ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:52:30.849+02:00 r=b4a36682ed0b ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=10ms
-2024-10-16T13:53:25.255+02:00 r=1be70fc31fc9 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:53:25.262+02:00 r=1be70fc31fc9 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T13:53:25.266+02:00 r=1be70fc31fc9 ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=5ms
-2024-10-16T13:54:27.713+02:00 r=fb46bc61e37f ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T13:54:27.719+02:00 r=fb46bc61e37f ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T13:54:27.723+02:00 r=fb46bc61e37f ip=0:0:0:0:0:0:0:1  INFO 15184 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=8ms
-2024-10-16T14:04:48.750+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T14:04:48.750+02:00 r= ip=  INFO 15184 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T14:10:48.716+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 34980 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T14:10:48.719+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T14:10:50.212+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T14:10:50.233+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T14:10:50.233+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T14:10:50.316+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T14:10:50.316+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1526 ms
-2024-10-16T14:10:50.360+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T14:10:50.754+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T14:10:50.758+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T14:10:50.770+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T14:10:51.507+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T14:10:51.519+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 3.556 seconds (process running for 4.507)
-2024-10-16T14:14:17.784+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-16T14:14:17.785+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-16T14:14:17.787+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-10-16T14:14:17.801+02:00 r=55f43a9f4971 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:17.899+02:00 r=55f43a9f4971 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:17.996+02:00 r=55f43a9f4971 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=194ms
-2024-10-16T14:14:21.490+02:00 r=558c60144682 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:21.496+02:00 r=558c60144682 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:21.499+02:00 r=558c60144682 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=7ms
-2024-10-16T14:14:26.598+02:00 r=588e5027ce96 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?maxPrice=10 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:26.605+02:00 r=588e5027ce96 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:26.614+02:00 r=588e5027ce96 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?maxPrice=10 status=200 time=12ms
-2024-10-16T14:14:26.732+02:00 r=0a71e34895c9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:26.746+02:00 r=0a71e34895c9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:26.762+02:00 r=0a71e34895c9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=28ms
-2024-10-16T14:14:29.632+02:00 r=97bf137b2c2e ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:29.638+02:00 r=97bf137b2c2e ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:29.642+02:00 r=97bf137b2c2e ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=6ms
-2024-10-16T14:14:30.259+02:00 r=36d56e79d756 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:30.266+02:00 r=36d56e79d756 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:30.268+02:00 r=36d56e79d756 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=8ms
-2024-10-16T14:14:35.384+02:00 r=1bfa9401467b ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:35.387+02:00 r=1bfa9401467b ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:35.398+02:00 r=1bfa9401467b ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=12ms
-2024-10-16T14:14:36.356+02:00 r=8f17a833ce5d ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:36.378+02:00 r=8f17a833ce5d ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:36.380+02:00 r=8f17a833ce5d ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=24ms
-2024-10-16T14:14:37.375+02:00 r=c8b6548c6de9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:37.378+02:00 r=c8b6548c6de9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:37.382+02:00 r=c8b6548c6de9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
-2024-10-16T14:14:39.079+02:00 r=5dbb9212f649 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:39.082+02:00 r=5dbb9212f649 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:39.089+02:00 r=5dbb9212f649 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=7ms
-2024-10-16T14:14:47.309+02:00 r=3050eeea8cb9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:47.309+02:00 r=3050eeea8cb9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:47.314+02:00 r=3050eeea8cb9 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=3ms
-2024-10-16T14:14:48.578+02:00 r=83505855d0bb ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:48.582+02:00 r=83505855d0bb ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:48.588+02:00 r=83505855d0bb ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=10ms
-2024-10-16T14:14:54.715+02:00 r=3a719f24b8c3 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:54.719+02:00 r=3a719f24b8c3 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:54.721+02:00 r=3a719f24b8c3 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
-2024-10-16T14:14:56.551+02:00 r=26b898921612 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:56.554+02:00 r=26b898921612 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:14:56.560+02:00 r=26b898921612 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=8ms
-2024-10-16T14:14:57.792+02:00 r=70d16eced56e ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:14:57.792+02:00 r=70d16eced56e ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:14:57.802+02:00 r=70d16eced56e ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=8ms
-2024-10-16T14:15:58.314+02:00 r=bbdfa4fae179 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:15:58.315+02:00 r=bbdfa4fae179 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:15:58.318+02:00 r=bbdfa4fae179 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=3ms
-2024-10-16T14:16:00.312+02:00 r=65b072efde9a ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:16:00.317+02:00 r=65b072efde9a ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:16:00.320+02:00 r=65b072efde9a ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
-2024-10-16T14:16:02.609+02:00 r=53abe3836a48 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:16:02.614+02:00 r=53abe3836a48 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:16:02.618+02:00 r=53abe3836a48 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=7ms
-2024-10-16T14:17:12.421+02:00 r=8cf2eb83d462 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:17:12.431+02:00 r=8cf2eb83d462 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:17:12.434+02:00 r=8cf2eb83d462 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=10ms
-2024-10-16T14:17:13.463+02:00 r=c8ee0d9f1010 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:17:13.465+02:00 r=c8ee0d9f1010 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:17:13.469+02:00 r=c8ee0d9f1010 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=4ms
-2024-10-16T14:19:16.503+02:00 r=92cc9bb07872 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:19:16.506+02:00 r=92cc9bb07872 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:19:16.508+02:00 r=92cc9bb07872 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
-2024-10-16T14:19:20.243+02:00 r=5f8bf7d62f02 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:19:20.251+02:00 r=5f8bf7d62f02 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:19:20.257+02:00 r=5f8bf7d62f02 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=13ms
-2024-10-16T14:19:22.299+02:00 r=75503f5fe882 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:19:22.301+02:00 r=75503f5fe882 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T14:19:22.301+02:00 r=75503f5fe882 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
-2024-10-16T14:19:24.232+02:00 r=21614e3669f4 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T14:19:24.240+02:00 r=21614e3669f4 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T14:19:24.242+02:00 r=21614e3669f4 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=9ms
-2024-10-16T16:48:16.159+02:00 r=832aff0033d0 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T16:48:16.161+02:00 r=832aff0033d0 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T16:48:16.163+02:00 r=832aff0033d0 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=3ms
-2024-10-16T16:48:28.622+02:00 r= ip=  WARN 34980 --- [wendys-christmas-shop] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h18m7s592ms104µs401ns).
-2024-10-16T17:45:49.419+02:00 r=3b42efa4b1fa ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T17:45:49.440+02:00 r=3b42efa4b1fa ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T17:45:49.452+02:00 r=3b42efa4b1fa ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=27ms
-2024-10-16T17:45:50.828+02:00 r=88b4b48b0208 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T17:45:50.828+02:00 r=88b4b48b0208 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T17:45:50.829+02:00 r=88b4b48b0208 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=1ms
-2024-10-16T17:45:58.775+02:00 r=02c9f916b294 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T17:45:58.779+02:00 r=02c9f916b294 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T17:45:58.782+02:00 r=02c9f916b294 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
-2024-10-16T17:46:01.315+02:00 r=5e9c7fd25151 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T17:46:01.319+02:00 r=5e9c7fd25151 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T17:46:01.321+02:00 r=5e9c7fd25151 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=3ms
-2024-10-16T17:58:30.034+02:00 r=0305dd597248 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T17:58:30.036+02:00 r=0305dd597248 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T17:58:30.040+02:00 r=0305dd597248 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
-2024-10-16T17:59:01.290+02:00 r=d596cf62579d ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T17:59:01.291+02:00 r=d596cf62579d ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T17:59:01.293+02:00 r=d596cf62579d ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=2ms
-2024-10-16T18:39:43.765+02:00 r= ip=  WARN 34980 --- [wendys-christmas-shop] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m14s872ms891µs600ns).
-2024-10-16T18:50:22.821+02:00 r=a93c18fdaab0 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T18:50:22.823+02:00 r=a93c18fdaab0 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T18:50:22.828+02:00 r=a93c18fdaab0 ip=0:0:0:0:0:0:0:1  INFO 34980 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=6ms
-2024-10-16T19:01:36.079+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T19:01:36.112+02:00 r= ip=  INFO 34980 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T19:01:46.213+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 35924 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T19:01:46.217+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T19:01:47.657+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T19:01:47.690+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T19:01:47.691+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T19:01:47.762+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T19:01:47.762+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1478 ms
-2024-10-16T19:01:47.813+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T19:01:53.211+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T19:01:53.238+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T19:01:53.252+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T19:01:53.621+02:00 r= ip=  WARN 35924 --- [wendys-christmas-shop] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'articleEndpoint' method 
-at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint#search(ArticleSearchDto)
-to {GET [/articles]}: There is already 'articleEndpoint' bean method
-at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint#get(Long) mapped.
-2024-10-16T19:01:53.623+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T19:01:53.676+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-16T19:01:53.680+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-10-16T19:01:53.692+02:00 r= ip=  INFO 35924 --- [wendys-christmas-shop] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-10-16T19:01:53.714+02:00 r= ip= ERROR 35924 --- [wendys-christmas-shop] [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'articleEndpoint' method 
-at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint#search(ArticleSearchDto)
-to {GET [/articles]}: There is already 'articleEndpoint' bean method
-at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint#get(Long) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.13.jar:6.1.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.4.jar:3.3.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.4.jar:3.3.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.4.jar:3.3.4]
-	at at.ac.tuwien.sepr.assignment.individual.SeprIndividualAssignmentApplication.main(SeprIndividualAssignmentApplication.java:13) ~[classes/:na]
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'articleEndpoint' method 
-at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint#search(ArticleSearchDto)
-to {GET [/articles]}: There is already 'articleEndpoint' bean method
-at.ac.tuwien.sepr.assignment.individual.rest.ArticleEndpoint#get(Long) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:508) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:239) ~[spring-webmvc-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.13.jar:6.1.13]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.13.jar:6.1.13]
-	... 16 common frames omitted
-
-2024-10-16T19:04:26.363+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 28536 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
-2024-10-16T19:04:26.365+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
-2024-10-16T19:04:27.795+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-16T19:04:27.811+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-16T19:04:27.811+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2024-10-16T19:04:27.868+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-16T19:04:27.868+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1436 ms
-2024-10-16T19:04:27.909+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-16T19:04:33.227+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
-2024-10-16T19:04:33.229+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-16T19:04:33.240+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
-2024-10-16T19:04:33.797+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-10-16T19:04:33.807+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 8.206 seconds (process running for 9.107)
-2024-10-16T19:05:22.573+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-16T19:05:22.574+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-16T19:05:22.576+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-10-16T19:05:22.585+02:00 r=8f33cf56a632 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:05:22.703+02:00 r=8f33cf56a632 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:05:22.791+02:00 r=8f33cf56a632 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=204ms
-2024-10-16T19:11:38.915+02:00 r=a6da601cedc1 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:38.923+02:00 r=a6da601cedc1 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:11:38.931+02:00 r=a6da601cedc1 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=14ms
-2024-10-16T19:11:41.893+02:00 r=43b2755a44fb ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:41.898+02:00 r=43b2755a44fb ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:41.901+02:00 r=43b2755a44fb ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=6ms
-2024-10-16T19:11:46.797+02:00 r=a5ba8d5c9ff8 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:46.805+02:00 r=a5ba8d5c9ff8 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:46.805+02:00 r=a5ba8d5c9ff8 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460 status=200 time=14ms
-2024-10-16T19:11:48.337+02:00 r=b16dd4f8c831 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:48.346+02:00 r=b16dd4f8c831 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:48.349+02:00 r=b16dd4f8c831 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4 status=200 time=6ms
-2024-10-16T19:11:48.622+02:00 r=c63734a5a619 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGH UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:48.622+02:00 r=c63734a5a619 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:48.622+02:00 r=c63734a5a619 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGH status=200 time=5ms
-2024-10-16T19:11:48.751+02:00 r=6fdfa8d85d68 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJG UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:48.751+02:00 r=6fdfa8d85d68 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:48.760+02:00 r=6fdfa8d85d68 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJG status=200 time=6ms
-2024-10-16T19:11:49.321+02:00 r=f849b2c3268c ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJG UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:49.321+02:00 r=f849b2c3268c ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:49.326+02:00 r=f849b2c3268c ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJG status=200 time=4ms
-2024-10-16T19:11:53.080+02:00 r=677e5c2ce600 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDV UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:53.086+02:00 r=677e5c2ce600 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:53.086+02:00 r=677e5c2ce600 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDV status=200 time=4ms
-2024-10-16T19:11:54.678+02:00 r=35570fa0ed82 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:54.679+02:00 r=35570fa0ed82 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:54.679+02:00 r=35570fa0ed82 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV status=200 time=5ms
-2024-10-16T19:11:56.288+02:00 r=dc87b46f4860 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:11:56.291+02:00 r=dc87b46f4860 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:11:56.303+02:00 r=dc87b46f4860 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV status=200 time=14ms
-2024-10-16T19:12:02.578+02:00 r=369083e16910 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV&minPrice=10 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:02.591+02:00 r=369083e16910 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:12:02.596+02:00 r=369083e16910 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV&minPrice=10 status=200 time=11ms
-2024-10-16T19:12:04.897+02:00 r=a97bf51a4117 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV&minPrice=10&maxPrice=18 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:04.905+02:00 r=a97bf51a4117 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:12:04.910+02:00 r=a97bf51a4117 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=Article11028460&description=ajf%C3%A4HGHEJGSL%3C%C3%84NKDVS%C3%84KDSVNDDVDVDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV&minPrice=10&maxPrice=18 status=200 time=7ms
-2024-10-16T19:12:06.481+02:00 r=78ef66fa8565 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:06.489+02:00 r=78ef66fa8565 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:12:06.497+02:00 r=78ef66fa8565 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=13ms
-2024-10-16T19:12:09.365+02:00 r=5885f5acb494 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:09.365+02:00 r=5885f5acb494 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:12:09.365+02:00 r=5885f5acb494 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=5ms
-2024-10-16T19:12:10.746+02:00 r=cf49efd27522 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:10.748+02:00 r=cf49efd27522 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:12:10.751+02:00 r=cf49efd27522 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
-2024-10-16T19:12:11.890+02:00 r=72bdf8d729d5 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:11.892+02:00 r=72bdf8d729d5 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:12:11.892+02:00 r=72bdf8d729d5 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=4ms
-2024-10-16T19:12:26.694+02:00 r=bb1d5396ded3 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:26.697+02:00 r=bb1d5396ded3 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:12:26.698+02:00 r=bb1d5396ded3 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
-2024-10-16T19:12:28.049+02:00 r=92f5a44c7d46 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:12:28.055+02:00 r=92f5a44c7d46 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:12:28.066+02:00 r=92f5a44c7d46 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=16ms
-2024-10-16T19:17:51.887+02:00 r=1d7bf7331578 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:17:51.890+02:00 r=1d7bf7331578 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:17:51.894+02:00 r=1d7bf7331578 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
-2024-10-16T19:17:52.504+02:00 r=ea96ef234b19 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:17:52.506+02:00 r=ea96ef234b19 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:17:52.508+02:00 r=ea96ef234b19 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
-2024-10-16T19:17:54.041+02:00 r=4bcf3ff7551f ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:17:54.043+02:00 r=4bcf3ff7551f ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:17:54.047+02:00 r=4bcf3ff7551f ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=5ms
-2024-10-16T19:17:55.600+02:00 r=44ce59a17b65 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:17:55.607+02:00 r=44ce59a17b65 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
-2024-10-16T19:17:55.611+02:00 r=44ce59a17b65 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=9ms
-2024-10-16T19:17:57.241+02:00 r=b2c3189fd59d ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:17:57.245+02:00 r=b2c3189fd59d ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:17:57.248+02:00 r=b2c3189fd59d ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=5ms
-2024-10-16T19:17:58.988+02:00 r=8bc9ab16a86a ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:17:58.991+02:00 r=8bc9ab16a86a ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:17:58.992+02:00 r=8bc9ab16a86a ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner status=200 time=4ms
-2024-10-16T19:18:00.174+02:00 r=96c3e5e0ebfe ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:00.177+02:00 r=96c3e5e0ebfe ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:00.182+02:00 r=96c3e5e0ebfe ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4 status=200 time=6ms
-2024-10-16T19:18:02.179+02:00 r=5f179d9bbfaf ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-1 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:02.187+02:00 r=5f179d9bbfaf ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:02.190+02:00 r=5f179d9bbfaf ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-1 status=200 time=5ms
-2024-10-16T19:18:02.486+02:00 r=a6ab110190df ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:02.486+02:00 r=a6ab110190df ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:02.492+02:00 r=a6ab110190df ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2 status=200 time=4ms
-2024-10-16T19:18:04.147+02:00 r=a12c9d486175 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:04.147+02:00 r=a12c9d486175 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:04.159+02:00 r=a12c9d486175 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=8ms
-2024-10-16T19:18:04.596+02:00 r=ac3afd436c95 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:04.598+02:00 r=ac3afd436c95 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:04.604+02:00 r=ac3afd436c95 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=6ms
-2024-10-16T19:18:10.748+02:00 r=8d67a68e5305 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:10.750+02:00 r=8d67a68e5305 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:10.759+02:00 r=8d67a68e5305 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=9ms
-2024-10-16T19:18:11.507+02:00 r=6a0324cec76f ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:11.509+02:00 r=6a0324cec76f ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:11.517+02:00 r=6a0324cec76f ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=8ms
-2024-10-16T19:18:11.890+02:00 r=3b94db86a603 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:11.892+02:00 r=3b94db86a603 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:11.898+02:00 r=3b94db86a603 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=7ms
-2024-10-16T19:18:12.114+02:00 r=361fae309c87 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:12.121+02:00 r=361fae309c87 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:12.127+02:00 r=361fae309c87 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=13ms
-2024-10-16T19:18:12.684+02:00 r=412d4523ec72 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:12.688+02:00 r=412d4523ec72 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:12.690+02:00 r=412d4523ec72 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=5ms
-2024-10-16T19:18:12.820+02:00 r=e7cab450502a ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:12.822+02:00 r=e7cab450502a ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:12.824+02:00 r=e7cab450502a ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=3ms
-2024-10-16T19:18:17.221+02:00 r=582fb532b807 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:17.223+02:00 r=582fb532b807 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:17.225+02:00 r=582fb532b807 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=4ms
-2024-10-16T19:18:17.910+02:00 r=47a436126e35 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:17.913+02:00 r=47a436126e35 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:17.913+02:00 r=47a436126e35 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=4ms
-2024-10-16T19:18:18.132+02:00 r=31f2f1c31fcb ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:18.140+02:00 r=31f2f1c31fcb ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:18.141+02:00 r=31f2f1c31fcb ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=5ms
-2024-10-16T19:18:18.394+02:00 r=ae7e45a498b4 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
-2024-10-16T19:18:18.397+02:00 r=ae7e45a498b4 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
-2024-10-16T19:18:18.411+02:00 r=ae7e45a498b4 ip=0:0:0:0:0:0:0:1  INFO 28536 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=18ms
-2024-10-16T19:22:11.843+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-16T19:22:11.849+02:00 r= ip=  INFO 28536 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-17T10:23:38.571+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 16720 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
+2024-10-17T10:23:38.591+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
+2024-10-17T10:23:40.411+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-17T10:23:40.429+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-17T10:23:40.429+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-17T10:23:40.497+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-17T10:23:40.499+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1788 ms
+2024-10-17T10:23:40.546+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-17T10:23:40.994+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
+2024-10-17T10:23:40.997+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-17T10:23:41.007+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
+2024-10-17T10:23:41.743+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-17T10:23:41.752+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 4.115 seconds (process running for 5.332)
+2024-10-17T10:24:24.405+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-17T10:24:24.406+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-17T10:24:24.408+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-17T10:24:24.422+02:00 r=0d8acd210032 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T10:24:24.679+02:00 r=0d8acd210032 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T10:24:24.853+02:00 r=0d8acd210032 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=430ms
+2024-10-17T10:24:27.129+02:00 r=b06d44b4a32a ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T10:24:27.134+02:00 r=b06d44b4a32a ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
+2024-10-17T10:24:27.139+02:00 r=b06d44b4a32a ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=9ms
+2024-10-17T10:24:30.526+02:00 r=0e16a0aa405e ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T10:24:30.533+02:00 r=0e16a0aa405e ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
+2024-10-17T10:24:30.543+02:00 r=0e16a0aa405e ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles?name=David%20Fellner&description=ajf%C3%A4&minPrice=-2&maxPrice=2 status=200 time=16ms
+2024-10-17T10:24:32.352+02:00 r=ae3d91321fe9 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T10:24:32.358+02:00 r=ae3d91321fe9 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T10:24:32.368+02:00 r=ae3d91321fe9 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=14ms
+2024-10-17T10:25:37.555+02:00 r=3e0f548869f2 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /articles UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T10:25:37.556+02:00 r=3e0f548869f2 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.ArticleEndpoint         : GET /articles
+2024-10-17T10:25:37.556+02:00 r=3e0f548869f2 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /articles status=200 time=5ms
+2024-10-17T10:25:40.546+02:00 r=75a24c2803d2 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T10:25:40.558+02:00 r=75a24c2803d2 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T10:25:40.560+02:00 r=75a24c2803d2 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=8ms
+2024-10-17T11:15:41.042+02:00 r=65ec766471e6 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:15:41.050+02:00 r=65ec766471e6 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:15:41.069+02:00 r=65ec766471e6 ip=0:0:0:0:0:0:0:1  INFO 16720 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=26ms
+2024-10-17T11:15:58.443+02:00 r= ip=  WARN 16720 --- [wendys-christmas-shop] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m16s657ms13µs400ns).
+2024-10-17T11:19:18.976+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-17T11:19:18.982+02:00 r= ip=  INFO 16720 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-17T11:35:44.426+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Starting SeprIndividualAssignmentApplication using Java 21.0.4 with PID 4652 (C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend\target\classes started by david in C:\Users\david\Desktop\SEPM\Wendys-Christmas-Shop\backend)
+2024-10-17T11:35:44.434+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : No active profile set, falling back to 1 default profile: "default"
+2024-10-17T11:35:46.044+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-17T11:35:46.063+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-17T11:35:46.064+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-17T11:35:46.119+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-17T11:35:46.119+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1583 ms
+2024-10-17T11:35:46.159+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-17T11:35:51.606+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2: ./wendydb user=SA
+2024-10-17T11:35:51.609+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-17T11:35:51.623+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2: ./wendydb'
+2024-10-17T11:35:52.204+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-17T11:35:52.214+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [main] .a.i.SeprIndividualAssignmentApplication : Started SeprIndividualAssignmentApplication in 8.922 seconds (process running for 10.02)
+2024-10-17T11:36:13.620+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-17T11:36:13.622+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-17T11:36:13.626+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-17T11:36:13.654+02:00 r=f69a99ed1542 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:13.823+02:00 r=f69a99ed1542 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:13.955+02:00 r=f69a99ed1542 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=297ms
+2024-10-17T11:36:19.900+02:00 r=7405a46567d9 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:19.902+02:00 r=7405a46567d9 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:19.905+02:00 r=7405a46567d9 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
+2024-10-17T11:36:27.268+02:00 r=8f421fe542b0 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> OPTIONS /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:27.286+02:00 r=8f421fe542b0 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< OPTIONS /customers status=200 time=17ms
+2024-10-17T11:36:27.289+02:00 r=2446e10a850d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> POST /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:27.421+02:00 r=2446e10a850d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : POST /customers
+2024-10-17T11:36:27.548+02:00 r=2446e10a850d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< POST /customers status=200 time=258ms
+2024-10-17T11:36:27.585+02:00 r=343110d0ad83 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:27.588+02:00 r=343110d0ad83 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:27.593+02:00 r=343110d0ad83 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=7ms
+2024-10-17T11:36:30.508+02:00 r=4f1ee12c7109 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Ann UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:30.515+02:00 r=4f1ee12c7109 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:30.523+02:00 r=4f1ee12c7109 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Ann status=200 time=14ms
+2024-10-17T11:36:31.477+02:00 r=f8b4a7d65679 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:31.480+02:00 r=f8b4a7d65679 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:31.486+02:00 r=f8b4a7d65679 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com status=200 time=7ms
+2024-10-17T11:36:34.000+02:00 r=1f5408e5d5d8 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:34.013+02:00 r=1f5408e5d5d8 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:34.020+02:00 r=1f5408e5d5d8 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10 status=200 time=18ms
+2024-10-17T11:36:35.984+02:00 r=88e1e4849301 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:35.987+02:00 r=88e1e4849301 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:35.994+02:00 r=88e1e4849301 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03 status=200 time=8ms
+2024-10-17T11:36:37.506+02:00 r=9a02993b56b4 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03&minAge=1 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:37.510+02:00 r=9a02993b56b4 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:37.514+02:00 r=9a02993b56b4 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03&minAge=1 status=200 time=7ms
+2024-10-17T11:36:38.888+02:00 r=33ea7d40742f ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03&minAge=0 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:38.892+02:00 r=33ea7d40742f ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:38.897+02:00 r=33ea7d40742f ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-10] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03&minAge=0 status=200 time=7ms
+2024-10-17T11:36:40.239+02:00 r=41229f575fb8 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03&minAge=0&maxAge=0 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:40.242+02:00 r=41229f575fb8 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:40.248+02:00 r=41229f575fb8 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers?firstName=Anna&lastName=Fellner&email=anna.fellner06@gmail.com&dateOfBirthEarliest=2024-10-10&dateOfBirthLatest=2024-10-03&minAge=0&maxAge=0 status=200 time=8ms
+2024-10-17T11:36:54.876+02:00 r=cb256f972ce5 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> POST /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:54.879+02:00 r=cb256f972ce5 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.CustomerEndpoint        : POST /customers
+2024-10-17T11:36:54.886+02:00 r=cb256f972ce5 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< POST /customers status=200 time=9ms
+2024-10-17T11:36:54.927+02:00 r=f0a34e06745e ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:36:54.934+02:00 r=f0a34e06745e ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:36:54.941+02:00 r=f0a34e06745e ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=12ms
+2024-10-17T11:41:27.007+02:00 r=7bf5796df630 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:41:27.010+02:00 r=7bf5796df630 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:41:27.015+02:00 r=7bf5796df630 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=7ms
+2024-10-17T11:41:28.122+02:00 r=dcdbfef01590 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:41:28.124+02:00 r=dcdbfef01590 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:41:28.126+02:00 r=dcdbfef01590 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-17T11:41:33.216+02:00 r=7ce713bc3f57 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:41:33.218+02:00 r=7ce713bc3f57 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:41:33.220+02:00 r=7ce713bc3f57 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-17T11:41:33.387+02:00 r=07f8fc382fcc ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:41:33.389+02:00 r=07f8fc382fcc ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:41:33.392+02:00 r=07f8fc382fcc ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
+2024-10-17T11:41:55.116+02:00 r=e66aef2aa193 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:41:55.117+02:00 r=e66aef2aa193 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:41:55.119+02:00 r=e66aef2aa193 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-17T11:46:39.968+02:00 r=0ff54158d54e ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:46:39.971+02:00 r=0ff54158d54e ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:46:39.976+02:00 r=0ff54158d54e ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-1] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=6ms
+2024-10-17T11:47:16.134+02:00 r=b5e69c982311 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:47:16.136+02:00 r=b5e69c982311 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:47:16.140+02:00 r=b5e69c982311 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-2] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
+2024-10-17T11:47:24.346+02:00 r=d2614ae62eba ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:47:24.346+02:00 r=d2614ae62eba ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:47:24.386+02:00 r=d2614ae62eba ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-3] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=34ms
+2024-10-17T11:47:25.301+02:00 r=8a7f66bb3d9d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:47:25.301+02:00 r=8a7f66bb3d9d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:47:25.328+02:00 r=8a7f66bb3d9d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-5] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=20ms
+2024-10-17T11:48:14.397+02:00 r=fd9d7d91a051 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:48:14.400+02:00 r=fd9d7d91a051 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:48:14.402+02:00 r=fd9d7d91a051 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-4] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=4ms
+2024-10-17T11:48:16.301+02:00 r=45d0662a6758 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:48:16.304+02:00 r=45d0662a6758 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:48:16.308+02:00 r=45d0662a6758 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-6] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=6ms
+2024-10-17T11:49:10.937+02:00 r=2cb159a19542 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:49:10.938+02:00 r=2cb159a19542 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:49:10.941+02:00 r=2cb159a19542 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-7] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=3ms
+2024-10-17T11:49:18.755+02:00 r=b1cff000fa3d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers/21 UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:49:18.758+02:00 r=b1cff000fa3d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers/21
+2024-10-17T11:49:18.760+02:00 r=b1cff000fa3d ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-8] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers/21 status=200 time=9ms
+2024-10-17T11:49:20.482+02:00 r=2841c6482be6 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : >>> GET /customers UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+2024-10-17T11:49:20.483+02:00 r=2841c6482be6 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.i.rest.CustomerEndpoint        : GET /customers
+2024-10-17T11:49:20.489+02:00 r=2841c6482be6 ip=0:0:0:0:0:0:0:1  INFO 4652 --- [wendys-christmas-shop] [http-nio-8080-exec-9] a.a.t.s.a.individual.config.LogFilter    : <<< GET /customers status=200 time=5ms
+2024-10-17T11:50:17.248+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-17T11:50:17.252+02:00 r= ip=  INFO 4652 --- [wendys-christmas-shop] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

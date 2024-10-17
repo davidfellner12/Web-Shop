@@ -12,5 +12,6 @@ public record Article(
         String designation,
         String description,
         Integer price
+        /*TODO: String imagePath*/
 ) {
 }

@@ -88,6 +88,7 @@
         <th>Age</th>
         <th class="min-width">Actions</th>
         <th>Register</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -110,7 +111,15 @@
               <button
                 (click)="markUnmarkAsRegistered(customer)"
                 class="btn btn-sm btn-success">
-                <i class="bi bi-person-plus"></i> Register
+                <i class="bi bi-person-plus"></i> Login
+              </button>
+            </div>
+          </td>
+          <td>
+            <div class="btn-group">
+              <button
+                class="btn btn-sm btn-danger">
+                <i class="bi bi-person-minus"></i> Delete
               </button>
             </div>
           </td>
