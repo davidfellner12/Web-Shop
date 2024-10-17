@@ -21,7 +21,7 @@ export class CustomerService {
    *
    * @param customer The customer to be logged in
    */
-  set loggedInCustomer(customer: CustomerListDto) {
+  set loggedInCustomer(customer: CustomerListDto | undefined) {
     this._loggedInCustomer = customer;
   }
 

@@ -7,7 +7,7 @@ import { debounceTime, Subject } from 'rxjs';
 import {CustomerListDto, CustomerSearch} from 'src/app/dto/customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core'
 
 @Component({
   selector: 'app-customers',
@@ -78,6 +78,7 @@ export class CustomersComponent implements OnInit {
     console.log(`Registered customer: ${dto.firstName} ${dto.lastName}`);
     console.log('checking if the customer is really registered' + dto.isRegistered);
     this.cdr.detectChanges();
+    this.selectedCustomer = dto;
   }
 
   private unregisterCustomer(dto: CustomerListDto): void {
@@ -102,4 +103,17 @@ export class CustomersComponent implements OnInit {
   searchChanged(): void {
     this.searchChangedObservable.next();
   }
+
+  toggleLoginStatus(customer: CustomerListDto) : void{
+    if (this.service.loggedInCustomer === customer){
+      this.service.loggedInCustomer = undefined;
+    } else {
+      this.service.loggedInCustomer = customer;
+    }
+  }
+
+  isLoggedIn(customer: CustomerListDto) : boolean{
+    return this.service.loggedInCustomer == customer;
+  }
+
 }
