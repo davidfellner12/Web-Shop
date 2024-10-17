@@ -16,8 +16,6 @@
       New customer
     </a>
   </div>
-
-
 </div>
 
 
@@ -93,7 +91,7 @@
     </thead>
     <tbody>
       @for (customer of customers; track customer) {
-        <tr class="align-middle" [ngClass] = "{'bg-registered':customer.isRegistered}" >
+        <tr class="align-middle" [ngClass] = "{'bg-registered': (customer).isRegistered}" >
           <td>{{ customer.firstName }}</td>
           <td>{{ customer.lastName }}</td>
           <td>{{ customer.email }}</td>
@@ -118,6 +116,7 @@
           <td>
             <div class="btn-group">
               <button
+                (click)="deleteCustomer(customer)"
                 class="btn btn-sm btn-danger">
                 <i class="bi bi-person-minus"></i> Delete
               </button>
@@ -127,6 +126,5 @@
       }
     </tbody>
   </table>
-
 </div>
 

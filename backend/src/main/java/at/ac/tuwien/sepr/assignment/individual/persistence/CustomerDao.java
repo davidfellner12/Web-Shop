@@ -1,9 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence;
 
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.*;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
@@ -66,4 +63,14 @@ public interface CustomerDao {
    * @throws NotFoundException thrown if there exists no customer with the specified id
    */
   Customer getOneById(Long id) throws NotFoundException;
+
+  /**
+   * Delets a customer with the id
+   * given in {@code id}
+   * when it exists in the data store
+   * @param id id for searching the customer for deletion
+   * @return
+   * @throws NotFoundException
+   */
+  void delete(Long id) throws NotFoundException;
 }

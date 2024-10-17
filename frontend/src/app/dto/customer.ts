@@ -13,7 +13,7 @@ export interface CustomerListDto {
   email: string;
   dateOfBirth: Date;
   age: number;
-  isRegistered?: boolean;
+  isRegistered: boolean;
 }
 
 export interface CustomerSearch {

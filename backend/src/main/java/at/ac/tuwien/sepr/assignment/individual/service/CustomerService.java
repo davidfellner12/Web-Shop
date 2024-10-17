@@ -1,9 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.service;
 
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.*;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
@@ -57,5 +54,15 @@ public interface CustomerService {
    * @throws NotFoundException if there exists no customer for the specific id
    */
   CustomerDetailDto get(Long id) throws NotFoundException;
+
+  /**
+   * Deletes a specific customer
+   * in the database with the id
+   * given in {@code id}
+   * @param id the id for the customer to delete
+   * @return
+   * @throws NotFoundException if there exists no customer to delete with the specific id
+   */
+  void delete(Long id) throws NotFoundException;
 
 }

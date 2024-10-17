@@ -78,7 +78,6 @@ export class CustomerService {
 
   }
 
-
   /**
    * Create a new customer in the system.
    *
@@ -98,5 +97,16 @@ export class CustomerService {
 
   update(customer: Customer): Observable<Customer> {
     return this.http.patch<Customer>(baseUri, customer);
+  }
+
+  /**
+   * Deletes a specific customer in the system
+   *
+   * @param id specify the customer to delete
+   * @return an Observable for the updating of a customer
+   */
+
+  delete(id: number): Observable<Customer>{
+    return this.http.delete<Customer>(`${baseUri}/${id}`)
   }
 }

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { debounceTime, Subject } from 'rxjs';
-import { CustomerListDto, CustomerSearch } from 'src/app/dto/customer';
+import {CustomerListDto, CustomerSearch} from 'src/app/dto/customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
 import { ChangeDetectorRef } from '@angular/core';
@@ -30,7 +30,6 @@ export class CustomersComponent implements OnInit {
   status = 'Enable';
 
   selectedCustomer: CustomerListDto | undefined;
-
 
   constructor(private service: CustomerService,
               private errorFormatter: ErrorFormatterService,
@@ -62,8 +61,6 @@ export class CustomersComponent implements OnInit {
   }
 
   //checks if a customer is registered
-
-
   markUnmarkAsRegistered(dto: CustomerListDto): void {
     if (!dto.isRegistered) {
       this.toggle = !this.toggle;
@@ -79,13 +76,27 @@ export class CustomersComponent implements OnInit {
   private registerCustomer(dto: CustomerListDto): void {
     dto.isRegistered = true;
     console.log(`Registered customer: ${dto.firstName} ${dto.lastName}`);
+    console.log('checking if the customer is really registered' + dto.isRegistered);
     this.cdr.detectChanges();
   }
-
 
   private unregisterCustomer(dto: CustomerListDto): void {
     dto.isRegistered = false;
     console.log(`Unregistered customer: ${dto.firstName} ${dto.lastName}`);
+    console.log('checking if the customer is really unregistered' + dto.isRegistered);
+  }
+
+  deleteCustomer(dto: CustomerListDto){
+    console.log("The button is really clicked")
+    this.service.delete(dto.id).subscribe({
+      next: () => {
+        this.customers = this.customers.filter(customer => customer.id != dto.id);
+        console.log("Customer successfully deleted");
+      },
+      error: err => {
+        console.error("Error deleting customer:", err);
+      }
+    });
   }
 
   searchChanged(): void {

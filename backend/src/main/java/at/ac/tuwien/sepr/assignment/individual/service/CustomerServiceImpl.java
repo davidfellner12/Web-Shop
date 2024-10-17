@@ -1,9 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.service;
 
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.*;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
@@ -63,6 +60,12 @@ public class CustomerServiceImpl implements CustomerService {
     LOG.trace("get({})", id);
     //TODO Mayber there is some validation needed, but when the customer is created everything should be fine
     return customerMapper.entityToDetailDto(customerDao.getOneById(id));
+  }
+
+  @Override
+  public void delete(Long id) throws NotFoundException{
+    LOG.trace("delete({})", id);
+    customerDao.delete(id);
   }
 
 }

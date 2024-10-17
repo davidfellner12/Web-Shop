@@ -1,9 +1,6 @@
 package at.ac.tuwien.sepr.assignment.individual.rest;
 
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerCreateDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerDetailDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerSearchDto;
-import at.ac.tuwien.sepr.assignment.individual.dto.CustomerUpdateDto;
+import at.ac.tuwien.sepr.assignment.individual.dto.*;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
@@ -77,6 +74,14 @@ public class CustomerEndpoint {
     LOG.debug("request parameters: {}", id);
     System.out.println("here is the" + id);
     return customerService.get(id);
+  }
+
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  @DeleteMapping("/{id}")
+  public void delete(@PathVariable("id") Long id) throws NotFoundException, ConflictException {
+    LOG.info("DELETE " + BASE_PATH + "/{}", id);
+    LOG.debug("request parameters: {}", id);
+    customerService.delete(id);
   }
 
   private void logClientError(HttpStatus status, String message, Exception e) {

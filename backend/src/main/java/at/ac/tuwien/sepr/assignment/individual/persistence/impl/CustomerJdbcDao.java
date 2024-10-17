@@ -57,6 +57,7 @@ public class CustomerJdbcDao implements CustomerDao {
       + " WHERE id = ?";
 
   private static final String SQL_SELECT_BY_EMAIL = "SELECT * FROM " + TABLE_NAME + " WHERE email = ?";
+  private static final String SQL_DELETE_BY_ID = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
 
   private final JdbcTemplate jdbcTemplate;
   private final NamedParameterJdbcTemplate jdbcNamed;
@@ -89,7 +90,7 @@ public class CustomerJdbcDao implements CustomerDao {
       sqlQuery.append(" AND date_of_birth  > '" + searchParameters.dateOfBirthEarliest() + "'" + " AND date_of_birth < '" + searchParameters.dateOfBirthLatest() + "'");
     } else if (searchParameters.dateOfBirthEarliest() != null && searchParameters.dateOfBirthLatest() == null) {
       sqlQuery.append(" AND date_of_birth > '" + searchParameters.dateOfBirthEarliest() + "'");
-    } else if (searchParameters.dateOfBirthLatest() == null && searchParameters.dateOfBirthLatest() != null) {
+    } else if (searchParameters.dateOfBirthEarliest() == null && searchParameters.dateOfBirthLatest() != null) {
       sqlQuery.append(" AND date_of_birth  < '" + searchParameters.dateOfBirthLatest() + "'");
     }
 
@@ -100,12 +101,13 @@ public class CustomerJdbcDao implements CustomerDao {
       sqlQuery.append(" AND date_of_birth > '" + newMinDate + "'" + " AND date_of_birth < '" + newMaxDate + "'");
     } else if (searchParameters.minAge() != null && searchParameters.maxAge() == null) {
       LocalDate newMaxDate = currentDate.minusYears(searchParameters.minAge());
+
       sqlQuery.append(" AND date_of_birth < '" + newMaxDate + "'");
     } else if (searchParameters.minAge() == null && searchParameters.maxAge() != null) {
       LocalDate newMaxDate = currentDate.minusYears(searchParameters.maxAge());
       sqlQuery.append(" AND date_of_birth > '" + newMaxDate + "'");
+      System.out.println(newMaxDate);
     }
-
     String sql = sqlQuery.toString();
     return jdbcTemplate.query(sql, this::mapRow);
   }
@@ -174,6 +176,16 @@ public class CustomerJdbcDao implements CustomerDao {
     );
   }
 
+  @Override
+  public void delete(Long id) throws NotFoundException {
+    LOG.trace("delete({})", id);
+    List<Customer> customers = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+
+    if (customers.isEmpty() || customers == null) {
+      throw new NotFoundException("Could not delete customer with ID %d".formatted(id) + "because it does not exist");
+    }
+    jdbcTemplate.update(SQL_DELETE_BY_ID, id);
+  }
 
   private Customer mapRow(ResultSet result, int rowNum) throws SQLException {
     return new Customer(
