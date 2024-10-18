@@ -29,7 +29,8 @@ export class ArticleCreateEditComponent implements OnInit{
   article: Article = {
     designation: '',
     description: '',
-    price: 0
+    price: 0,
+    image: ''
   };
 
   constructor(private service: ArticleService,
@@ -116,6 +117,19 @@ export class ArticleCreateEditComponent implements OnInit{
           this.notification.error(this.errorFormatter.format(error), 'Could not save article');
         }
       });
+    }
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.article.image= reader.result as string;
+        console.log('Base64 encoded file:', this.article.image);
+      };
+      reader.readAsDataURL(file);
     }
   }
 

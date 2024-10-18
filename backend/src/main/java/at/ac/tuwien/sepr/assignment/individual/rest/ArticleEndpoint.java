@@ -6,6 +6,7 @@ import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import at.ac.tuwien.sepr.assignment.individual.service.ArticleService;
 import java.lang.invoke.MethodHandles;
+import java.util.Base64;
 import java.util.stream.Stream;
 
 import org.slf4j.Logger;
@@ -51,7 +52,6 @@ public class ArticleEndpoint {
   public ArticleDetailDto get(@PathVariable("id") Long id) throws NotFoundException{
     LOG.info("GET " + BASE_PATH);
     LOG.info("GET /articles with id: {}", id);
-
     LOG.debug("request parameters: {}", id);
     return articleService.get(id);
   }

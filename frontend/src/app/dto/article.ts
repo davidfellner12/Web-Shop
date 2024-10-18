@@ -3,6 +3,7 @@ export interface Article {
   designation: string;
   description: string;
   price: number;
+  image?: string;
 }
 
 export interface ArticleListDto {
@@ -10,6 +11,7 @@ export interface ArticleListDto {
   designation: string;
   description: string;
   price: number;
+  image?: File;
 }
 
 export interface ArticleSearch {

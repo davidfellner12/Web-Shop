@@ -12,5 +12,6 @@ CREATE TABLE IF NOT EXISTS article
     id  BIGINT AUTO_INCREMENT PRIMARY KEY,
     designation VARCHAR(255) NOT NULL UNIQUE,
     description VARCHAR(255) NOT NULL,
-    price       Integer      NOT NULL
+    price       Integer      NOT NULL,
+    image       BLOB        NULL
 )

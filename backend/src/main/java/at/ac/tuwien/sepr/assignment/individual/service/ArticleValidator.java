@@ -47,7 +47,8 @@ public class ArticleValidator {
         ArticleCreateDto toCheck = new ArticleCreateDto(
                 dto.designation(),
                 dto.description(),
-                dto.price());
+                dto.price(),
+                dto.imageBase64());
         List<String> validationErrors = validate(toCheck);
         List<String> conflictErrors = new ArrayList<>();
         if (dto.id() == null) {

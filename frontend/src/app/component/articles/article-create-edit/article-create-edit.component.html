@@ -35,6 +35,14 @@
       <input [(ngModel)]="article.price" class="form-control" id="price" name="price" placeholder="Enter price"
              required type="email"/>
     </div>
+
+    <!-- Image -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="image">Image</label>
+      <input  class="form-control" id="image" name="image"
+             placeholder="Upload image" required type="file"
+              (change)="onFileSelected($event)"/>
+    </div>
   </div>
 
   <!-- Submit Button -->
