@@ -27,7 +27,7 @@ export enum ArticleCreateEditMode{
 export class ArticleCreateEditComponent implements OnInit{
   mode: ArticleCreateEditMode = ArticleCreateEditMode.create;
   article: Article = {
-    name: '',
+    designation: '',
     description: '',
     price: 0
   };
@@ -44,9 +44,9 @@ export class ArticleCreateEditComponent implements OnInit{
   public get header(): string {
     switch (this.mode) {
       case ArticleCreateEditMode.create:
-        return 'Create New Customer';
+        return 'Create New Article';
       case ArticleCreateEditMode.edit:
-        return "Edit The Customer"
+        return "Edit The Article"
       default:
         return '?';
     }
@@ -86,8 +86,8 @@ export class ArticleCreateEditComponent implements OnInit{
         this.article = article;
       },
       error: (err) => {
-        console.error("Error loading customer", err);
-        this.notification.error("Failed to load customer details");
+        console.error("Error loading article", err);
+        this.notification.error("Failed to load article details");
       }
     });
   }
@@ -103,22 +103,39 @@ export class ArticleCreateEditComponent implements OnInit{
           observable = this.service.update(this.article);
           break;
         default:
-          console.error('Unknown CustomerCreateEditMode', this.mode);
+          console.error('Unknown ArticleCreateEditMode', this.mode);
           return;
       }
       observable.subscribe({
         next: () => {
-          this.notification.success(`Customer ${this.article.name}  successfully saved!`);
+          this.notification.success(`Article ${this.article.designation}  successfully created!`);
           this.location.back();
         },
         error: error => {
-          console.error('Error creating customer', error);
-          this.notification.error(this.errorFormatter.format(error), 'Could not save customer');
+          console.error('Error creating article', error);
+          this.notification.error(this.errorFormatter.format(error), 'Could not save article');
         }
       });
     }
   }
 
+  /*
+  delete(): void {
+    if (!this.article.id){
+      console.error("No customer ID provided for deletion.");
+      return;
+    }
+    this.service.delete(this.article.id).subscribe({
+      next: () => {
+        this.notification.success(`Customer ${this.article.description} successfully deleted!`);
+      },
+      error: (error) => {
+        console.error("Error deleting customer", error);
+        this.notification.error(this.errorFormatter.format(error), "Could not delete customer");
+      }
+    })
+  }
+*/
 
 
 }

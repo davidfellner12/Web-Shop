@@ -1,19 +1,19 @@
 export interface Article {
   id?: number;
-  name: string;
+  designation: string;
   description: string;
   price: number;
 }
 
 export interface ArticleListDto {
   id: number;
-  name: string;
+  designation: string;
   description: string;
   price: number;
 }
 
 export interface ArticleSearch {
-  name?: string;
+  designation?: string;
   description?: string;
   minPrice?: number;
   maxPrice?: number;

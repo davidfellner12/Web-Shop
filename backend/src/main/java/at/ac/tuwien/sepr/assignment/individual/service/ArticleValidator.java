@@ -94,6 +94,14 @@ public class ArticleValidator {
         if ((!isValidDescription(dto.description()))){
             errorList.add("description can only have alphanumeric characters");
         }
+
+        if (!(dto.price() instanceof Integer)){
+            errorList.add("price can only be in valid integer format");
+        }
+        if (!isValidPrice(dto.price())){
+            errorList.add("The format of the price is not correct or exceeds the limit of 999999999.99");
+        }
+
         //TODO optional image validation
         return errorList;
     }
@@ -105,8 +113,15 @@ public class ArticleValidator {
     }
 
     private boolean isValidDescription(String description){
-        String nameRegex = "\"^[\\\\wÀ-ÿ.,;:?!\\\"'\\\\s-]+$\"";
+        String nameRegex = "^[a-zA-Z0-9À-ÿ '-]+$";
         Pattern pattern = Pattern.compile(nameRegex);
         return pattern.matcher(description).matches();
+    }
+
+    private boolean isValidPrice(Integer price){
+        String nameRegex = "^(?!0\\d)\\d{1,9}(\\.\\d{1,2})?$";
+        Pattern pattern = Pattern.compile(nameRegex);
+        String priceStr = String.valueOf(price);
+        return pattern.matcher(priceStr).matches();
     }
 }

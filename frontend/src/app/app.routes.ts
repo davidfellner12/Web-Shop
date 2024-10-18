@@ -14,6 +14,8 @@ export const routes: Routes = [
   {
     path: 'articles', children: [
       { path: '', component: ArticlesComponent },
+      { path: 'create', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.create}},
+      { path: 'edit/:id', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.edit}}
     ]
   },
   {
@@ -21,9 +23,6 @@ export const routes: Routes = [
       { path: '', component: CustomersComponent },
       { path: 'create', component: CustomerCreateEditComponent, data: { mode: CustomerCreateEditMode.create } },
       { path: 'edit/:id', component: CustomerCreateEditComponent, data: {mode: CustomerCreateEditMode.edit}},
-      { path: 'create', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.create}},
-      { path: 'edit/:id', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.edit}},
-
     ]
   },
   // Redirect any non-existing path to 'customers'

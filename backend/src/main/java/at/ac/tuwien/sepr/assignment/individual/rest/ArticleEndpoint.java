@@ -63,7 +63,6 @@ public class ArticleEndpoint {
     return articleService.update(dto);
   }
 
-
   private void logClientError(HttpStatus status, String message, Exception e) {
     LOG.warn("{} {}: {}: {}", status.value(), message, e.getClass().getSimpleName(), e.getMessage());
   }

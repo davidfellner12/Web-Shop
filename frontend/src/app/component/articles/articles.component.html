@@ -26,7 +26,7 @@
     <!-- Article Name -->
     <div class="col-md-3">
       <label class="form-label" for="name">Article Name</label>
-      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.name" class="form-control" id="name"
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.designation" class="form-control" id="name"
              name="name" placeholder="Enter article name"
              type="text"/>
     </div>
@@ -73,7 +73,7 @@
         <tr class="align-middle">
           <td>
           </td>
-          <td>{{ article.name }}</td>
+          <td>{{ article.designation }}</td>
           <td>{{ article.description }}</td>
           <td>{{ article.price | currency}}</td>
           <td class="text-end">

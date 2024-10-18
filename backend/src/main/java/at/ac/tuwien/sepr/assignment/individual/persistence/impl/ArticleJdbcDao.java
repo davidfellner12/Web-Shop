@@ -39,15 +39,14 @@ public class ArticleJdbcDao implements ArticleDao {
   private static final String SQL_REGISTER_ARTICLE = "INSERT INTO " + TABLE_NAME
           + " SET designation = ?"
           + "  , description = ?"
-          + "  , price = ?"
-          + "  , picture = ?";
+          + "  , price = ?";
   private static final String SQL_SELECT_BY_DESIGNATION = "SELECT * FROM " + TABLE_NAME + " WHERE designation = ?";
   private static final String SQL_SELECT_ALL_ARTICLES = "SELECT * FROM " + TABLE_NAME + " WHERE 1=1";
   private static final String SQL_SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
   private static final String SQL_UPDATE = "UPDATE " + TABLE_NAME
           + " SET designation = ?"
           + "  , description = ?"
-          + "  , price = ?"
+          + "  ,price =  ?"
           + " WHERE id = ?";
 
 
@@ -74,7 +73,7 @@ public class ArticleJdbcDao implements ArticleDao {
           return ps;
         }, keyHolder);
       } catch (DataAccessException e) {
-        throw new ConflictException("Customer could not be created in the database", List.of(e.getMessage()));
+        throw new ConflictException("Article could not be created in the database", List.of(e.getMessage()));
       }
       Long id = keyHolder.getKey().longValue();
       /*Byte[] imageBytes = dto.imageData();
@@ -139,7 +138,7 @@ public class ArticleJdbcDao implements ArticleDao {
   public Article update(ArticleUpdateDto dto) throws NotFoundException {
     LOG.trace("update({})", dto);
     int updated = jdbcTemplate.update(SQL_UPDATE,
-            dto.designation(), dto.description(), dto.price()
+             dto.designation(), dto.description(), dto.price(), dto.id()
             );
     if (updated == 0) {
       throw new NotFoundException(("Could not update customer with ID %d,"

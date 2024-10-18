@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Article, ArticleListDto, ArticleSearch } from 'src/app/dto/article';
 import { environment } from 'src/app/environments/environment';
-import {Customer} from "../dto/customer";
 
 const baseUri = environment.backendUrl + '/articles';
 
@@ -33,8 +32,8 @@ export class ArticleService {
    */
   getAllByFilter(filter: ArticleSearch): Observable<ArticleListDto[]> {
     let params = new HttpParams();
-    if (filter.name?.trim()) {
-      params = params.append('name', filter.name as string);
+    if (filter.designation?.trim()) {
+      params = params.append('name', filter.designation as string);
     }
     if (filter.description?.trim()) {
       params = params.append('description', filter.description as string);

@@ -34,7 +34,7 @@ public class ArticleServiceImpl implements ArticleService {
     this.articleMapper = articleMapper;
   }
   @Override
-  public ArticleDetailDto create(ArticleCreateDto dto) throws   ValidationException, NotFoundException, ConflictException  {
+  public ArticleDetailDto create(ArticleCreateDto dto) throws ValidationException, NotFoundException, ConflictException  {
     LOG.trace("create({})", dto);
     articleValidator.validateForCreate(dto);
     return articleMapper.entityToDetailDto(articleDao.create(dto));
@@ -61,6 +61,4 @@ public class ArticleServiceImpl implements ArticleService {
     articleValidator.validateForUpdate(dto);
     return articleMapper.entityToDetailDto(articleDao.update(dto));
   }
-
-
 }

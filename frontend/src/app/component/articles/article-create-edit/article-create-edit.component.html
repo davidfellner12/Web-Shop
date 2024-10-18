@@ -1,0 +1,52 @@
+<!-- Header Section -->
+<div class="row">
+  <div class="col">
+    <h1>{{ header }}</h1>
+  </div>
+  <div class="col-auto">
+  </div>
+</div>
+
+<!-- Customer Form -->
+<form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
+  <!-- Hidden submit element, to keep presses of enter key to trigger the cancel button -->
+  <input type="submit" hidden="hidden"/>
+
+  <div class="row">
+    <!-- Name -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="name">Name</label>
+      <input [(ngModel)]="article.designation" class="form-control" id="name" name="name"
+             placeholder="Enter name" required type="text"/>
+    </div>
+
+    <!-- Description -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="description">Description</label>
+      <input [(ngModel)]="article.description" class="form-control" id="description" name="description"
+             placeholder="Enter description" required type="text"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Price -->
+    <div class="col-md-6 mb-3">
+      <label class="form-label" for="price">Price</label>
+      <input [(ngModel)]="article.price" class="form-control" id="price" name="price" placeholder="Enter price"
+             required type="email"/>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="d-flex flex-row justify-content-end">
+    <a class="btn btn-secondary me-1" routerLink="/customers">
+      <i class="bi bi-x-lg"></i>
+      Cancel
+    </a>
+    <button [disabled]="!articleForm.valid" class="btn btn-primary" type="submit">
+      <i class="bi bi-check-lg"></i>
+      {{ submitButtonText }}
+    </button>
+  </div>
+
+</form>
