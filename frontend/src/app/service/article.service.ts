@@ -54,7 +54,8 @@ export class ArticleService {
    * @return an Observable for the created article
    */
   create(article: Article): Observable<Article> {
-
+    console.log("Here is the article image" + article.image);
+    console.log("Here is the article description for example" + article.description);
     return this.http.post<Article>(baseUri, article);
   }
 

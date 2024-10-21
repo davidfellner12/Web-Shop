@@ -7,6 +7,6 @@ public record ArticleUpdateDto(
         String designation,
         String description,
         Integer price,
-        String imageBase64
+        String image
 ){
 }

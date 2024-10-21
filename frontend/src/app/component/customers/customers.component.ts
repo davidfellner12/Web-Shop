@@ -60,33 +60,6 @@ export class CustomersComponent implements OnInit {
       });
   }
 
-  //checks if a customer is registered
-  markUnmarkAsRegistered(dto: CustomerListDto): void {
-    if (!dto.isRegistered) {
-      this.toggle = !this.toggle;
-      this.registerCustomer(dto);
-
-    } else {
-      this.toggle = !this.toggle;
-      this.unregisterCustomer(dto);
-    }
-    this.status = this.toggle ? 'Enable' : 'Disable';
-  }
-
-  private registerCustomer(dto: CustomerListDto): void {
-    dto.isRegistered = true;
-    console.log(`Registered customer: ${dto.firstName} ${dto.lastName}`);
-    console.log('checking if the customer is really registered' + dto.isRegistered);
-    this.cdr.detectChanges();
-    this.selectedCustomer = dto;
-  }
-
-  private unregisterCustomer(dto: CustomerListDto): void {
-    dto.isRegistered = false;
-    console.log(`Unregistered customer: ${dto.firstName} ${dto.lastName}`);
-    console.log('checking if the customer is really unregistered' + dto.isRegistered);
-  }
-
   deleteCustomer(dto: CustomerListDto){
     console.log("The button is really clicked")
     this.service.delete(dto.id).subscribe({

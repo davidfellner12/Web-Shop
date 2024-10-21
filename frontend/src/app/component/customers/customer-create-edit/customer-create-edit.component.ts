@@ -160,6 +160,7 @@ export class CustomerCreateEditComponent implements OnInit {
     this.service.delete(this.customer.id).subscribe({
       next: () => {
         this.notification.success(`Customer ${this.customer.firstName} ${this.customer.lastName} successfully deleted!`);
+        this.router.navigate(['/customers']);
       },
       error: (error) => {
         console.error("Error deleting customer", error);

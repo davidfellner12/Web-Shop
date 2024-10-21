@@ -31,6 +31,7 @@ public class ArticleValidator {
     public void validateForCreate (ArticleCreateDto dto) throws ValidationException, NotFoundException, ConflictException {
         List<String> validationErrors = validate(dto);
         List<String> conflictErrors = new ArrayList<>();
+
         if (articleDao.designationExists(dto.designation())){
             conflictErrors.add("Article with given designation already exists");
         }
@@ -48,7 +49,7 @@ public class ArticleValidator {
                 dto.designation(),
                 dto.description(),
                 dto.price(),
-                dto.imageBase64());
+                dto.image());
         List<String> validationErrors = validate(toCheck);
         List<String> conflictErrors = new ArrayList<>();
         if (dto.id() == null) {

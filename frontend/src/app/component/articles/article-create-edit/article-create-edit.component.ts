@@ -3,7 +3,7 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {Article} from "../../../dto/article";
 import {ErrorFormatterService} from "../../../service/error-formatter.service";
-import {Location} from "@angular/common";
+import {Location, CommonModule} from "@angular/common";
 import {ToastrService} from "ngx-toastr";
 import {ArticleService} from "../../../service/article.service";
 import {Observable} from "rxjs";
@@ -17,6 +17,7 @@ export enum ArticleCreateEditMode{
   selector: 'app-article-create-edit',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     RouterLink
   ],
@@ -98,9 +99,11 @@ export class ArticleCreateEditComponent implements OnInit{
       let observable: Observable<Article>;
       switch (this.mode) {
         case ArticleCreateEditMode.create:
+          console.log("here is the creation article to check" + this.article);
           observable = this.service.create(this.article);
           break;
         case ArticleCreateEditMode.edit:
+          console.log("here is the  update article to check" + this.article);
           observable = this.service.update(this.article);
           break;
         default:
@@ -124,10 +127,12 @@ export class ArticleCreateEditComponent implements OnInit{
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
+      console.log("Selected input file: " +file);
       const reader = new FileReader();
       reader.onload = () => {
-        this.article.image= reader.result as string;
-        console.log('Base64 encoded file:', this.article.image);
+        const baseString = reader.result as string;
+        this.article.image = baseString.replace(/^data:image\/(png);base64,/, '');
+        console.log("Base64 encoded file: ", this.article.image);
       };
       reader.readAsDataURL(file);
     }

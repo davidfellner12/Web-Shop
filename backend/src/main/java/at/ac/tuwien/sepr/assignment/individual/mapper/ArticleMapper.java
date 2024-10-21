@@ -22,7 +22,8 @@ public class ArticleMapper {
                 article.id(),
                 article.designation(),
                 article.description(),
-                article.price()
+                article.price(),
+                article.image()
         );
     }
 }

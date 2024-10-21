@@ -30,13 +30,14 @@ public class ArticleEndpoint {
     this.articleService = articleService;
   }
 
+
   @PostMapping()
   public ArticleDetailDto create(@RequestBody ArticleCreateDto dto) throws ValidationException, ConflictException, NotFoundException {
     LOG.info("POST " + BASE_PATH);
     LOG.debug("request parameters: {}", dto);
+    System.out.println("request parameters: " + dto);
     return articleService.create(dto);
   }
-
   /**
    * Interface to search for articles by search parameters.
    * @return Stream of articles matching search parameters

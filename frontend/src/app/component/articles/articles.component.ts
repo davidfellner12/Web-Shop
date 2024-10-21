@@ -1,4 +1,4 @@
-import { CurrencyPipe } from '@angular/common';
+import {CurrencyPipe, NgIf} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -14,7 +14,8 @@ import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
   imports: [
     RouterLink,
     FormsModule,
-    CurrencyPipe
+    CurrencyPipe,
+    NgIf
   ],
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.scss'

@@ -23,6 +23,7 @@
   <input hidden="hidden" type="submit"/>
 
   <div class="row">
+
     <!-- Article Name -->
     <div class="col-md-3">
       <label class="form-label" for="name">Article Name</label>
@@ -71,9 +72,10 @@
     <tbody>
       @for (article of articles; track article) {
         <tr class="align-middle">
-          <td>
+
+         <td>
+            <img *ngIf="article.image" [src]="article.image" alt="{{ article.designation }}" style="max-width: 100px; max-height: 100px;" />
           </td>
-          <td>{{ article.image}}</td>
           <td>{{ article.designation }}</td>
           <td>{{ article.description }}</td>
           <td>{{ article.price | currency}}</td>
