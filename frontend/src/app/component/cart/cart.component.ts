@@ -6,6 +6,8 @@ import { ArticleService } from "../../service/article.service";
 import { CartService } from "../../service/cart.service";
 import { CommonModule } from '@angular/common';
 import { ArticleListDto } from "../../dto/article";
+import {ToastrService} from "ngx-toastr";
+import {CustomerService} from "../../service/customer.service";
 
 @Component({
   selector: 'app-cart',
@@ -24,7 +26,9 @@ export class CartComponent {
 
   constructor(
     private cartService: CartService,
-    private articleService: ArticleService
+    private customerService: CustomerService,
+    private articleService: ArticleService,
+  private notification: ToastrService
   ) {
     this.loadCart();
   }
@@ -71,7 +75,12 @@ export class CartComponent {
   }
 
   purchaseCart(): void{
-
+    if (this.customerService.loggedInCustomer == undefined){
+      this.notification.error("No customer is logged in for purchase")
+    } else {
+      this.clearCart();
+      this.notification.success('Basket was successfully bought!');
+    }
   }
 
   protected readonly Object = Object;
