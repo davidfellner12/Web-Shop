@@ -7,6 +7,7 @@ import { debounceTime, Subject } from 'rxjs';
 import { ArticleListDto, ArticleSearch } from 'src/app/dto/article';
 import { ArticleService } from 'src/app/service/article.service';
 import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
+import {Article} from "src/app/dto/article";
 
 
 @Component({
@@ -63,6 +64,10 @@ export class ArticlesComponent implements OnInit {
       return "data:image/" + article.imageType + ";base64," + article.image;
     }
     return '';
+  }
+
+  addToCart(article: Article): void{
+
   }
 
 }
