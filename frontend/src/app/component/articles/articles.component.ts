@@ -7,7 +7,7 @@ import { debounceTime, Subject } from 'rxjs';
 import { ArticleListDto, ArticleSearch } from 'src/app/dto/article';
 import { ArticleService } from 'src/app/service/article.service';
 import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
-import {Article} from "src/app/dto/article";
+import {CartService} from "../../service/cart.service";
 
 
 @Component({
@@ -28,7 +28,8 @@ export class ArticlesComponent implements OnInit {
   searchChangedObservable = new Subject<void>();
 
 
-  constructor(private articleService: ArticleService,
+  constructor(private cartService: CartService,
+              private articleService: ArticleService,
               private errorFormatter: ErrorFormatterService,
               private notification: ToastrService) {
   }
@@ -58,16 +59,13 @@ export class ArticlesComponent implements OnInit {
   }
 
   setImage(article: ArticleListDto): string{
-    //this.articleService.getById(article.id);
-    console.log("Here is the 64base encoding from the database" + article.image );
     if (article.image != null){
       return "data:image/" + article.imageType + ";base64," + article.image;
     }
     return '';
   }
 
-  addToCart(article: Article): void{
-
+  addToCart(article: ArticleListDto, quantity: number): void {
+      this.cartService.setItem(article,quantity);
   }
-
 }

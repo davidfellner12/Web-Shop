@@ -41,9 +41,7 @@ export class ArticleDetailsComponent {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       const id = this.route.snapshot.paramMap.get('id');
-      console.log('Customer ID:', id);
       if (id){
-        console.log(+id);
         this.loadArticle(+id);
       }
     });
@@ -51,8 +49,6 @@ export class ArticleDetailsComponent {
 
 
   private loadArticle(articleId: number): void{
-    console.log("The id should be right")
-    console.log("Here is the number" + articleId)
     this.service.getById(articleId).subscribe({
       next: (article) => {
         this.article = article;
@@ -69,8 +65,6 @@ export class ArticleDetailsComponent {
   }
 
   setImage(article: Article): string{
-    //this.articleService.getById(article.id);
-    console.log("Here is the 64base encoding from the database" + article.image );
     if (article.image != null){
       return  "data:image/" + article.imageType + ";base64," + article.image;
     }

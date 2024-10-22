@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Your Cart</h1>
+  <!-- Check if the cart has any items -->
+  <div *ngIf="getCartContents().length > 0; else emptyCart">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Article Designation</th>
+        <th>Price per Unit</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Loop through the cart contents -->
+      <tr *ngFor="let item of getCartContents()">
+        <td>{{ item.article.designation }}</td>
+        <td>{{ item.article.price | currency }}</td>
+        <td>
+          <input
+            type="number"
+            [value]="item.quantity"
+            (input)="updateQuantity(item.article, $event)"
+            min="1"
+            class="form-control"
+            style="width: 80px;"
+          />
+        </td>
+        <td>{{ getOverallPrice(item.article.price, item.quantity) | currency }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeFromCart(item.article)">Remove</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-total">
+      <h3>Total: {{ calculateTotal() | currency }}</h3>
+    </div>
+
+    <button class="btn btn-warning" (click)="clearCart()">Clear Cart</button>
+
+    <button class="btn btn-success" (click)="purchaseCart()">Order Now</button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+</div>
