@@ -143,7 +143,6 @@ public class ArticleJdbcDao implements ArticleDao {
   private Article mapRow(ResultSet result, int rowNum) throws SQLException {
     return new Article(
             result.getLong("id"),
-
             result.getString("designation"),
             result.getString("description"),
             result.getInt("price"),
