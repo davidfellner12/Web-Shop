@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { debounceTime, Subject } from 'rxjs';
-import { Article, ArticleListDto, ArticleSearch } from 'src/app/dto/article';
+import { ArticleListDto, ArticleSearch } from 'src/app/dto/article';
 import { ArticleService } from 'src/app/service/article.service';
 import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
+
 
 @Component({
   selector: 'app-articles',
@@ -21,10 +22,10 @@ import { ErrorFormatterService } from 'src/app/service/error-formatter.service';
   styleUrl: './articles.component.scss'
 })
 export class ArticlesComponent implements OnInit {
-
   articles: ArticleListDto[] = [];
   searchParams: ArticleSearch = {};
   searchChangedObservable = new Subject<void>();
+
 
   constructor(private articleService: ArticleService,
               private errorFormatter: ErrorFormatterService,
@@ -55,7 +56,13 @@ export class ArticlesComponent implements OnInit {
     this.searchChangedObservable.next();
   }
 
-  addToCart(article: Article): void {
-    // TODO this is to be implemented
+  setImage(article: ArticleListDto): string{
+    //this.articleService.getById(article.id);
+    console.log("Here is the 64base encoding from the database" + article.image );
+    if (article.image != null){
+      return "data:image/" + article.imageType + ";base64," + article.image;
+    }
+    return '';
   }
+
 }

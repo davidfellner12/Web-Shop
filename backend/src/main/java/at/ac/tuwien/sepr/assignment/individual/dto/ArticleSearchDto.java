@@ -5,6 +5,7 @@ public record ArticleSearchDto(
         String description,
         Integer minPrice,
         Integer maxPrice,
-        String image
+        String image,
+        String imageType
 ) {
 }

@@ -31,12 +31,16 @@ public class ArticleValidator {
     public void validateForCreate (ArticleCreateDto dto) throws ValidationException, NotFoundException, ConflictException {
         List<String> validationErrors = validate(dto);
         List<String> conflictErrors = new ArrayList<>();
+        List<String> validationErrorsForImage = new ArrayList<>();
+        if (dto.image() != null) {
+            validationErrorsForImage = isValidImageType(dto.imageType(), dto.image());
+        }
 
         if (articleDao.designationExists(dto.designation())){
             conflictErrors.add("Article with given designation already exists");
         }
 
-        if (!validationErrors.isEmpty()) {
+        if (!validationErrors.isEmpty() || !validationErrorsForImage.isEmpty()) {
             throw new ValidationException("Validation of article for creation failed", validationErrors);
         }
         if (!conflictErrors.isEmpty()) {
@@ -49,7 +53,8 @@ public class ArticleValidator {
                 dto.designation(),
                 dto.description(),
                 dto.price(),
-                dto.image());
+                dto.image(),
+                dto.imageType());
         List<String> validationErrors = validate(toCheck);
         List<String> conflictErrors = new ArrayList<>();
         if (dto.id() == null) {
@@ -106,6 +111,16 @@ public class ArticleValidator {
 
         //TODO optional image validation
         return errorList;
+    }
+
+    private ArrayList<String> isValidImageType(String imageType, String image) {
+        ArrayList<String> validationErrors = new ArrayList<>();
+        if (imageType == null && image != null) {
+            validationErrors.add("Image type is null although image exists.");
+        } else if (image != null && !imageType.equals("png")) {
+            validationErrors.add("Image type '" + imageType + "' is not supported. Use PNG Image type instead.");
+        }
+        return validationErrors;
     }
 
     private boolean isValidDesignation(String designation){

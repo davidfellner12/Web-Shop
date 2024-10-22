@@ -13,5 +13,6 @@ CREATE TABLE IF NOT EXISTS articles
         designation VARCHAR(255) NOT NULL UNIQUE,
         description VARCHAR(255) NOT NULL,
         price       Integer      NOT NULL,
-        image       BLOB
+        image       BLOB,
+        image_type  VARCHAR(4)  
 );

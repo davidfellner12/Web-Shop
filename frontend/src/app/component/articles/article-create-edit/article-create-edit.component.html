@@ -11,7 +11,6 @@
 <form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
   <!-- Hidden submit element, to keep presses of enter key to trigger the cancel button -->
   <input type="submit" hidden="hidden"/>
-
   <div class="row">
     <!-- Name -->
     <div class="col-md-6 mb-3">
@@ -41,8 +40,8 @@
       <label class="form-label" for="image">Image</label>
 
       <!-- Display the stored image-->
-      <div *ngIf="article.image">
-        <img [src]="article.image" alt="Article Image" class="img-fluid mb-2" style="max-width: 100px; height: auto;"/>
+      <div *ngIf="currentPath">
+        <img [src]="currentPath" alt="Article Image" class="img-fluid mb-2" style="max-width: 100px; height: auto;"/>
       </div>
 
       <!--  new image upload -->

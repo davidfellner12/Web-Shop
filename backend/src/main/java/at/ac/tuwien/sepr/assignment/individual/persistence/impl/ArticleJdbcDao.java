@@ -42,11 +42,13 @@ public class ArticleJdbcDao implements ArticleDao {
           + " SET designation = ?"
           + "  , description = ?"
           + "  , price = ?"
-          + "  , image = ?";
+          + "  , image = ?"
+          + "  , image_type = ?";
 
   private static final String SQL_SELECT_BY_DESIGNATION = "SELECT * FROM " + TABLE_NAME + " WHERE designation = ?";
   private static final String SQL_SELECT_ALL_ARTICLES = "SELECT * FROM " + TABLE_NAME + " WHERE 1=1";
   private static final String SQL_SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
+  private static final String SQL_SELECT_IMAGE_BY_ID = "SELECT image FROM " + TABLE_NAME + " WHERE id = ?";
   private static final String SQL_UPDATE = "UPDATE " + TABLE_NAME
           + " SET designation = ?"
           + "  , description = ?"
@@ -66,22 +68,23 @@ public class ArticleJdbcDao implements ArticleDao {
     public Article create(ArticleCreateDto dto) throws ConflictException {
       LOG.trace("create({})", dto);
       KeyHolder keyHolder = new GeneratedKeyHolder();
-      System.out.println("Here is everything we need" + dto.image() +  dto.designation() +  dto.description());
+      System.out.println("Here is the dto before encoding" + dto);
       try {
         jdbcTemplate.update(connection -> {
           PreparedStatement ps = connection.prepareStatement(SQL_REGISTER_ARTICLE, Statement.RETURN_GENERATED_KEYS);
           ps.setString(1, dto.designation());
           ps.setString(2, dto.description());
           ps.setInt(3, dto.price());
-          byte[] imageBytes = Base64.getDecoder().decode(dto.image());
-          ps.setBytes(4, imageBytes);
+          ps.setString(4, dto.image());
+          ps.setString(5, dto.imageType());
           return ps;
         }, keyHolder);
       } catch (DataAccessException e) {
         throw new ConflictException("Article could not be created in the database", List.of(e.getMessage()));
       }
       Long id = keyHolder.getKey().longValue();
-      return new Article(id, dto.designation(), dto.description(), dto.price(), dto.image());
+      System.out.println("Here is the dto after encoding" + dto);
+      return new Article(id, dto.designation(), dto.description(), dto.price(), dto.image(), dto.imageType());
     }
 
   @Override
@@ -107,7 +110,6 @@ public class ArticleJdbcDao implements ArticleDao {
     } else if (dto.maxPrice() != null && dto.minPrice() == null) {
       sqlQuery.append(" AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
     }
-   //TODO: Searching for image equality?
     String sql = sqlQuery.toString();
     return jdbcTemplate.query(sql, this::mapRow);
   }
@@ -135,7 +137,7 @@ public class ArticleJdbcDao implements ArticleDao {
     if (updated == 0) {
       throw new NotFoundException(("Could not update customer with ID %d,"
               + "because it does not exist").formatted(dto.id()));
-    } return new Article(dto.id(), dto.designation(), dto.description(), dto.price(), dto.image());
+    } return new Article(dto.id(), dto.designation(), dto.description(), dto.price(), dto.image(), dto.imageType());
   }
 
   private Article mapRow(ResultSet result, int rowNum) throws SQLException {
@@ -144,7 +146,8 @@ public class ArticleJdbcDao implements ArticleDao {
             result.getString("designation"),
             result.getString("description"),
             result.getInt("price"),
-            result.getString("image")
+            result.getString("image"),
+            result.getString("image_type")
     );
   }
 }

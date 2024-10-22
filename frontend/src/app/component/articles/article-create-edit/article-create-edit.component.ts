@@ -31,8 +31,13 @@ export class ArticleCreateEditComponent implements OnInit{
     designation: '',
     description: '',
     price: 0,
-    image: ''
+    image: '',
+    imageType: ''
   };
+  currentPath  = "";
+
+
+
 
   constructor(private service: ArticleService,
               private errorFormatter: ErrorFormatterService,
@@ -74,6 +79,7 @@ export class ArticleCreateEditComponent implements OnInit{
         this.mode = ArticleCreateEditMode.edit;
         console.log(+id);
         this.loadArticle(+id);
+
       } else {
         this.mode = ArticleCreateEditMode.create;
       }
@@ -86,6 +92,7 @@ export class ArticleCreateEditComponent implements OnInit{
     this.service.getById(articleId).subscribe({
       next: (article) => {
         this.article = article;
+        this.currentPath = "data:image/" + article.imageType + ";base64," + article.image;
       },
       error: (err) => {
         console.error("Error loading article", err);
@@ -112,8 +119,16 @@ export class ArticleCreateEditComponent implements OnInit{
       }
       observable.subscribe({
         next: () => {
-          this.notification.success(`Article ${this.article.designation}  successfully created!`);
-          this.location.back();
+          switch(this.mode){
+            case ArticleCreateEditMode.create:
+              this.notification.success(`Article ${this.article.designation}  successfully created!`);
+              this.location.back();
+              break;
+            case ArticleCreateEditMode.edit:
+              this.notification.success(`Article ${this.article.designation}  successfully edited!`);
+              this.location.back();
+              break;
+          }
         },
         error: error => {
           console.error('Error creating article', error);
@@ -130,13 +145,17 @@ export class ArticleCreateEditComponent implements OnInit{
       console.log("Selected input file: " +file);
       const reader = new FileReader();
       reader.onload = () => {
-        const baseString = reader.result as string;
-        this.article.image = baseString.replace(/^data:image\/(png);base64,/, '');
+        this.currentPath = reader.result as string;
+        this.article.imageType = this.currentPath.substring(11,14);
+        this.article.image = this.currentPath.replace("data:image/" + this.article.imageType + ";base64,", "");
         console.log("Base64 encoded file: ", this.article.image);
+        console.log("Image type: ", this.article.imageType);
       };
       reader.readAsDataURL(file);
     }
   }
+
+
 
   /*
   delete(): void {
