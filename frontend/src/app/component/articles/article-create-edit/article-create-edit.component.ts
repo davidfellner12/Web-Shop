@@ -7,6 +7,7 @@ import {Location, CommonModule} from "@angular/common";
 import {ToastrService} from "ngx-toastr";
 import {ArticleService} from "../../../service/article.service";
 import {Observable} from "rxjs";
+import {CartService} from "../../../service/cart.service";
 
 export enum ArticleCreateEditMode{
   edit,
@@ -36,17 +37,14 @@ export class ArticleCreateEditComponent implements OnInit{
   };
   currentPath  = "";
 
-
-
-
   constructor(private service: ArticleService,
+              private cartService: CartService,
               private errorFormatter: ErrorFormatterService,
               private router: Router,
               private route: ActivatedRoute,
               private location: Location,
               private notification: ToastrService) {
   }
-
 
   public get header(): string {
     switch (this.mode) {
@@ -155,8 +153,9 @@ export class ArticleCreateEditComponent implements OnInit{
     }
   }
 
-
-
+  addToCart(article: Article, quantity: number): void {
+    this.cartService.setItemWithArticleEntity(article,quantity);
+  }
   /*
   delete(): void {
     if (!this.article.id){

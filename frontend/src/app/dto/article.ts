@@ -8,7 +8,7 @@ export interface Article {
 }
 
 export interface ArticleListDto {
-  id: number;
+  id?: number;
   designation: string;
   description: string;
   price: number;
