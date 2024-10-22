@@ -9,13 +9,15 @@ import {
   ArticleCreateEditComponent,
   ArticleCreateEditMode
 } from "./component/articles/article-create-edit/article-create-edit.component";
+import {ArticleDetailsComponent} from "./component/articles/article-details/article-details.component";
 
 export const routes: Routes = [
   {
     path: 'articles', children: [
       { path: '', component: ArticlesComponent },
       { path: 'create', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.create}},
-      { path: 'edit/:id', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.edit}}
+      { path: 'edit/:id', component: ArticleCreateEditComponent, data: {mode: ArticleCreateEditMode.edit}},
+      { path: 'details/:id', component: ArticleDetailsComponent}
     ]
   },
   {
