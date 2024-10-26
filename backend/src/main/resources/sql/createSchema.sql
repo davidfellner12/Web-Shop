@@ -16,3 +16,12 @@ CREATE TABLE IF NOT EXISTS articles
         image       BLOB,
         image_type  VARCHAR(4)  
 );
+
+CREATE TABLE IF NOT EXISTS orders
+(
+    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    customerId  BIGINT,
+    dateOfPurchase        TIMESTAMP NOT NULL,
+    price       INTEGER NOT NULL,
+    FOREIGN KEY (customerId) REFERENCES CUSTOMERS(id) ON DELETE CASCADE
+);

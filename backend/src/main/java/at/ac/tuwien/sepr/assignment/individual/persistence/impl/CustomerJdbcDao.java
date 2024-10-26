@@ -127,6 +127,7 @@ public class CustomerJdbcDao implements CustomerDao {
         return ps;
       }, keyHolder);
     } catch (DataAccessException e) {
+        LOG.error("Database access error occurred while creating customer: {}", e.getMessage(), e);
         throw new ConflictException("Customer could not be created in the database", List.of(e.getMessage()));
     }
     Long id = keyHolder.getKey().longValue();

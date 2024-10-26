@@ -80,6 +80,7 @@ public class ArticleJdbcDao implements ArticleDao {
           return ps;
         }, keyHolder);
       } catch (DataAccessException e) {
+        LOG.error("Database access error occurred while creating article: {}", e.getMessage(), e);
         throw new ConflictException("Article could not be created in the database", List.of(e.getMessage()));
       }
       Long id = keyHolder.getKey().longValue();

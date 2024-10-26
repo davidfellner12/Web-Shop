@@ -11,7 +11,13 @@
   } from "./component/articles/article-create-edit/article-create-edit.component";
   import {ArticleDetailsComponent} from "./component/articles/article-details/article-details.component";
   import {CartComponent} from "./component/cart/cart.component";
+  import {OrdersComponent} from "./component/orders/orders.component";
   export const routes: Routes = [
+    {
+      path: 'orders', children: [
+        {path: '', component: OrdersComponent}
+      ]
+    },
     {
       path: 'cart', children: [
         { path: '', component: CartComponent }

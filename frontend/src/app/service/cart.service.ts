@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { ArticleListDto } from "../dto/article";
 import { Article } from "../dto/article";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  cartSaving: Map<ArticleListDto, number> = new Map<ArticleListDto, number>();
 
-  constructor() {}
+
+  constructor(private http: HttpClient) {
+  }
 
   /**
    * Store a value in session storage.
@@ -49,17 +53,17 @@ export class CartService {
 
     const existingQuantity = this.getItem(correctKey);
 
-      // Increment the existing quantity
-      if (correctKey.id != undefined){
-        if (existingQuantity !== null) {
-          this.storeItem(correctKey.id, correctKey, existingQuantity + value);
-          console.log(`Incremented quantity for article ID ${key.id}`);
-        }else {
-          // Store a new article
-          this.storeItem(correctKey.id, correctKey, value);
-          console.log(`Set new article with ID ${key.id}`);
-        }
+    // Increment the existing quantity
+    if (correctKey.id != undefined) {
+      if (existingQuantity !== null) {
+        this.storeItem(correctKey.id, correctKey, existingQuantity + value);
+        console.log(`Incremented quantity for article ID ${key.id}`);
+      } else {
+        // Store a new article
+        this.storeItem(correctKey.id, correctKey, value);
+        console.log(`Set new article with ID ${key.id}`);
       }
+    }
   }
 
   /**
@@ -75,7 +79,7 @@ export class CartService {
     }
 
     // Store both the article and its quantity as a JSON object
-    const item = { article, quantity };
+    const item = {article, quantity};
     sessionStorage.setItem(id.toString(), JSON.stringify(item));
   }
 

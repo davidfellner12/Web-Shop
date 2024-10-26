@@ -8,6 +8,20 @@ import { CommonModule } from '@angular/common';
 import { ArticleListDto } from "../../dto/article";
 import {ToastrService} from "ngx-toastr";
 import {CustomerService} from "../../service/customer.service";
+import {Order} from "../../dto/order";
+import {OrderService} from "../../service/order.service"
+//This is the interface for the customerCart for saving in orders
+interface CustomerCart{
+  customerId: number,
+  cart: Map<ArticleListDto, number>;
+}
+
+export interface OrderArticle {
+  orderId: number,
+  articleId: number,
+  quantity: number,
+  totalPrice: number
+}
 
 @Component({
   selector: 'app-cart',
@@ -21,14 +35,23 @@ import {CustomerService} from "../../service/customer.service";
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+
 export class CartComponent {
   cart: Map<ArticleListDto, number> = new Map<ArticleListDto, number>();
+  customerCarts: CustomerCart[] = [];
+  order: Order = {
+    name: '',
+    customerId: 0,
+    dateOfPurchase: '',
+    totalPrice: 0
+  };
 
   constructor(
     private cartService: CartService,
     private customerService: CustomerService,
+    private orderService: OrderService,
     private articleService: ArticleService,
-  private notification: ToastrService
+    private notification: ToastrService
   ) {
     this.loadCart();
   }
@@ -41,12 +64,18 @@ export class CartComponent {
 
   clearCart(): void {
     this.cart.clear();
-    // Clear session storage
     this.cartService.clear();
   }
 
   loadCart(): void {
     this.cart = this.cartService.getAllSessionStorageItems();
+  }
+
+  getCurrentDate() {
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
+    const formattedTime = `${String(currentDate.getHours()).padStart(2, '0')}:${String(currentDate.getMinutes()).padStart(2, '0')}:${String(currentDate.getSeconds()).padStart(2, '0')}`;
+    return `${formattedDate} ${formattedTime}`;
   }
 
   getCartContents(): { article: ArticleListDto, quantity: number }[] {
@@ -78,10 +107,17 @@ export class CartComponent {
     if (this.customerService.loggedInCustomer == undefined){
       this.notification.error("No customer is logged in for purchase")
     } else {
+      this.cartService.cartSaving = new Map<ArticleListDto, number>(this.cart);
+      const customerId: number = this.customerService.loggedInCustomer.id;
+
+      const customerCartToSafe: CustomerCart = {
+        customerId,
+        cart: this.cartService.cartSaving,
+      };
+      this.customerCarts.push(customerCartToSafe);
       this.clearCart();
       this.notification.success('Basket was successfully bought!');
     }
   }
-
   protected readonly Object = Object;
 }
