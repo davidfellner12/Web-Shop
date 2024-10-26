@@ -43,6 +43,7 @@ public interface ArticleService {
      *
      * @param id the id for the article to search
      * @return a Stream of found ArticleDetailDtos
+     * @throws NotFoundException if the article with the specified id is not found
      */
     ArticleDetailDto get(Long id) throws NotFoundException;
 

@@ -24,6 +24,7 @@ import org.springframework.web.servlet.View;
 /**
  * Validator used to validate customer related objects.
  */
+//TODO LOG warn
 @Component
 public class CustomerValidator {
   private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

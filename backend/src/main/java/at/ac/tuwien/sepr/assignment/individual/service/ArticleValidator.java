@@ -37,13 +37,16 @@ public class ArticleValidator {
         }
 
         if (articleDao.designationExists(dto.designation())){
+            LOG.warn("Article with given designation already exists");
             conflictErrors.add("Article with given designation already exists");
         }
 
         if (!validationErrors.isEmpty() || !validationErrorsForImage.isEmpty()) {
+            LOG.warn("Validation of article for creation failed");
             throw new ValidationException("Validation of article for creation failed", validationErrors);
         }
         if (!conflictErrors.isEmpty()) {
+            LOG.warn("Creation of article contains conflicts");
             throw new ConflictException("Creation of article contains conflicts", conflictErrors);
         }
     }
@@ -58,16 +61,20 @@ public class ArticleValidator {
         List<String> validationErrors = validate(toCheck);
         List<String> conflictErrors = new ArrayList<>();
         if (dto.id() == null) {
+            LOG.warn("NO ID for updating given");
             validationErrors.add("No ID for updating given");
         }
         if (!(articleDao.designationExists(dto.designation()))){
+            LOG.warn("Article with given designation does not exist");
             conflictErrors.add("Designation for specific article does not exist");
         }
         if (!validationErrors.isEmpty()) {
-            throw new ValidationException("Validation of customer for update failed", validationErrors);
+            LOG.warn("Validation of article for creation failed");
+            throw new ValidationException("Validation of article for update failed", validationErrors);
         }
         if (!conflictErrors.isEmpty()) {
-            throw new ConflictException("Update for customer contains conflicts", conflictErrors);
+            LOG.warn("Validation of article contains conflicts");
+            throw new ConflictException("Update for article contains conflicts", conflictErrors);
         }
     }
 
@@ -75,37 +82,48 @@ public class ArticleValidator {
         List<String> errorList = new ArrayList<>();
 
         if (dto == null) {
+            LOG.warn("Article not found");
             throw new NotFoundException("Article not found");
         }
         if (dto.designation() == null || dto.designation().isEmpty()) {
+            LOG.warn("designation is required");
             errorList.add("designation is required");
         }
         if (dto.description() == null || dto.description().isEmpty()) {
+            LOG.warn("description is required");
             errorList.add("description is required");
         }
         if (dto.price() == null || dto.price().describeConstable().isEmpty()){
+            LOG.warn("price is required");
             errorList.add("price is required");
         }
         if (dto.designation().length() > 256){
+            LOG.warn("the designation can only have 256 charaterecs");
             errorList.add("the designation can only have 256 characters");
         }
         if (dto.description().length() > 256){
+            LOG.warn("the description can only have 256 charaterecs");
             errorList.add("the description can only have 255 characters");
         }
         if (dto.price() < 0){
+            LOG.warn("price can not be negative");
             errorList.add("price can not be negative");
         }
         if (!(isValidDesignation(dto.designation()))){
+            LOG.warn("designation can only have alphanumeric characters");
             errorList.add("designation can only have alphanumeric characters");
         }
         if ((!isValidDescription(dto.description()))){
+            LOG.warn("description can only have alphanumeric characters");
             errorList.add("description can only have alphanumeric characters");
         }
 
         if (!(dto.price() instanceof Integer)){
+            LOG.warn("price can only be in valid integer format");
             errorList.add("price can only be in valid integer format");
         }
         if (!isValidPrice(dto.price())){
+            LOG.warn("The format of the price is not correct or exceeds the limit of 999999999.99");
             errorList.add("The format of the price is not correct or exceeds the limit of 999999999.99");
         }
 

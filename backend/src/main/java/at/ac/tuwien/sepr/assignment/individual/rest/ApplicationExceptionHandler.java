@@ -1,6 +1,7 @@
 package at.ac.tuwien.sepr.assignment.individual.rest;
 
 import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
+import at.ac.tuwien.sepr.assignment.individual.exception.FatalException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import java.lang.invoke.MethodHandles;
 import org.slf4j.Logger;
@@ -32,5 +33,13 @@ public class ApplicationExceptionHandler {
   public ConflictErrorRestDto handleConflictException(ConflictException e) {
     LOG.warn("Terminating request processing with status 409 due to {}: {}", e.getClass().getSimpleName(), e.getMessage());
     return new ConflictErrorRestDto(e.summary(), e.errors());
+  }
+
+  @ExceptionHandler
+  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+  @ResponseBody
+  public FatalErrorRestDto handleFatalException(FatalException e) {
+    LOG.error("Terminating request processing with status 500 due to {}: {}", e.getClass().getSimpleName(), e.getMessage(), e);
+    return new FatalErrorRestDto("An unexpected error occurred. Please try again later.");
   }
 }

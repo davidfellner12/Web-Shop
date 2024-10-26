@@ -12,7 +12,7 @@ public interface OrderDao {
      * the data given in {@code dto}
      * in the persistent data store.
      *
-     * @param dto dto containing data to create the new Article
+     * @param dto dto containing data to create the new Order
      * @return the created article
      * @throws ConflictException thrown if the input data types do not match the expected input
      */

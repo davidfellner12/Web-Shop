@@ -33,6 +33,7 @@ public class CustomerEndpointTest extends TestBase {
   private WebApplicationContext webAppContext;
   private MockMvc mockMvc;
 
+
   @Autowired
   ObjectMapper objectMapper;
 
@@ -65,5 +66,9 @@ public class CustomerEndpointTest extends TestBase {
     assertThat(customerResult)
         .hasSize(10);
   }
+
+
+
+
 
 }

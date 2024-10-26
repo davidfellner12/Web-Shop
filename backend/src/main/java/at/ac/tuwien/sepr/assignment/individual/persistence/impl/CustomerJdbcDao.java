@@ -10,15 +10,11 @@ import at.ac.tuwien.sepr.assignment.individual.exception.FatalException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.persistence.CustomerDao;
 import java.lang.invoke.MethodHandles;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -109,7 +105,14 @@ public class CustomerJdbcDao implements CustomerDao {
       System.out.println(newMaxDate);
     }
     String sql = sqlQuery.toString();
-    return jdbcTemplate.query(sql, this::mapRow);
+
+    try{
+      return jdbcTemplate.query(sql, this::mapRow);
+    } catch(DataAccessException e) {
+      LOG.error("Database access error occurred while searching for customer: {}", e.getMessage(), e);
+      throw new FatalException("Database access error occurred while searching for customer: {} " + e.getMessage());
+    }
+
   }
 
   @Override
@@ -122,13 +125,13 @@ public class CustomerJdbcDao implements CustomerDao {
         PreparedStatement ps = connection.prepareStatement(SQL_REGISTER_CUSTOMER, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1, customerCreateDto.firstName());
         ps.setString(2, customerCreateDto.lastName());
-        ps.setDate(3, java.sql.Date.valueOf(customerCreateDto.dateOfBirth()));
+        ps.setDate(3, Date.valueOf(customerCreateDto.dateOfBirth()));
         ps.setString(4, customerCreateDto.email());
         return ps;
       }, keyHolder);
     } catch (DataAccessException e) {
         LOG.error("Database access error occurred while creating customer: {}", e.getMessage(), e);
-        throw new ConflictException("Customer could not be created in the database", List.of(e.getMessage()));
+        throw new FatalException("Database access error occurred while creating customer: {} " + e.getMessage());
     }
     Long id = keyHolder.getKey().longValue();
     return new Customer(id, customerCreateDto.firstName(), customerCreateDto.lastName(), customerCreateDto.dateOfBirth(), customerCreateDto.email());
@@ -136,7 +139,14 @@ public class CustomerJdbcDao implements CustomerDao {
 
   @Override
   public boolean emailExists(String email) {
-    List<Customer> customers = jdbcTemplate.query(SQL_SELECT_BY_EMAIL, this::mapRow, email);
+    List<Customer> customers = List.of();
+    try{
+      customers = jdbcTemplate.query(SQL_SELECT_BY_EMAIL, this::mapRow, email);
+    } catch (DataAccessException e) {
+      LOG.error("Database access error while checking for email: {}", e.getMessage(), e);
+      throw new FatalException("Database access error while checkign for email: {} " + e.getMessage());
+    }
+
     return !customers.isEmpty();
   }
 
@@ -144,11 +154,20 @@ public class CustomerJdbcDao implements CustomerDao {
   public Customer getOneById(Long id) throws NotFoundException{
     LOG.trace("getOneById({})", id);
 
-    List<Customer> result = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+    List<Customer> result = null;
+    try{
+      result = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+    } catch(DataAccessException e) {
+      LOG.error("Database access error while getting customer by id: {}", e.getMessage(), e);
+      throw new FatalException("Database access error while getting customer by id: {} " + e.getMessage());
+    }
+
     if (result == null || result.isEmpty()) {
+      LOG.warn("Customer with id {} not found", id);
       throw new NotFoundException(("Could not found customer with ID %d," + "because it does not exist").formatted(id));
     }
     if (result.size() > 1) {
+      LOG.error("To many customers with ID %d found");
       throw new FatalException("To many customers with ID %d found".formatted(id));
     }
     return result.getFirst();
@@ -158,16 +177,24 @@ public class CustomerJdbcDao implements CustomerDao {
   @Override
   public Customer update(CustomerUpdateDto dto) throws NotFoundException {
     LOG.trace("update({})", dto);
-    int updated = jdbcTemplate.update(SQL_UPDATE,
-        dto.firstName(),
-        dto.lastName(),
-        dto.dateOfBirth(),
-        dto.email(),
-        dto.id());
-    if (updated == 0) {
-      throw new NotFoundException(("Could not update customer with ID %d,"
-          + "because it does not exist").formatted(dto.id()));
+
+    try{
+      int updated = jdbcTemplate.update(SQL_UPDATE,
+              dto.firstName(),
+              dto.lastName(),
+              dto.dateOfBirth(),
+              dto.email(),
+              dto.id());
+      if (updated == 0) {
+        LOG.warn("Could not update customer with ID %d");
+        throw new NotFoundException(("Could not update customer with ID %d,"
+                + "because it does not exist").formatted(dto.id()));
+      }
+    } catch (DataAccessException e) {
+      LOG.error("Database access error while updating customer: {}", e.getMessage(), e);
+      throw new FatalException("Database access error while updating customer: {} " + e.getMessage());
     }
+
     return new Customer(
         dto.id(),
         dto.lastName(),
@@ -180,12 +207,19 @@ public class CustomerJdbcDao implements CustomerDao {
   @Override
   public void delete(Long id) throws NotFoundException {
     LOG.trace("delete({})", id);
-    List<Customer> customers = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+
+    List<Customer> customers = List.of();
+    try{
+      customers = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
+    } catch (DataAccessException e) {
+      LOG.error("Database access error while deleting customer: {}", e.getMessage(), e);
+    }
 
     if (customers.isEmpty() || customers == null) {
+      LOG.warn("Customer with id {} not found", id);
       throw new NotFoundException("Could not delete customer with ID %d".formatted(id) + "because it does not exist");
     }
-    jdbcTemplate.update(SQL_DELETE_BY_ID, id);
+    //jdbcTemplate.update(SQL_DELETE_BY_ID, id);
   }
 
   private Customer mapRow(ResultSet result, int rowNum) throws SQLException {

@@ -25,13 +25,13 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.rowset.serial.SerialBlob;
+import javax.xml.crypto.Data;
 
 /**
  * Implementation of the ArticleDao interface using JDBC.
  */
 @Repository
 public class ArticleJdbcDao implements ArticleDao {
-  //TODO: Image handling
   private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   public static final String TABLE_NAME = "articles";
@@ -81,39 +81,52 @@ public class ArticleJdbcDao implements ArticleDao {
         }, keyHolder);
       } catch (DataAccessException e) {
         LOG.error("Database access error occurred while creating article: {}", e.getMessage(), e);
-        throw new ConflictException("Article could not be created in the database", List.of(e.getMessage()));
+        throw new FatalException("Database access error occurred while creating article: {} " + e.getMessage());
       }
       Long id = keyHolder.getKey().longValue();
-      System.out.println("Here is the dto after encoding" + dto);
       return new Article(id, dto.designation(), dto.description(), dto.price(), dto.image(), dto.imageType());
     }
 
   @Override
-  public boolean designationExists(String designation){
-    List<Article> articles = jdbcTemplate.query(SQL_SELECT_BY_DESIGNATION, this::mapRow, designation);
+  public boolean designationExists(String designation) {
+    List<Article> articles;
+    try{
+       articles = jdbcTemplate.query(SQL_SELECT_BY_DESIGNATION, this::mapRow, designation);
+    } catch (DataAccessException e) {
+      LOG.error("Database access error occurred while reading designation: {}", e.getMessage(), e);
+      throw new FatalException("Database access error occurred while designating email for article: {} " + e.getMessage());
+    }
     return !articles.isEmpty();
   }
 
   @Override
-  public Collection<Article> search(ArticleSearchDto dto) {
+  public Collection<Article> search(ArticleSearchDto dto){
     LOG.trace("search({})", dto);
-    StringBuilder sqlQuery = new StringBuilder(SQL_SELECT_ALL_ARTICLES);
-    if (dto.name() != null) {
-      sqlQuery.append(" AND LOWER(designation) = LOWER('" + dto.name() + "')");
+
+      StringBuilder sqlQuery = new StringBuilder(SQL_SELECT_ALL_ARTICLES);
+      if (dto.name() != null) {
+        sqlQuery.append(" AND LOWER(designation) = LOWER('" + dto.name() + "')");
+      }
+      if (dto.description() != null) {
+        sqlQuery.append(" AND LOWER(description) = LOWER('" + dto.description() + "')");
+      }
+      if (dto.minPrice() != null && dto.maxPrice() != null) {
+        sqlQuery.append(" AND LOWER(price) >= LOWER('" + dto.minPrice() + "') AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
+      } else if (dto.minPrice() != null && dto.maxPrice() == null) {
+        sqlQuery.append(" AND LOWER(price) >= LOWER('" + dto.minPrice() + "')");
+      } else if (dto.maxPrice() != null && dto.minPrice() == null) {
+        sqlQuery.append(" AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
+      }
+      String sql = sqlQuery.toString();
+
+      try{
+        return jdbcTemplate.query(sql, this::mapRow);
+      } catch(DataAccessException e) {
+        LOG.error("Database access error occurred while searching for article: {}", e.getMessage(), e);
+        throw new FatalException("Database access error occurred while searching for article: {} " + e.getMessage());
+      }
     }
-    if (dto.description() != null) {
-      sqlQuery.append(" AND LOWER(description) = LOWER('" + dto.description() + "')");
-    }
-    if (dto.minPrice() != null && dto.maxPrice() != null) {
-      sqlQuery.append(" AND LOWER(price) >= LOWER('" + dto.minPrice() + "') AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
-    } else if (dto.minPrice() != null && dto.maxPrice() == null) {
-      sqlQuery.append(" AND LOWER(price) >= LOWER('" + dto.minPrice() + "')");
-    } else if (dto.maxPrice() != null && dto.minPrice() == null) {
-      sqlQuery.append(" AND LOWER(price) <= LOWER('" + dto.maxPrice() + "')");
-    }
-    String sql = sqlQuery.toString();
-    return jdbcTemplate.query(sql, this::mapRow);
-  }
+
 
   @Override
   public Article get(Long id) throws NotFoundException {
@@ -121,9 +134,11 @@ public class ArticleJdbcDao implements ArticleDao {
     List<Article> result = jdbcTemplate.query(SQL_SELECT_BY_ID, this::mapRow, id);
 
     if (result.size() > 1) {
+      LOG.warn("To many articles with ID %d found".formatted(id));
       throw new FatalException("To many articles with ID %d found".formatted(id));
     }
     if (result == null || result.isEmpty()) {
+      LOG.warn(("Could not found article with ID %d," + "because it does not exist").formatted(id));
       throw new NotFoundException(("Could not found article with ID %d," + "because it does not exist").formatted(id));
     }
     return result.getFirst();
@@ -132,9 +147,16 @@ public class ArticleJdbcDao implements ArticleDao {
   @Override
   public Article update(ArticleUpdateDto dto) throws NotFoundException {
     LOG.trace("update({})", dto);
-    int updated = jdbcTemplate.update(SQL_UPDATE,
-             dto.designation(), dto.description(), dto.price(), dto.image(), dto.id()
-            );
+    int updated = 0;
+    try{
+      updated = jdbcTemplate.update(SQL_UPDATE,
+              dto.designation(), dto.description(), dto.price(), dto.image(), dto.id()
+      );
+    } catch(DataAccessException e) {
+      LOG.error("Database access error occurred while updating article: {}", e.getMessage(), e);
+      throw new FatalException("Database access error occurred while updating article: {}" + e.getMessage());
+    }
+
     if (updated == 0) {
       throw new NotFoundException(("Could not update customer with ID %d,"
               + "because it does not exist").formatted(dto.id()));
