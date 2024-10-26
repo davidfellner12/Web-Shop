@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="col">
+    <h1>Search articles</h1>
+  </div>
+
+
+  <div class="col-auto d-flex align-items-center">
+    <!-- Submit Button (Search) -->
+    <button (click)="getOrders()" class="btn btn-primary me-2">
+      <i class="bi bi-search"></i>
+      Search
+    </button>
+
+
+    <!-- New Article Button -->
+    <a aria-label="New article" class="btn btn-success" routerLink="create">
+      <i class="bi bi-plus-lg"></i>
+      New article
+    </a>
+  </div>
+</div>
+
+
+<form (ngSubmit)="getOrders()">
+  <!-- Hidden Submit Button -->
+  <input hidden="hidden" type="submit"/>
+
+
+  <div class="row">
+
+    <!-- Buyer Name -->
+    <div class="col-md-3">
+      <label class="form-label" for="name">Buyer Name</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.name" class="form-control" id="name"
+             name="name" placeholder="Enter buyer name"
+             type="text"/>
+    </div>
+
+    <!-- Date of Birth (Earliest) -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="dateOfPurchaseEarliest">Born after</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.dateOfPurchaseEarliest" class="form-control"
+             id="dateOfPurchaseEarliest" name="dateOfPurchaseEarliest" type="date"/>
+    </div>
+
+    <!-- Date of Birth (Latest) -->
+    <div class="col-md-3 mb-3">
+      <label class="form-label" for="dateOfPurchaseLatest">Born after</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.dateOfPurchaseLatest" class="form-control"
+             id="dateOfPurchaseLatest" name="dateOfPurchaseLatest" type="date"/>
+    </div>
+
+
+    <!-- Description -->
+    <div class="col-md-3">
+      <label class="form-label" for="description">Article name</label>
+      <input (ngModelChange)="searchChanged()" [(ngModel)]="searchParams.designation" class="form-control"
+             id="description" name="description"
+             placeholder="Enter article name" type="text"/>
+    </div>
+  </div>
+</form>
+
+
+<div class="mt-3">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Buyer Name</th>
+      <th>Ordered Date</th>
+      <th>Total Price</th>
+      <th class="min-width">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (order of orders; track order) {
+        <tr class="align-middle">
+          <td>{{ order.name }}</td>
+
+          <td>{{ order.dateOfPurchase }}</td>
+          <td>{{ order.totalPrice |  currency}}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button id="infoButton" onclick="handleButtonClick(order)" class="btn btn-sm responsive-info-button">
+                <i class="bi bi-info"></i>
+              </button>
+            </div>
+            <div id="contentDisplay" style="display: none;">
+              <!-- This content will be shown when the button is clicked -->
+              <p>This is the specific HTML format displayed after the button click.</p>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+
+
