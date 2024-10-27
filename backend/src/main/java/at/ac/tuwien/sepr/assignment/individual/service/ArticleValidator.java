@@ -28,7 +28,7 @@ public class ArticleValidator {
         this.error = error;
     }
 
-    public void validateForCreate (ArticleCreateDto dto) throws ValidationException, NotFoundException, ConflictException {
+    public void validateForCreate(ArticleCreateDto dto) throws ValidationException, NotFoundException, ConflictException {
         List<String> validationErrors = validate(dto);
         List<String> conflictErrors = new ArrayList<>();
         List<String> validationErrorsForImage = new ArrayList<>();
@@ -36,7 +36,7 @@ public class ArticleValidator {
             validationErrorsForImage = isValidImageType(dto.imageType(), dto.image());
         }
 
-        if (articleDao.designationExists(dto.designation())){
+        if (articleDao.designationExists(dto.designation())) {
             LOG.warn("Article with given designation already exists");
             conflictErrors.add("Article with given designation already exists");
         }
@@ -51,7 +51,7 @@ public class ArticleValidator {
         }
     }
 
-    public void validateForUpdate (ArticleUpdateDto dto ) throws ValidationException, NotFoundException, ConflictException {
+    public void validateForUpdate(ArticleUpdateDto dto) throws ValidationException, NotFoundException, ConflictException {
         ArticleCreateDto toCheck = new ArticleCreateDto(
                 dto.designation(),
                 dto.description(),
@@ -64,7 +64,7 @@ public class ArticleValidator {
             LOG.warn("NO ID for updating given");
             validationErrors.add("No ID for updating given");
         }
-        if (!(articleDao.designationExists(dto.designation()))){
+        if (!(articleDao.designationExists(dto.designation()))) {
             LOG.warn("Article with given designation does not exist");
             conflictErrors.add("Designation for specific article does not exist");
         }
@@ -78,7 +78,7 @@ public class ArticleValidator {
         }
     }
 
-    private List<String> validate (ArticleCreateDto dto) throws NotFoundException {
+    private List<String> validate(ArticleCreateDto dto) throws NotFoundException {
         List<String> errorList = new ArrayList<>();
 
         if (dto == null) {
@@ -93,36 +93,36 @@ public class ArticleValidator {
             LOG.warn("description is required");
             errorList.add("description is required");
         }
-        if (dto.price() == null || dto.price().describeConstable().isEmpty()){
+        if (dto.price() == null || dto.price().describeConstable().isEmpty()) {
             LOG.warn("price is required");
             errorList.add("price is required");
         }
-        if (dto.designation().length() > 256){
+        if (dto.designation().length() > 256) {
             LOG.warn("the designation can only have 256 charaterecs");
             errorList.add("the designation can only have 256 characters");
         }
-        if (dto.description().length() > 256){
+        if (dto.description().length() > 256) {
             LOG.warn("the description can only have 256 charaterecs");
             errorList.add("the description can only have 255 characters");
         }
-        if (dto.price() < 0){
+        if (dto.price() < 0) {
             LOG.warn("price can not be negative");
             errorList.add("price can not be negative");
         }
-        if (!(isValidDesignation(dto.designation()))){
+        if (!(isValidDesignation(dto.designation()))) {
             LOG.warn("designation can only have alphanumeric characters");
             errorList.add("designation can only have alphanumeric characters");
         }
-        if ((!isValidDescription(dto.description()))){
+        if ((!isValidDescription(dto.description()))) {
             LOG.warn("description can only have alphanumeric characters");
             errorList.add("description can only have alphanumeric characters");
         }
 
-        if (!(dto.price() instanceof Integer)){
+        if (!(dto.price() instanceof Integer)) {
             LOG.warn("price can only be in valid integer format");
             errorList.add("price can only be in valid integer format");
         }
-        if (!isValidPrice(dto.price())){
+        if (!isValidPrice(dto.price())) {
             LOG.warn("The format of the price is not correct or exceeds the limit of 999999999.99");
             errorList.add("The format of the price is not correct or exceeds the limit of 999999999.99");
         }
@@ -141,19 +141,19 @@ public class ArticleValidator {
         return validationErrors;
     }
 
-    private boolean isValidDesignation(String designation){
+    private boolean isValidDesignation(String designation) {
         String nameRegex = "^[a-zA-Z0-9À-ÿ '-]+$";
         Pattern pattern = Pattern.compile(nameRegex);
         return pattern.matcher(designation).matches();
     }
 
-    private boolean isValidDescription(String description){
+    private boolean isValidDescription(String description) {
         String nameRegex = "^[a-zA-Z0-9À-ÿ '-]+$";
         Pattern pattern = Pattern.compile(nameRegex);
         return pattern.matcher(description).matches();
     }
 
-    private boolean isValidPrice(Integer price){
+    private boolean isValidPrice(Integer price) {
         String nameRegex = "^(?!0\\d)\\d{1,9}(\\.\\d{1,2})?$";
         Pattern pattern = Pattern.compile(nameRegex);
         String priceStr = String.valueOf(price);

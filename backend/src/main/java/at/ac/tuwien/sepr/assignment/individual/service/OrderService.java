@@ -8,6 +8,10 @@ import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 
+/**
+ * Service for handling order-related operations.
+ */
+
 public interface OrderService {
     /**
      * Creates a new order in the database
@@ -17,7 +21,7 @@ public interface OrderService {
      * @param dto the order to create
      * @return
      * @throws ValidationException if the data given for the order is in itself incorrect(no designation, designation too long)
-     * @throws ConflictException if the data given for the order is in conflict with the data currently in the system (id already exists, …)
+     * @throws ConflictException   if the data given for the order is in conflict with the data currently in the system (id already exists, …)
      */
     OrderDetailDto create(OrderCreateDto dto) throws ConflictException, ValidationException, NotFoundException;
 }

@@ -8,7 +8,6 @@ import java.sql.Blob;
 
 /**
  * Entity describing an article.
- *
  */
 public record Article(
         Long id,

@@ -9,7 +9,7 @@ import java.util.List;
  * @param errors  List of validation errors that occured
  */
 public record ValidationErrorRestDto(
-    String message,
-    List<String> errors
+        String message,
+        List<String> errors
 ) {
 }

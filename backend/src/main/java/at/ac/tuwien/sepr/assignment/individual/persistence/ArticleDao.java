@@ -1,4 +1,5 @@
 package at.ac.tuwien.sepr.assignment.individual.persistence;
+
 import at.ac.tuwien.sepr.assignment.individual.dto.*;
 import at.ac.tuwien.sepr.assignment.individual.entity.Article;
 import at.ac.tuwien.sepr.assignment.individual.entity.Customer;
@@ -27,6 +28,7 @@ public interface ArticleDao {
      * Checks if a designation with
      * the data given in {@code designation}
      * exists in the persistent data store
+     *
      * @param designation is the designation of the article
      * @return true if is so, else false
      */
@@ -44,6 +46,7 @@ public interface ArticleDao {
 
     /**
      * Get the object for the id, which
+     *
      * @param id the id for getting the article
      * @return the article where the given id of the parameter matches
      * @throws NotFoundException thrown if there is no entry with the specified id in the database

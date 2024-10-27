@@ -9,8 +9,10 @@ import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import at.ac.tuwien.sepr.assignment.individual.mapper.ArticleMapper;
 import at.ac.tuwien.sepr.assignment.individual.mapper.OrderMapper;
 import at.ac.tuwien.sepr.assignment.individual.persistence.ArticleDao;
+
 import java.lang.invoke.MethodHandles;
 import java.util.stream.Stream;
+
 import at.ac.tuwien.sepr.assignment.individual.persistence.OrderDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

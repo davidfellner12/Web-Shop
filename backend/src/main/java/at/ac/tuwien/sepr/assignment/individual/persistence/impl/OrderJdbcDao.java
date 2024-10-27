@@ -41,7 +41,7 @@ public class OrderJdbcDao implements OrderDao {
         this.jdbcNamed = jdbcNamed;
     }
 
-   @Override
+    @Override
     public Order create(OrderCreateDto dto) throws ConflictException {
         /*LOG.trace("create({})", dto);
         KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -62,7 +62,7 @@ public class OrderJdbcDao implements OrderDao {
         }
         Long id = keyHolder.getKey().longValue();
         return new Order(id,dto.customerId(),dto.name(),dto.dateOfPurchase(), dto.totalPrice());*/
-       return new Order(null,null,null,null,null);
+        return new Order(null, null, null, null, null);
     }
 
 

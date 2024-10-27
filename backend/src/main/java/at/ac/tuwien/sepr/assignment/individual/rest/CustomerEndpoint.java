@@ -6,13 +6,16 @@ import at.ac.tuwien.sepr.assignment.individual.exception.ConflictException;
 import at.ac.tuwien.sepr.assignment.individual.exception.NotFoundException;
 import at.ac.tuwien.sepr.assignment.individual.exception.ValidationException;
 import at.ac.tuwien.sepr.assignment.individual.service.CustomerService;
+
 import java.lang.invoke.MethodHandles;
 import java.time.LocalDate;
 import java.util.stream.Stream;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -22,69 +25,73 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(CustomerEndpoint.BASE_PATH)
 public class CustomerEndpoint {
 
-  private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-  public static final String BASE_PATH = "/customers";
+    private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    public static final String BASE_PATH = "/customers";
 
-  private final CustomerService customerService;
+    private final CustomerService customerService;
 
-  public CustomerEndpoint(CustomerService customerService) {
-    this.customerService = customerService;
-  }
-  /**
-   * Interface to search for customers by search parameters.
-   *
-   *
-   * @return Stream of customers matching search parameters
-   */
-  @GetMapping(value = "")
-  public Stream<CustomerDetailDto> search(CustomerSearchDto dto) {
-    LOG.info("GET " + BASE_PATH);
-    LOG.debug("request parameters: {}", dto);
-    return customerService.search(dto);
-  }
+    public CustomerEndpoint(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
-  /**
-   * Interface to create a new customer in the database
-   * @param dto Dto containing information for creation of a new persistence entry
-   * @return
-   * @throws ValidationException thrown if the input does not match the expected one
-   * @throws ConflictException thrown if there already exists an entry for the specific parameter
-   * @throws NotFoundException thrown if
-   */
+    /**
+     * Interface to search for customers by search parameters.
+     *
+     * @return Stream of customers matching search parameters
+     */
+    @GetMapping(value = "")
+    public Stream<CustomerDetailDto> search(CustomerSearchDto dto) {
+        LOG.info("GET " + BASE_PATH);
+        LOG.debug("request parameters: {}", dto);
+        return customerService.search(dto);
+    }
 
-  //TODO: Check for throwing of ConflictException, thats not true
-  @PostMapping()
-  public CustomerDetailDto create(@RequestBody CustomerCreateDto dto) throws ValidationException, ConflictException, NotFoundException {
-    LOG.info("POST " + BASE_PATH);
-    LOG.debug("request parameters: {}", dto);
-    return customerService.create(dto);
-  }
+    /**
+     * Interface to create a new customer in the database
+     *
+     * @param dto Dto containing information for creation of a new persistence entry
+     * @return
+     * @throws ValidationException thrown if the input does not match the expected one
+     * @throws ConflictException   thrown if there already exists an entry for the specific parameter
+     * @throws NotFoundException   thrown if
+     */
 
-  @PatchMapping()
-  public CustomerDetailDto patch(@RequestBody CustomerUpdateDto dto) throws ValidationException, ConflictException, NotFoundException {
-    LOG.info("PATCH " + BASE_PATH + "/{}", dto);
-    LOG.debug("request parameters: {}", dto);
-    return customerService.update(dto);
-  }
+    //TODO: Check for throwing of ConflictException, thats not true
+    @PostMapping()
+    public ResponseEntity<CustomerDetailDto> create(@RequestBody CustomerCreateDto dto)
+            throws ValidationException, ConflictException, NotFoundException {
+        LOG.info("POST " + BASE_PATH);
+        LOG.debug("request parameters: {}", dto);
 
-  //TODO: everything has to be encapsulated via a dto
-  @GetMapping("/{id}")
-  public CustomerDetailDto get(@PathVariable("id") Long id) throws NotFoundException {
-    LOG.info("GET " + BASE_PATH + "/{}", id);
-    LOG.debug("request parameters: {}", id);
-    System.out.println("here is the" + id);
-    return customerService.get(id);
-  }
+        CustomerDetailDto createdCustomer = customerService.create(dto);
+        return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
+    }
 
-  @ResponseStatus(HttpStatus.NO_CONTENT)
-  @DeleteMapping("/{id}")
-  public void delete(@PathVariable("id") Long id) throws NotFoundException, ConflictException {
-    LOG.info("DELETE " + BASE_PATH + "/{}", id);
-    LOG.debug("request parameters: {}", id);
-    customerService.delete(id);
-  }
+    @PatchMapping()
+    public CustomerDetailDto patch(@RequestBody CustomerUpdateDto dto) throws ValidationException, ConflictException, NotFoundException {
+        LOG.info("PATCH " + BASE_PATH + "/{}", dto);
+        LOG.debug("request parameters: {}", dto);
+        return customerService.update(dto);
+    }
 
-  private void logClientError(HttpStatus status, String message, Exception e) {
-    LOG.warn("{} {}: {}: {}", status.value(), message, e.getClass().getSimpleName(), e.getMessage());
-  }
+    //TODO: everything has to be encapsulated via a dto
+    @GetMapping("/{id}")
+    public CustomerDetailDto get(@PathVariable("id") Long id) throws NotFoundException {
+        LOG.info("GET " + BASE_PATH + "/{}", id);
+        LOG.debug("request parameters: {}", id);
+        System.out.println("here is the" + id);
+        return customerService.get(id);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) throws NotFoundException, ConflictException {
+        LOG.info("DELETE " + BASE_PATH + "/{}", id);
+        LOG.debug("request parameters: {}", id);
+        customerService.delete(id);
+    }
+
+    private void logClientError(HttpStatus status, String message, Exception e) {
+        LOG.warn("{} {}: {}: {}", status.value(), message, e.getClass().getSimpleName(), e.getMessage());
+    }
 }

@@ -38,13 +38,14 @@ export class ArticleDetailsComponent {
               private notification: ToastrService) {
   }
 
+
   ngOnInit(): void {
-    this.route.data.subscribe(data => {
+    {
       const id = this.route.snapshot.paramMap.get('id');
       if (id){
         this.loadArticle(+id);
       }
-    });
+    };
   }
 
 

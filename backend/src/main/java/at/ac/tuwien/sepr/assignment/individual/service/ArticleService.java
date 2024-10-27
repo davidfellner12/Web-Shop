@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 /**
  * Service for working with articles.
  */
+
 public interface ArticleService {
 
     /**
@@ -24,7 +25,7 @@ public interface ArticleService {
      * @param dto the article to create
      * @return
      * @throws ValidationException if the data given for the article is in itself incorrect(no designation, designation too long)
-     * @throws ConflictException if the data given for the article is in conflict with the data currently in the system (id already exists, …)
+     * @throws ConflictException   if the data given for the article is in conflict with the data currently in the system (id already exists, …)
      */
     ArticleDetailDto create(ArticleCreateDto dto) throws ConflictException, ValidationException, NotFoundException;
 
@@ -50,11 +51,12 @@ public interface ArticleService {
     /**
      * Updates an article in the database, given by the data of the
      * DTO
+     *
      * @param dto
      * @return the updated Article
-     * @throws NotFoundException if the article with given ID does not exist in the persistent data store
+     * @throws NotFoundException   if the article with given ID does not exist in the persistent data store
      * @throws ValidationException if the update data given for the article is in itself incorrect (no price, name too long …)
-     *  @throws ConflictException   if the update data given for the article is in conflict the data currently in the system (designation already exists, …)
+     * @throws ConflictException   if the update data given for the article is in conflict the data currently in the system (designation already exists, …)
      **/
 
     ArticleDetailDto update(ArticleUpdateDto dto) throws NotFoundException, ValidationException, ConflictException;

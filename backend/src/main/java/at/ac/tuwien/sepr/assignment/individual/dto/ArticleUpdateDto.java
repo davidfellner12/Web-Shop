@@ -1,7 +1,8 @@
 package at.ac.tuwien.sepr.assignment.individual.dto;
 
-import java.sql.Blob;
-
+/**
+ * Dto for updating an article
+ */
 public record ArticleUpdateDto(
         Long id,
         String designation,
@@ -9,5 +10,5 @@ public record ArticleUpdateDto(
         Integer price,
         String image,
         String imageType
-){
+) {
 }
