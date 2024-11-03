@@ -1,9 +1,11 @@
-# SE PR Projekttemplate
+# Web-Shop
+Webshop Project is a full-stack application designed to provide a seamless online shopping experience. The application allows customers to browse articles, manage their orders, and maintain their accounts. Built with a robust architecture, it utilizes Angular for the frontend and Spring Boot for the backend.
 
-Bitte fügen Sie diese Datei, inklusive der beiliegenden `.gitlab-ci.yml` und den beiden Verzeichnissen `frontend` und `backend` zum Wurzelverzeichnis ihres Git-Repositories hinzu.
-Im folgenden befindet sich ein Template für die Stundenliste; bitte verwenden Sie es so, dass im GitLab-Projekt ihre Stundenliste als Tabelle sichtbar ist.
+Technologies Used
+Frontend: HTML, CSS, TypeScript, Angular
+Backend: Java, Spring Boot, H2 Database
+API: RESTful services 
 
-Vergessen Sie nicht im Projekt ihren Namen und Matrikelnummer zu ersetzen.
 
 ## Stundenliste
 
@@ -35,7 +37,6 @@ Vergessen Sie nicht im Projekt ihren Namen und Matrikelnummer zu ersetzen.
 | 2024-23-10 | 9:00      | 3h    | #14/#15     |Implemented purchase of basket in frontend + order basic structure|
 | 2024-23-10 | 13:00     | 5h    | #15         |Trying to implemend order structure linked with basket on button clich|
 | 2024-24-10 | 14:00     | 4h    | #15         |Trying to solve order, with storing basket in fronted which is the false approach|
-| 2024-26-10 | 13:00     |       | #15         |Trying to solve order, working of tech stories
 
 
 
